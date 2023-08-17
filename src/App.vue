@@ -1,11 +1,13 @@
 <script setup>
-import Hero from './components/sections/Hero.vue'
-import Skills from './components/sections/Skills.vue'
+import Hero from '@/components/sections/Hero.vue'
+import Skills from '@/components/sections/Skills.vue'
+import Presentation from '@/components/sections/Presentation.vue'
 </script>
 
 <template>
   <main>
     <Hero />
+    <Presentation />
     <Skills />
   </main>
 </template>
@@ -70,6 +72,22 @@ html {
       width: 1440px;
       margin: auto;
 
+      @media screen and (max-width: 1699px) {
+        width: 1280px;
+      }
+
+      @media screen and (max-width: 1399px) {
+        width: 1170px;
+      }
+
+      @media screen and (max-width: 1199px) {
+        width: 960px;
+      }
+
+      @media screen and (max-width: 991px) {
+        width: 80%;
+      }
+
       video,
       img,
       svg,
@@ -89,18 +107,27 @@ html {
 
       h1 {
         font-family: 'Anton', sans-serif;
-        font-size: 10.625rem; // 170px
+        font-size: 15.74vh;
         font-weight: 400;
         line-height: 0.97;
         text-transform: uppercase;
+        margin-bottom: 1.85vh;
+
+        @media screen and (max-width: 991px) {
+          font-size: 10.74vh;
+        }
       }
 
       h2 {
         font-family: Heebo, sans-serif;
-        font-size: 3rem; // 48px
+        font-size: 4.44vh;
         text-transform: uppercase;
-        letter-spacing: 4.8px;
-        margin-bottom: 6.25rem; // 100px
+        letter-spacing: 0.44vh;
+        margin-bottom: 9.26vh;
+
+        @media screen and (max-width: 991px) {
+          font-size: 3.44vh;
+        }
       }
     }
   }
