@@ -1,7 +1,27 @@
 <script setup>
+import Header from '@/components/Header.vue'
 import Hero from '@/components/sections/Hero.vue'
 import Skills from '@/components/sections/Skills.vue'
 import Presentation from '@/components/sections/Presentation.vue'
+
+const headerLinks = [
+  {
+    name: "Qui suis-je ?",
+    href: "#presentation"
+  },
+  {
+    name: "Compétences",
+    href: "#skills"
+  },
+  {
+    name: "Réalisations",
+    href: "#portfolio"
+  },
+  {
+    name: "Contact",
+    href: "#contact"
+  }
+]
 
 const skills = [
   "HTML",
@@ -20,6 +40,7 @@ const skills = [
 
 <template>
   <main>
+    <Header :links="headerLinks"/>
     <Hero />
     <Presentation />
     <Skills :skills="skills"/>
@@ -82,6 +103,24 @@ html {
     min-height: 100%;
     background-color: var(--background);
 
+    video,
+    img,
+    svg,
+    object {
+      max-width: 100%;
+      height: auto;
+      vertical-align: middle;
+    }
+
+    li {
+      list-style: none;
+      text-decoration: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
     section {
       width: 1440px;
       margin: auto;
@@ -112,23 +151,6 @@ html {
 
       @media screen and (max-width: 991px) {
         width: 80%;
-      }
-
-      video,
-      img,
-      svg,
-      object {
-        max-width: 100%;
-        height: auto;
-        vertical-align: middle;
-      }
-
-      li {
-        list-style: none;
-      }
-
-      a {
-        text-decoration: none;
       }
 
       h1 {
