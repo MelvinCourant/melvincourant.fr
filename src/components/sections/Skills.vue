@@ -10,8 +10,8 @@ defineProps({
 </script>
 
 <template>
-  <section id="skills" class="skills">
-    <Title :value="'Compétences'" :level="2" />
+  <section class="skills">
+    <Title id="skills" :value="'Compétences'" :level="2" />
     <ul class="skills__list">
       <li v-for="(skill, index) in skills" :key="index">
         {{ skill }}

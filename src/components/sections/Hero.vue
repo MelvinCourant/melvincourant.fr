@@ -8,7 +8,11 @@ import Link from "@/components/reusables/Link.vue";
     <div class="hero__left">
       <Title :value="'Melvin Courant'" :level="1" />
       <p>Développeur front-end</p>
-      <Link :text="'Me découvrir'" :href="'#presentation'" />
+      <Link
+        :text="'Me découvrir'"
+        :href="'#presentation'"
+        :title="'Descendre à la section présentation'"
+      />
     </div>
     <div class="hero__right">
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

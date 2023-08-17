@@ -31,7 +31,7 @@ function toggleIcon() {
   <header class="header">
     <button
       :class="['header__button', {burger : burgerClass}, {cross : crossClass}]"
-      @click="toggleIcon()"
+      @click.stop="toggleIcon()"
       :title="titleButton"
     >
       <span class="header__button__icon">
@@ -51,6 +51,7 @@ function toggleIcon() {
         >
           <a
             :href="link.href"
+            @click="toggleIcon()"
           >
             {{ link.name }}
           </a>

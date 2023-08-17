@@ -3,6 +3,8 @@ import Header from '@/components/Header.vue'
 import Hero from '@/components/sections/Hero.vue'
 import Skills from '@/components/sections/Skills.vue'
 import Presentation from '@/components/sections/Presentation.vue'
+import Realisations from '@/components/sections/Realisations.vue'
+import Contact from '@/components/sections/Contact.vue'
 
 const headerLinks = [
   {
@@ -36,14 +38,55 @@ const skills = [
   "Illustrator",
   "Photoshop"
 ];
+
+const contact = [
+  {
+    text: "MelvinCourant",
+    href: "https://github.com/MelvinCourant",
+    title: "Mon Github",
+    icon: "github.svg"
+  },
+  {
+    text: "melvincourant_dev",
+    href: "https://www.instagram.com/melvincourant_dev/",
+    title: "Mon Instagram",
+    icon: "instagram.svg"
+  },
+  {
+    text: "Melvin Courant",
+    href: "https://www.linkedin.com/in/melvin-courant/",
+    title: "Mon Linkedin",
+    icon: "linkedin.svg"
+  },
+  {
+    text: "@MelvinCourant",
+    href: "https://twitter.com/MelvinCourant",
+    title: "Mon Twitter",
+    icon: "x.svg"
+  },
+  {
+    text: "melvin.courant1\n@gmail.com",
+    href: "mailto:melvin.courant1@gmail.com",
+    title: "Mon mail",
+    icon: "mail.svg"
+  },
+  {
+    text: "Mon CV",
+    href: "@/assets/docs/cv.pdf",
+    title: "Mon CV",
+    icon: "download.svg"
+  }
+]
 </script>
 
 <template>
+  <Header :links="headerLinks"/>
   <main>
-    <Header :links="headerLinks"/>
     <Hero />
     <Presentation />
     <Skills :skills="skills"/>
+    <Realisations />
+    <Contact :contact="contact"/>
   </main>
 </template>
 
