@@ -2,13 +2,27 @@
 import Hero from '@/components/sections/Hero.vue'
 import Skills from '@/components/sections/Skills.vue'
 import Presentation from '@/components/sections/Presentation.vue'
+
+const skills = [
+  "HTML",
+  "CSS / SCSS",
+  "JavaScript",
+  "PHP",
+  "Vue.js",
+  "TypeScript",
+  "Git",
+  "WordPress",
+  "Figma",
+  "Illustrator",
+  "Photoshop"
+];
 </script>
 
 <template>
   <main>
     <Hero />
     <Presentation />
-    <Skills />
+    <Skills :skills="skills"/>
   </main>
 </template>
 
