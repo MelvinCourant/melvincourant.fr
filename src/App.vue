@@ -72,6 +72,18 @@ html {
       width: 1440px;
       margin: auto;
 
+      &:not(.hero) {
+        padding: 17.188rem 0 5.625rem; // 275px 0 90px
+
+        @media screen and (max-width: 991px) {
+          padding: 10.938rem 0 3.438rem; // 175px 0 55px
+        }
+
+        @media screen and (max-width: 767px) {
+          padding: 5.625rem 0 1.875rem; // 90px 0 30px
+        }
+      }
+
       @media screen and (max-width: 1699px) {
         width: 1280px;
       }
