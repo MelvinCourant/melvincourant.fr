@@ -1,6 +1,6 @@
 <script setup>
-import Hero from './components/Hero.vue'
-import Skills from './components/Skills.vue'
+import Hero from './components/sections/Hero.vue'
+import Skills from './components/sections/Skills.vue'
 </script>
 
 <template>

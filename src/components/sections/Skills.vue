@@ -1,10 +1,10 @@
 <script setup>
-
+import Title from '../reusables/Title.vue'
 </script>
 
 <template>
   <section>
-    <h2>Compétences</h2>
+    <Title :value="'Compétences'" :level="2" />
   </section>
 </template>
 

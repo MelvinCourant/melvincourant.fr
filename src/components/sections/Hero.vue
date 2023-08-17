@@ -1,10 +1,10 @@
 <script setup>
-
+import Title from "replacement/components/reusables/Title.vue";
 </script>
 
 <template>
   <section class="hero">
-    <h1>Melvin Courant</h1>
+    <Title :value="'Melvin Courant'" :level="1" />
   </section>
 </template>
 
