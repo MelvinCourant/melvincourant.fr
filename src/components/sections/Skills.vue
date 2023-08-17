@@ -1,13 +1,39 @@
 <script setup>
 import Title from '@/components/reusables/Title.vue'
+
+defineProps({
+  skills: {
+    type: Array,
+    required: true
+  }
+})
 </script>
 
 <template>
-  <section>
+  <section id="skills" class="skills">
     <Title :value="'Compétences'" :level="2" />
+    <ul class="skills__list">
+      <li v-for="skill in skills" :key="skill">
+        {{ skill }}
+      </li>
+    </ul>
   </section>
 </template>
 
 <style scoped lang="scss">
+.skills {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.85vh;
+    font-size: 11.85vh;
+    line-height: 0.875;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
 
+    @media screen and (max-width: 767px) {
+      font-size: 7.5vh;
+    }
+  }
+}
 </style>
