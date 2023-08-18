@@ -117,6 +117,7 @@ const contact = [
   // Black colors
   --background: #1D1D1B;
   --secondary: #141413;
+  --links: #222220;
 
   // Text colors
   --text: #D9D9D9;

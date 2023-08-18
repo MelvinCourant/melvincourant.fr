@@ -50,6 +50,7 @@ function getIconUrl(icon) {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--links);
 
   &__button {
     display: flex;
