@@ -6,7 +6,10 @@ import Link from "@/components/reusables/Link.vue";
 <template>
   <section class="hero">
     <div class="hero__left">
-      <Title :value="'Melvin Courant'" :level="1" />
+      <Title
+        :value="'Melvin Courant'"
+        :level="1"
+      />
       <p>Développeur front-end</p>
       <Link
         :text="'Me découvrir'"
