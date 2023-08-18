@@ -3,8 +3,12 @@ import Title from '@/components/reusables/Title.vue'
 </script>
 
 <template>
-  <section class="presentation">
-    <Title id="presentation" :value="'Qui suis-je ?'" :level="2" :hidden="true" />
+  <section id="presentation" class="presentation">
+    <Title
+      :value="'Qui suis-je ?'"
+      :level="2"
+      :hidden="true"
+    />
     <p class="presentation__text">
       Bien le bonjour&nbsp;!
       Je suis un jeune <span class="presentation__text__hightlights">développeur front-end</span> de 23&nbsp;ans,

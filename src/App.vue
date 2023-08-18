@@ -17,7 +17,7 @@ const headerLinks = [
   },
   {
     name: "Réalisations",
-    href: "#portfolio"
+    href: "#realisations"
   },
   {
     name: "Contact",
@@ -136,6 +136,11 @@ const contact = [
 
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  &::selection {
+    background: none;
+    color: var(--primary);
   }
 }
 
