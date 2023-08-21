@@ -359,6 +359,10 @@ const toggleHeader = computed(() => {
       &__link {
         position: relative;
 
+        a {
+          transition: color .2s ease;
+        }
+
         &:after {
           position: absolute;
           content: '';
@@ -375,6 +379,7 @@ const toggleHeader = computed(() => {
         &:hover {
           a {
             color: var(--primary);
+            transition: color .2s ease;
           }
 
           &:after {
