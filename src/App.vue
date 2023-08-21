@@ -128,7 +128,6 @@ const contact = [
   // Blue colors
   --primary: #0392FA;
   --primary-darkened: #0267B0;
-  --links: rgba(3, 146, 250, 0.1);
 
   // Black colors
   --background: #1D1D1B;
@@ -139,8 +138,7 @@ const contact = [
   --text-grey: #696961;
 
   // Borders
-  --border: 2px solid var(--primary, #0392FA);
-  --border-transparent: 2px solid var(--primary-transparent, rgba(3, 146, 250, 0.40));
+  --border: 2px solid var(--primary);
 }
 
 * {

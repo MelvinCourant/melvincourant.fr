@@ -13,6 +13,18 @@ defineProps({
 function getIconUrl(icon) {
   return new URL(`../../assets/imgs/${icon}`, import.meta.url).href;
 }
+
+function hoverBoxes(e) {
+  const boxes = document.querySelectorAll(".boxes__box");
+  boxes.forEach(box => {
+    const rect = box.getBoundingClientRect(),
+      x = e.clientX - rect.left,
+      y = e.clientY - rect.top;
+
+    box.style.setProperty("--mouse-x", `${x}px`);
+    box.style.setProperty("--mouse-y", `${y}px`);
+  });
+}
 </script>
 
 <template>
@@ -27,6 +39,7 @@ function getIconUrl(icon) {
   <ul
     class="boxes"
     v-if="type === 'boxes'"
+    @mousemove="hoverBoxes"
   >
     <li
       v-for="link in data"
@@ -57,7 +70,7 @@ function getIconUrl(icon) {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--links);
+  background-color: var(--background);
 
   &__button {
     display: flex;
@@ -83,15 +96,13 @@ function getIconUrl(icon) {
     gap: 6.3vh;
     padding-top: 6.02vh;
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    border: var(--border-transparent);
-    border-radius: 10px;
+    z-index: 2;
+    flex: 1;
     font-family: 'Anton', sans-serif;
     font-size: 2.5rem; // 40px
     line-height: 1.5;
+    inset: 2px;
+    border-radius: inherit;
 
     @media screen and (max-width: 1199px) {
       font-size: 2rem; // 24px
@@ -139,9 +150,57 @@ function getIconUrl(icon) {
     grid-template-columns: 1fr;
   }
 
-  &__box{
+  &:hover {
+    & > .boxes__box {
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__box {
     position: relative;
     aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    background-color: rgba(3, 146, 250, 0.5);
+
+    &:hover {
+      &:before {
+        opacity: 1;
+      }
+    }
+
+    &:before,
+    &:after {
+      border-radius: inherit;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity .5s;
+      pointer-events: none;
+    }
+
+    &:before {
+      background: radial-gradient(
+          800px circle at var(--mouse-x) var(--mouse-y),
+          rgba(3, 146, 250, 0.06),
+          transparent 40%
+      );
+      z-index: 3;
+    }
+
+    &:after {
+      background: radial-gradient(
+          600px circle at var(--mouse-x) var(--mouse-y),
+          rgba(3, 146, 250, 0.4),
+          transparent 40%
+      );
+      z-index: 2;
+    }
   }
 }
 </style>
