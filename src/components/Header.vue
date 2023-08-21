@@ -1,5 +1,5 @@
 <script setup>
-import {ref, computed, onMounted} from "vue"
+import {ref, computed} from "vue"
 
 const animation = ref("deactivated");
 const burgerClass = ref(true);
@@ -120,7 +120,7 @@ const toggleHeader = computed(() => {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2;
+    z-index: 5;
     position: fixed;
     top: 70px;
     left: 70px;
@@ -331,7 +331,7 @@ const toggleHeader = computed(() => {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 4;
     position: fixed;
     top: 0;
     left: 0;
