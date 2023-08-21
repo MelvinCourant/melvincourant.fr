@@ -1,9 +1,11 @@
 <script setup>
-import { ref } from "vue"
+import {ref, computed, onMounted} from "vue"
 
+const animation = ref("deactivated");
 const burgerClass = ref(true);
 const crossClass = ref(false);
 const titleButton = ref("Ouvrir le menu");
+const transition = ref("");
 
 defineProps({
   links: {
@@ -15,16 +17,64 @@ defineProps({
 function toggleIcon() {
   burgerClass.value = !burgerClass.value;
   crossClass.value = !crossClass.value;
+  transition.value = "transition: clip-path 0.4s ease-in-out;";
 
   if (crossClass.value === true) {
     titleButton.value = "Fermer le menu";
-    document.documentElement.style.getPropertyValue("overflow", "hidden")
+    document.documentElement.style.setProperty("overflow", "hidden")
   }
   else {
     titleButton.value = "Ouvrir le menu";
     document.documentElement.style.removeProperty("overflow");
   }
+
+  if (animation.value === "deactivated") {
+    animation.value = "activated";
+  }
 }
+
+const toggleHeader = computed(() => {
+  const topLeft = ref(null);
+
+  function getTopLeft() {
+    if(window.innerWidth < 991) {
+      topLeft.value = 30;
+    }
+    else {
+      topLeft.value = 70;
+    }
+  }
+
+  getTopLeft();
+
+  const size = 28;
+  const circleInit = ref("");
+  const circleTaller = ref("");
+  const clipPath = ref(circleInit.value);
+
+  function initCircles() {
+    const position = ref(topLeft.value + size);
+    circleInit.value = `circle(${size}px at ${position.value}px ${position.value}px)`;
+    circleTaller.value = `circle(140% at ${position.value}px ${position.value}px)`;
+  }
+
+  initCircles();
+
+  if (crossClass.value === true) {
+    clipPath.value = circleTaller.value;
+  }
+  else {
+    clipPath.value = circleInit.value;
+  }
+
+  window.onresize = () => {
+    getTopLeft();
+    initCircles();
+    transition.value = "";
+  };
+
+  return `clip-path: ${clipPath.value}; ${transition.value}`;
+});
 </script>
 
 <template>
@@ -34,14 +84,17 @@ function toggleIcon() {
       @click.stop="toggleIcon()"
       :title="titleButton"
     >
-      <span class="header__button__icon">
+      <span
+        class="header__button__icon"
+        :data-animation="animation"
+      >
           <span></span>
       </span>
     </button>
 
     <nav
       class="header__nav"
-      v-show="crossClass"
+      :style="toggleHeader"
     >
       <ul class="header__nav__links">
         <li
@@ -108,27 +161,167 @@ function toggleIcon() {
         &:after {
           content: "";
         }
+
+        &[data-animation="activated"] {
+          span {
+            animation: burgerSpan .3s ease-in-out;
+          }
+
+          @keyframes burgerSpan {
+            0% {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              opacity: 0;
+            }
+            49% {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              opacity: 0;
+            }
+            50% {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              opacity: 1;
+            }
+          }
+
+          &:before {
+            animation: burgerBefore .3s ease-in-out;
+          }
+
+          @keyframes burgerBefore {
+            0% {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%) rotate(-45deg);
+            }
+            50% {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+            100% {
+              position: absolute;
+              top: calc(-100% - 4px);
+              transform: initial;
+            }
+          }
+
+          &:after {
+            animation: burgerAfter .3s ease-in-out;
+          }
+
+          @keyframes burgerAfter {
+            0% {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%) rotate(45deg);
+            }
+            50% {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+            100% {
+              position: absolute;
+              top: calc(100% + 4px);
+              transform: initial;
+            }
+          }
+        }
       }
     }
 
     &.cross {
       .header__button__icon {
+        span,
         &:before,
         &:after {
-          position: absolute;
-          margin-top: -2px;
           width: 32px;
           height: 4px;
           background-color: var(--text);
+        }
+
+        &:before,
+        &:after {
+          position: absolute;
           content: "";
         }
 
         &:before {
-          transform: rotate(-45deg);
+          top: 50%;
+          transform: translateY(-50%) rotate(-45deg);
         }
 
-        &:after {
-          transform: rotate(45deg);
+        span {
+          top: 50%;
+          transform: translateY(-50%);
+          opacity: 0;
+        }
+
+        &[data-animation="activated"] {
+          span {
+            animation: crossSpan .3s ease-in-out;
+          }
+
+          @keyframes crossSpan {
+            0% {
+              top: 50%;
+              transform: translateY(-50%);
+              opacity: 1;
+            }
+            49% {
+              top: 50%;
+              transform: translateY(-50%);
+              opacity: 1;
+            }
+            50% {
+              opacity: 0;
+            }
+          }
+
+          &:before {
+            animation: crossBefore .3s ease-in-out;
+          }
+
+          @keyframes crossBefore {
+            0% {
+              top: calc(-100% - 4px);
+              transform: initial;
+            }
+            50% {
+              top: 50%;
+              transform: translateY(-50%);
+            }
+            100% {
+              top: 50%;
+              transform: translateY(-50%) rotate(-45deg);
+            }
+          }
+
+          &:after {
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            animation: crossAfter .3s ease-in-out;
+          }
+
+          @keyframes crossAfter {
+            0% {
+              top: calc(100% + 4px);
+              transform: initial;
+            }
+            50% {
+              top: 50%;
+              transform: translateY(-50%);
+            }
+            100% {
+              top: 50%;
+              transform: translateY(-50%) rotate(45deg);
+            }
+          }
         }
       }
     }

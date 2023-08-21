@@ -4,7 +4,11 @@ import Title from "@/components/reusables/Title.vue"
 
 <template>
   <section class="realisations">
-    <Title id="realisations" :value="'Réalisation'" :level="2" />
+    <Title
+      id="realisations"
+      :value="'Réalisation'"
+      :level="2"
+    />
   </section>
 </template>
 

@@ -1,17 +1,30 @@
 <script setup>
 import Title from "@/components/reusables/Title.vue";
-import Link from "@/components/reusables/Link.vue";
+import Links from "@/components/reusables/Links.vue";
+
+defineProps({
+  type: {
+    type: String,
+    default: "button"
+  },
+  data: {
+    type: Array,
+    required: true
+  }
+})
 </script>
 
 <template>
   <section class="hero">
     <div class="hero__left">
-      <Title :value="'Melvin Courant'" :level="1" />
+      <Title
+        :value="'Melvin Courant'"
+        :level="1"
+      />
       <p>Développeur front-end</p>
-      <Link
-        :text="'Me découvrir'"
-        :href="'#presentation'"
-        :title="'Descendre à la section présentation'"
+      <Links
+        :type="type"
+        :data="data"
       />
     </div>
     <div class="hero__right">

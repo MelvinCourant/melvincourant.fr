@@ -11,7 +11,11 @@ defineProps({
 
 <template>
   <section class="skills">
-    <Title id="skills" :value="'Compétences'" :level="2" />
+    <Title
+      id="skills"
+      :value="'Compétences'"
+      :level="2"
+    />
     <ul class="skills__list">
       <li v-for="(skill, index) in skills" :key="index">
         {{ skill }}
