@@ -1,24 +1,12 @@
 <script setup>
-const props = defineProps({
-  text: {
-    type: String,
-    required: true
-  },
-  href: {
-    type: String,
-    required: true
-  },
-  title: {
-    type: String,
-    default: ""
-  },
+defineProps({
   type: {
     type: String,
     default: "button"
   },
-  icon: {
-    type: String,
-    default: ""
+  data: {
+    type: Array,
+    required: true
   }
 })
 
@@ -29,19 +17,38 @@ function getIconUrl(icon) {
 
 <template>
   <a
-    :href="href"
-    :target="{'_blank': type === 'box'}"
-    :class="['link', `link__${type}`]"
-    :title="title"
+    :href="data[0].href"
+    class="link link__button"
+    :title="data[0].title"
+    v-if="type === 'button'"
   >
-    <img
-      v-if="icon"
-      :src="getIconUrl(icon)"
-      :alt="icon"
-      class="link__box__icon"
-    >
-    {{ text }}
+    {{ data[0].text }}
   </a>
+  <ul
+    class="boxes"
+    v-if="type === 'boxes'"
+  >
+    <li
+      v-for="link in data"
+      :key="link.text"
+      class="boxes__box"
+    >
+      <a
+        :href="link.href"
+        target="_blank"
+        class="link link__box"
+        :title="link.title"
+      >
+        <img
+          v-if="link.icon"
+          :src="getIconUrl(link.icon)"
+          :alt="link.icon"
+          class="link__box__icon"
+        >
+        {{ link.text }}
+      </a>
+    </li>
+  </ul>
 </template>
 
 <style scoped lang="scss">
@@ -116,6 +123,25 @@ function getIconUrl(icon) {
         height: 14vh;
       }
     }
+  }
+}
+
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem; // 20px
+
+  @media screen and (max-width: 991px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__box{
+    position: relative;
+    aspect-ratio: 1 / 1;
   }
 }
 </style>

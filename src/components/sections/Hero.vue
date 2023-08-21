@@ -1,6 +1,17 @@
 <script setup>
 import Title from "@/components/reusables/Title.vue";
-import Link from "@/components/reusables/Link.vue";
+import Links from "@/components/reusables/Links.vue";
+
+defineProps({
+  type: {
+    type: String,
+    default: "button"
+  },
+  data: {
+    type: Array,
+    required: true
+  }
+})
 </script>
 
 <template>
@@ -11,10 +22,9 @@ import Link from "@/components/reusables/Link.vue";
         :level="1"
       />
       <p>Développeur front-end</p>
-      <Link
-        :text="'Me découvrir'"
-        :href="'#presentation'"
-        :title="'Descendre à la section présentation'"
+      <Links
+        :type="type"
+        :data="data"
       />
     </div>
     <div class="hero__right">

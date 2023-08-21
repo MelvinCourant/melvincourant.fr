@@ -23,7 +23,15 @@ const headerLinks = [
     name: "Contact",
     href: "#contact"
   }
-]
+];
+
+const discover = [
+  {
+    text: "Me découvrir",
+    href: "#presentation",
+    title: "Descendre à la section présentation"
+  }
+];
 
 const skills = [
   "HTML",
@@ -82,11 +90,19 @@ const contact = [
 <template>
   <Header :links="headerLinks"/>
   <main>
-    <Hero />
+    <Hero
+      :type="'button'"
+      :data="discover"
+    />
     <Presentation />
-    <Skills :skills="skills"/>
+    <Skills
+      :skills="skills"
+    />
     <Realisations />
-    <Contact :contact="contact"/>
+    <Contact
+      :type="'boxes'"
+      :data="contact"
+    />
   </main>
 </template>
 
@@ -112,12 +128,11 @@ const contact = [
   // Blue colors
   --primary: #0392FA;
   --primary-darkened: #0267B0;
-  --primary-transparent: rgba(3, 146, 250, 0.4);
+  --links: rgba(3, 146, 250, 0.1);
 
   // Black colors
   --background: #1D1D1B;
   --secondary: #141413;
-  --links: #222220;
 
   // Text colors
   --text: #D9D9D9;
