@@ -147,6 +147,7 @@ const contact = [
   box-sizing: border-box;
   scrollbar-width: none;
   color: var(--text);
+  scroll-behavior: smooth;
 
   &::-webkit-scrollbar {
     display: none;
