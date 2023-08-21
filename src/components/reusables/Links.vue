@@ -16,10 +16,11 @@ function getIconUrl(icon) {
 
 function hoverBoxes(e) {
   const boxes = document.querySelectorAll(".boxes__box");
+
   boxes.forEach(box => {
-    const rect = box.getBoundingClientRect(),
-      x = e.clientX - rect.left,
-      y = e.clientY - rect.top;
+    const rect = box.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
 
     box.style.setProperty("--mouse-x", `${x}px`);
     box.style.setProperty("--mouse-y", `${y}px`);
@@ -28,14 +29,18 @@ function hoverBoxes(e) {
 </script>
 
 <template>
-  <a
-    :href="data[0].href"
-    class="link link__button"
-    :title="data[0].title"
+  <div
+    class="button"
     v-if="type === 'button'"
   >
-    {{ data[0].text }}
-  </a>
+    <a
+      :href="data[0].href"
+      class="link link__button"
+      :title="data[0].title"
+    >
+      {{ data[0].text }}
+    </a>
+  </div>
   <ul
     class="boxes"
     v-if="type === 'boxes'"
@@ -65,22 +70,54 @@ function hoverBoxes(e) {
 </template>
 
 <style scoped lang="scss">
+.button {
+  position: relative;
+  border-radius: 50px;
+  border: var(--border);
+  overflow: hidden;
+  width: fit-content;
+  transition: transform .3s ease-out;
+
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+    clip-path: circle(0% at 50% 50%);
+    transition: all .4s ease-in-out;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: var(--primary-darkened) 0 0 20px 0px;
+    transition: all .4s ease-in-out;
+
+    &:after {
+      clip-path: circle(150% at 50% 50%);
+      transition: clip-path .4s ease-in-out;
+    }
+  }
+}
+
 .link {
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--background);
 
   &__button {
     display: flex;
-    border: var(--border);
-    border-radius: 50px;
     width: 280px;
     height: 60px;
     font-family: Heebo, sans-serif;
     font-weight: 600;
     font-size: 1.5rem; // 24px
+    position: relative;
+    z-index: 2;
 
     @media screen and (max-width: 991px) {
       margin: 0 auto;
@@ -103,6 +140,7 @@ function hoverBoxes(e) {
     line-height: 1.5;
     inset: 2px;
     border-radius: inherit;
+    background-color: var(--background);
 
     @media screen and (max-width: 1199px) {
       font-size: 2rem; // 24px
