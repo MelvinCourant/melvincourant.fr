@@ -110,7 +110,9 @@ function toggleCursor() {
     <Skills
       :skills="skills"
     />
-    <Realisations />
+    <Realisations
+      @toggleCursor="toggleCursor"
+    />
     <Contact
       :type="'boxes'"
       :data="contact"

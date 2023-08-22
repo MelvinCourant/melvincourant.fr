@@ -13,7 +13,7 @@ defineProps({
 defineEmits(["toggleCursor"]);
 
 function getIconUrl(icon) {
-  return new URL(`../../assets/imgs/${icon}`, import.meta.url).href;
+  return new URL(`../../assets/imgs/icons/${icon}`, import.meta.url).href;
 }
 
 function hoverBoxes(e) {
@@ -83,6 +83,10 @@ function hoverBoxes(e) {
   overflow: hidden;
   width: fit-content;
   transition: transform .3s ease-out;
+
+  @media screen and (max-width: 991px) {
+    margin: 0 auto;
+  }
 
   &:after {
     content: "";
