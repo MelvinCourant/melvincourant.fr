@@ -6,7 +6,7 @@ import Title from "@/components/reusables/Title.vue"
   <section class="realisations">
     <Title
       id="realisations"
-      :value="'Réalisation'"
+      :value="'Réalisations'"
       :level="2"
     />
   </section>

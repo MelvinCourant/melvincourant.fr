@@ -8,7 +8,9 @@ defineProps({
     type: Array,
     required: true
   }
-})
+});
+
+defineEmits(["toggleCursor"]);
 
 function getIconUrl(icon) {
   return new URL(`../../assets/imgs/${icon}`, import.meta.url).href;
@@ -32,6 +34,8 @@ function hoverBoxes(e) {
   <div
     class="button"
     v-if="type === 'button'"
+    @mouseenter="$emit('toggleCursor')"
+    @mouseleave="$emit('toggleCursor')"
   >
     <a
       :href="data[0].href"
@@ -45,6 +49,8 @@ function hoverBoxes(e) {
     class="boxes"
     v-if="type === 'boxes'"
     @mousemove="hoverBoxes"
+    @mouseenter="$emit('toggleCursor')"
+    @mouseleave="$emit('toggleCursor')"
   >
     <li
       v-for="link in data"

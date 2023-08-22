@@ -12,7 +12,9 @@ defineProps({
     type: Array,
     required: true
   }
-})
+});
+
+defineEmits(["toggleCursor"]);
 
 const translateLogo = ref("transform: translate(0, 0)");
 
@@ -43,6 +45,7 @@ function mouseLeave() {
       <Links
         :type="type"
         :data="data"
+        @toggleCursor="$emit('toggleCursor')"
       />
     </div>
     <div
