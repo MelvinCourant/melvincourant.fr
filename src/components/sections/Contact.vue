@@ -11,8 +11,9 @@ defineProps({
     type: Array,
     required: true
   }
-})
+});
 
+defineEmits(["toggleCursor"]);
 </script>
 
 <template>
@@ -25,6 +26,7 @@ defineProps({
     <Links
       :type="type"
       :data="data"
+      @toggleCursor="$emit('toggleCursor')"
     />
   </section>
 </template>
