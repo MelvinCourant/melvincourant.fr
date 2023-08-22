@@ -5,6 +5,8 @@ import Skills from '@/components/sections/Skills.vue'
 import Presentation from '@/components/sections/Presentation.vue'
 import Realisations from '@/components/sections/Realisations.vue'
 import Contact from '@/components/sections/Contact.vue'
+import Cursor from "@/components/reusables/Cursor.vue";
+import { ref } from "vue";
 
 const headerLinks = [
   {
@@ -85,14 +87,24 @@ const contact = [
     icon: "download.svg"
   }
 ]
+
+const displayCursor = ref(true);
+
+function toggleCursor() {
+  displayCursor.value = !displayCursor.value;
+}
 </script>
 
 <template>
-  <Header :links="headerLinks"/>
+  <Header
+    :links="headerLinks"
+    @toggleCursor="toggleCursor"
+  />
   <main>
     <Hero
       :type="'button'"
       :data="discover"
+      @toggleCursor="toggleCursor"
     />
     <Presentation />
     <Skills
@@ -102,8 +114,12 @@ const contact = [
     <Contact
       :type="'boxes'"
       :data="contact"
+      @toggleCursor="toggleCursor"
     />
   </main>
+  <Cursor
+    :display="displayCursor"
+  />
 </template>
 
 <style lang="scss">

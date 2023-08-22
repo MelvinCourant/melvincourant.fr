@@ -12,7 +12,9 @@ defineProps({
     type: Array,
     required: true
   }
-})
+});
+
+defineEmits(["toggleCursor"]);
 
 function toggleIcon() {
   burgerClass.value = !burgerClass.value;
@@ -83,6 +85,8 @@ const toggleHeader = computed(() => {
       :class="['header__button', {burger : burgerClass}, {cross : crossClass}]"
       @click.stop="toggleIcon()"
       :title="titleButton"
+      @mouseenter="$emit('toggleCursor')"
+      @mouseleave="$emit('toggleCursor')"
     >
       <span
         class="header__button__icon"
@@ -96,7 +100,11 @@ const toggleHeader = computed(() => {
       class="header__nav"
       :style="toggleHeader"
     >
-      <ul class="header__nav__links">
+      <ul
+        class="header__nav__links"
+        @mouseenter="$emit('toggleCursor')"
+        @mouseleave="$emit('toggleCursor')"
+      >
         <li
           v-for="(link, index) in links"
           :key="index"
