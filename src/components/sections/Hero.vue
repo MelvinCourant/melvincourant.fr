@@ -71,14 +71,33 @@ function mouseLeave() {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   height: 100vh;
   position: relative;
+  
+  @media screen and (max-width: 991px) {
+    width: initial;
+  }
 
   &__left {
     width: 575px;
+    margin-left: calc((100% - 1440px) / 2);
+
+    @media screen and (max-width: 1699px) {
+      margin-left: calc((100% - 1280px) / 2);
+    }
+
+    @media screen and (max-width: 1399px) {
+      margin-left: calc((100% - 1170px) / 2);
+    }
+
+    @media screen and (max-width: 1199px) {
+      margin-left: calc((100% - 960px) / 2);
+    }
 
     @media screen and (max-width: 991px) {
       width: 100%;
+      margin-left: initial;
       text-align: center;
     }
 
@@ -97,8 +116,19 @@ function mouseLeave() {
   }
 
   &__right {
-    margin: -100px;
-    padding: 100px;
+    margin-right: calc((100% - 1440px) / 2);
+
+    @media screen and (max-width: 1699px) {
+      margin-right: calc((100% - 1280px) / 2);
+    }
+
+    @media screen and (max-width: 1399px) {
+      margin-right: calc((100% - 1170px) / 2);
+    }
+
+    @media screen and (max-width: 1199px) {
+      margin-right: calc((100% - 960px) / 2);
+    }
 
     @media screen and (max-width: 991px) {
       position: absolute;
@@ -106,6 +136,7 @@ function mouseLeave() {
       left: 50%;
       transform: translate(-50%, -50%);
       opacity: 30%;
+      margin-right: initial;
     }
 
     svg {
