@@ -10,10 +10,9 @@ defineProps({
   }
 });
 
-const emit = defineEmits(["toggleCursor"]);
+const emit = defineEmits(["toggleCursor", "realisationHovered"]);
 
 const splideOptions = {
-  type: "loop",
   gap: "1.25rem",
   focus: "center",
   keyboard: "global",
@@ -55,9 +54,11 @@ onMounted(() => {
 <template>
   <Splide
     :options="splideOptions"
+    @mouseleave="$emit('realisationHovered', '')"
   >
     <SplideSlide
       v-for="realisation in realisations"
+      @mouseover="$emit('realisationHovered', realisation.title)"
     >
       <a
         class="slider__item__link"

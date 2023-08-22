@@ -93,6 +93,12 @@ const displayCursor = ref(true);
 function toggleCursor() {
   displayCursor.value = !displayCursor.value;
 }
+
+const cursorText = ref("");
+
+function updateCursorText(text) {
+  cursorText.value = text;
+}
 </script>
 
 <template>
@@ -112,6 +118,7 @@ function toggleCursor() {
     />
     <Realisations
       @toggleCursor="toggleCursor"
+      @realisationHovered="updateCursorText"
     />
     <Contact
       :type="'boxes'"
@@ -121,6 +128,7 @@ function toggleCursor() {
   </main>
   <Cursor
     :display="displayCursor"
+    :text="cursorText"
   />
 </template>
 
