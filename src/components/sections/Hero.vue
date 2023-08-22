@@ -141,6 +141,7 @@ function mouseLeave() {
 
     svg {
       height: 60.19vh;
+      transition: transform 0.2s ease-out;
 
       @media screen and (max-width: 991px) {
         height: initial;
