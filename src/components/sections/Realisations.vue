@@ -9,17 +9,17 @@ const realisations = [
     url: "https://projet-js.melvincourant.fr/"
   },
   {
-    title: "Projet JS",
+    title: "Test 1",
     nameFile: "projet-js.jpg",
     url: "https://projet-js.melvincourant.fr/"
   },
   {
-    title: "Projet JS",
+    title: "Test 2",
     nameFile: "projet-js.jpg"
   },
 ];
 
-defineEmits(["toggleCursor"]);
+defineEmits(["toggleCursor", "realisationHovered"]);
 </script>
 
 <template>
@@ -32,6 +32,7 @@ defineEmits(["toggleCursor"]);
     <Slider
       :realisations="realisations"
       @toggleCursor="$emit('toggleCursor')"
+      @realisationHovered="$emit('realisationHovered', $event)"
     />
   </section>
 </template>

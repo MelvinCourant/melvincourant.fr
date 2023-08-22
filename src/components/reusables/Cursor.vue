@@ -1,10 +1,14 @@
 <script setup>
-import {onMounted, ref, watch} from "vue";
+import {ref, watch} from "vue";
 
 const props = defineProps({
   display: {
     type: Boolean,
     default: true
+  },
+  text: {
+    type: String,
+    default: ""
   }
 })
 
@@ -27,18 +31,30 @@ window.addEventListener("mousemove", (e) => {
 
 <template>
   <div
-    class="cursor"
+    :class="['cursor', {'cursor__hovering': text}]"
     :style="cursorStyle"
     v-show="showCursor"
-  ></div>
+  >
+    <span
+      class="cursor__hovering__text"
+      v-show="text"
+    >
+      {{ text }}
+    </span>
+  </div>
 </template>
 
 <style scoped lang="scss">
 .cursor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   z-index: 6;
   width: 40px;
   height: 40px;
+  aspect-ratio: 1/1;
+  text-align: center;
   top: 0;
   left: 0;
   transform: translate(calc(-50% + 15px), -50%);
@@ -49,6 +65,17 @@ window.addEventListener("mousemove", (e) => {
 
   @media screen and (max-width: 991px) {
     display: none;
+  }
+
+  &__hovering {
+    width: auto;
+    height: auto;
+
+    &__text {
+      font-family: 'Heebo', sans-serif;
+      font-size: 1.5rem; // 24px
+      padding: 1.25rem; // 20px
+    }
   }
 }
 </style>
