@@ -1,0 +1,38 @@
+[
+  {
+    "text": "MelvinCourant",
+    "href": "https://github.com/MelvinCourant",
+    "title": "Mon Github",
+    "icon": "github.svg"
+  },
+  {
+    "text": "melvincourant_dev",
+    "href": "https://www.instagram.com/melvincourant_dev/",
+    "title": "Mon Instagram",
+    "icon": "instagram.svg"
+  },
+  {
+    "text": "Melvin Courant",
+    "href": "https://www.linkedin.com/in/melvin-courant/",
+    "title": "Mon Linkedin",
+    "icon": "linkedin.svg"
+  },
+  {
+    "text": "@MelvinCourant",
+    "href": "https://twitter.com/MelvinCourant",
+    "title": "Mon Twitter",
+    "icon": "x.svg"
+  },
+  {
+    "text": "melvin.courant1\n@gmail.com",
+    "href": "mailto:melvin.courant1@gmail.com",
+    "title": "Mon mail",
+    "icon": "mail.svg"
+  },
+  {
+    "text": "Mon CV",
+    "href": "@/assets/docs/cv.pdf",
+    "title": "Mon CV",
+    "icon": "download.svg"
+  }
+]
