@@ -1,5 +1,11 @@
 <script setup>
 import Title from '@/components/reusables/Title.vue'
+
+const emit = defineEmits(["highlightTextHovered"]);
+
+function highlightTextHovered(text) {
+  emit("highlightTextHovered", text);
+}
 </script>
 
 <template>
@@ -11,8 +17,8 @@ import Title from '@/components/reusables/Title.vue'
     />
     <p class="presentation__text">
       Bien le bonjour&nbsp;!
-      Je suis un jeune <span class="presentation__text__hightlights">développeur front-end</span> de 23&nbsp;ans,
-      actuellement en train de poursuivre mon <span class="presentation__text__hightlights">master Ingénierie du Web</span>.
+      Je suis un développeur <span class="presentation__text__hightlights">front-end</span>
+      en master <span class="presentation__text__hightlights">Ingénierie du Web</span>.
       Mon parcours m'a conduit à rejoindre <span class="presentation__text__hightlights">La&nbsp;Suite&nbsp;and&nbsp;Co</span> pour mon alternance.
     </p>
   </section>
@@ -22,8 +28,8 @@ import Title from '@/components/reusables/Title.vue'
 .presentation {
   &__text {
     font-family: 'Anton', sans-serif;
-    font-size: 8.89vh;
-    line-height: 1.10;
+    font-size: 11.85vh;
+    line-height: 1.13;
 
     @media screen and (max-width: 991px) {
       font-size: 5.89vh;
