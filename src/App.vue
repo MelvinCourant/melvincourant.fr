@@ -1,15 +1,16 @@
 <script setup>
-import Header from '@/components/Header.vue'
+import Header from '@/components/global/Header.vue'
 import Hero from '@/components/sections/Hero.vue'
 import Skills from '@/components/sections/Skills.vue'
 import Presentation from '@/components/sections/Presentation.vue'
 import Realisations from '@/components/sections/Realisations.vue'
 import Contact from '@/components/sections/Contact.vue'
-import Cursor from "@/components/reusables/Cursor.vue";
-import { ref } from "vue";
+import Cursor from "@/components/global/Cursor.vue";
+import { ref, onMounted } from "vue";
 import skillsJson from "@/datas/skills.json";
 import realisationsJson from "@/datas/realisations.json";
 import contactJson from "@/datas/contact.json";
+import Loader from "@/components/global/Loader.vue";
 
 const headerLinks = [
   {
@@ -38,6 +39,12 @@ const discover = [
   }
 ];
 
+const load = ref(false);
+
+onMounted(() => {
+  load.value = true;
+});
+
 const displayCursor = ref(true);
 
 function toggleCursor() {
@@ -52,6 +59,9 @@ function updateCursorText(text) {
 </script>
 
 <template>
+  <Loader
+    :loaded="load"
+  />
   <Header
     :links="headerLinks"
     @toggleCursor="toggleCursor"
