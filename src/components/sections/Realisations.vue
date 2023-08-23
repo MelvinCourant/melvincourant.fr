@@ -1,23 +1,13 @@
 <script setup>
 import Title from "@/components/reusables/Title.vue"
-import Slider from "@/components/specifics/Realisations/Slider.vue";
+import Slider from "@/components/specifics/realisations/Slider.vue";
 
-const realisations = [
-  {
-    title: "Projet JS",
-    nameFile: "projet-js.jpg",
-    url: "https://projet-js.melvincourant.fr/"
-  },
-  {
-    title: "Test 1",
-    nameFile: "projet-js.jpg",
-    url: "https://projet-js.melvincourant.fr/"
-  },
-  {
-    title: "Test 2",
-    nameFile: "projet-js.jpg"
-  },
-];
+defineProps({
+  realisations: {
+    type: Array,
+    required: true
+  }
+})
 
 defineEmits(["toggleCursor", "realisationHovered"]);
 </script>
