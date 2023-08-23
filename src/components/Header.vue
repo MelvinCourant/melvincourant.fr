@@ -19,7 +19,7 @@ defineEmits(["toggleCursor"]);
 function toggleIcon() {
   burgerClass.value = !burgerClass.value;
   crossClass.value = !crossClass.value;
-  transition.value = "transition: clip-path 0.4s ease-in-out;";
+  transition.value = "transition: clip-path 0.5s ease-in-out;";
 
   if (crossClass.value === true) {
     titleButton.value = "Fermer le menu";
