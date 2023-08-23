@@ -1,6 +1,6 @@
 <script setup>
 import Title from "@/components/reusables/Title.vue"
-import Slider from "@/components/specifics/Realisations/Slider.vue";
+import Slider from "@/components/specifics/realisations/Slider.vue";
 
 const realisations = [
   {
