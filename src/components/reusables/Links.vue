@@ -82,7 +82,7 @@ function hoverBoxes(e) {
   border: var(--border);
   overflow: hidden;
   width: fit-content;
-  transition: transform .3s ease-out;
+  transition: transform .4s ease-out;
 
   @media screen and (max-width: 991px) {
     margin: 0 auto;
