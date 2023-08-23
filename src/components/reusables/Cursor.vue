@@ -84,6 +84,7 @@ window.addEventListener("mousemove", (e) => {
     &__text {
       font-family: 'Heebo', sans-serif;
       font-size: 1.5rem; // 24px
+      line-height: 1.2;
       padding: 1.25rem; // 20px
     }
   }
