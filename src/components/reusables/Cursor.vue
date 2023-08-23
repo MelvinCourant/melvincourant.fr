@@ -13,11 +13,25 @@ const props = defineProps({
 })
 
 const showCursor = ref(false);
-const displayCursor = ref("scale(1)");
+const scaleMin = "scale(0.25)";
+const scaleMax = "scale(1)";
+const displayCursor = ref(scaleMin);
 const cursorStyle = ref("");
 
 watch(() => props.display, (newValue) => {
-  displayCursor.value = newValue ? "scale(1)" : "scale(0)";
+  if(props.text !== "") {
+    displayCursor.value = newValue ? scaleMax : "scale(0)";
+  } else {
+    displayCursor.value = newValue ? scaleMin : "scale(0)";
+  }
+})
+
+watch(() => props.text, (newValue) => {
+  if(newValue !== "") {
+    displayCursor.value = scaleMax;
+  } else {
+    displayCursor.value = scaleMin;
+  }
 })
 
 window.addEventListener("mousemove", (e) => {
@@ -37,7 +51,6 @@ window.addEventListener("mousemove", (e) => {
   >
     <span
       class="cursor__hovering__text"
-      v-show="text"
     >
       {{ text }}
     </span>
@@ -51,13 +64,13 @@ window.addEventListener("mousemove", (e) => {
   align-items: center;
   position: fixed;
   z-index: 6;
-  width: 40px;
-  height: 40px;
+  width: 150px;
+  height: 150px;
   aspect-ratio: 1/1;
   text-align: center;
   top: 0;
   left: 0;
-  transform: translate(calc(-50% + 15px), -50%);
+  transform: translate(calc(-50% + 15px), -50%) scale(0.27);
   transition: all 0.2s ease-out;
   background-color: var(--primary);
   border-radius: 50%;
@@ -68,9 +81,6 @@ window.addEventListener("mousemove", (e) => {
   }
 
   &__hovering {
-    width: auto;
-    height: auto;
-
     &__text {
       font-family: 'Heebo', sans-serif;
       font-size: 1.5rem; // 24px
