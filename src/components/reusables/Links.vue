@@ -131,9 +131,6 @@ function hoverBoxes(e) {
 
     @media screen and (max-width: 991px) {
       margin: 0 auto;
-      width: 250px;
-      height: 53.5px;
-      font-size: 1rem; // 16px
     }
   }
 
