@@ -18,7 +18,6 @@ const splideOptions = {
   keyboard: "global",
   autoWidth: true,
   snap: true,
-  wheel: true,
   easing: "ease",
   breakpoints: {
     991: {
