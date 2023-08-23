@@ -7,6 +7,9 @@ import Realisations from '@/components/sections/Realisations.vue'
 import Contact from '@/components/sections/Contact.vue'
 import Cursor from "@/components/reusables/Cursor.vue";
 import { ref } from "vue";
+import skillsJson from "@/datas/skills.json";
+import realisationsJson from "@/datas/realisations.json";
+import contactJson from "@/datas/contact.json";
 
 const headerLinks = [
   {
@@ -19,7 +22,7 @@ const headerLinks = [
   },
   {
     name: "Réalisations",
-    href: "#realisations"
+    href: "#realisations.json"
   },
   {
     name: "Contact",
@@ -34,59 +37,6 @@ const discover = [
     title: "Descendre à la section présentation"
   }
 ];
-
-const skills = [
-  "HTML",
-  "CSS / SCSS",
-  "JavaScript",
-  "PHP",
-  "Vue.js",
-  "TypeScript",
-  "Git",
-  "WordPress",
-  "Figma",
-  "Illustrator",
-  "Photoshop"
-];
-
-const contact = [
-  {
-    text: "MelvinCourant",
-    href: "https://github.com/MelvinCourant",
-    title: "Mon Github",
-    icon: "github.svg"
-  },
-  {
-    text: "melvincourant_dev",
-    href: "https://www.instagram.com/melvincourant_dev/",
-    title: "Mon Instagram",
-    icon: "instagram.svg"
-  },
-  {
-    text: "Melvin Courant",
-    href: "https://www.linkedin.com/in/melvin-courant/",
-    title: "Mon Linkedin",
-    icon: "linkedin.svg"
-  },
-  {
-    text: "@MelvinCourant",
-    href: "https://twitter.com/MelvinCourant",
-    title: "Mon Twitter",
-    icon: "x.svg"
-  },
-  {
-    text: "melvin.courant1\n@gmail.com",
-    href: "mailto:melvin.courant1@gmail.com",
-    title: "Mon mail",
-    icon: "mail.svg"
-  },
-  {
-    text: "Mon CV",
-    href: "@/assets/docs/cv.pdf",
-    title: "Mon CV",
-    icon: "download.svg"
-  }
-]
 
 const displayCursor = ref(true);
 
@@ -114,15 +64,16 @@ function updateCursorText(text) {
     />
     <Presentation />
     <Skills
-      :skills="skills"
+      :skills="skillsJson"
     />
     <Realisations
+      :realisations="realisationsJson"
       @toggleCursor="toggleCursor"
       @realisationHovered="updateCursorText"
     />
     <Contact
       :type="'boxes'"
-      :data="contact"
+      :data="contactJson"
       @toggleCursor="toggleCursor"
     />
   </main>
