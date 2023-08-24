@@ -1,11 +1,5 @@
 <script setup>
 import Title from '@/components/reusables/Title.vue'
-
-const emit = defineEmits(["highlightTextHovered"]);
-
-function highlightTextHovered(text) {
-  emit("highlightTextHovered", text);
-}
 </script>
 
 <template>
