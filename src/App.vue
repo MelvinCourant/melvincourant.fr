@@ -45,6 +45,11 @@ onMounted(() => {
   load.value = true;
 });
 
+const displayHero = ref(false);
+function revealHero() {
+  displayHero.value = true;
+}
+
 const displayCursor = ref(true);
 
 function toggleCursor() {
@@ -61,6 +66,7 @@ function updateCursorText(text) {
 <template>
   <Loader
     :loaded="load"
+    @loaderDisappeared="revealHero"
   />
   <Header
     :links="headerLinks"
@@ -70,6 +76,7 @@ function updateCursorText(text) {
     <Hero
       :type="'button'"
       :data="discover"
+      :display="displayHero"
       @toggleCursor="toggleCursor"
     />
     <Presentation />
