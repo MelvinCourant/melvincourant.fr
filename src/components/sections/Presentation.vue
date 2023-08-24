@@ -28,11 +28,11 @@ function highlightTextHovered(text) {
 .presentation {
   &__text {
     font-family: 'Anton', sans-serif;
-    font-size: 11.85vh;
+    font-size: 6.666vw;
     line-height: 1.13;
 
     @media screen and (max-width: 991px) {
-      font-size: 5.89vh;
+      font-size: 8.476vw;
     }
 
     @media screen and (max-width: 767px) {
