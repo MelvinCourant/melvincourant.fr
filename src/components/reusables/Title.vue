@@ -32,7 +32,8 @@ defineProps({
 
 <style scoped lang="scss">
 .hidden {
-  display: none;
+  font-size: 0;
+  margin-bottom: 0;
 }
 
 h1 {
