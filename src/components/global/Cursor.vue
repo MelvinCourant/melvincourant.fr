@@ -34,20 +34,42 @@ watch(() => props.text, (newValue) => {
   }
 })
 
+const showEyesGif = ref(false);
+
 window.addEventListener("mousemove", (e) => {
   if(!showCursor.value) {
     showCursor.value = true;
   }
 
   cursorStyle.value = `transform: translate(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%)) ${displayCursor.value};`;
+
+  clearInterval(showEyes);
+  startTimer();
+
+  if(showEyesGif.value) {
+    showEyesGif.value = false;
+  }
 });
+
+function displayEyes() {
+  showEyesGif.value = true;
+  clearInterval(displayEyes);
+}
+
+let showEyes;
+
+function startTimer() {
+  showEyes = setInterval(displayEyes, 10000);
+}
+
+startTimer();
 </script>
 
 <template>
   <div
     :class="['cursor', {'cursor__hovering': text}]"
     :style="cursorStyle"
-    v-show="showCursor"
+    v-show="showCursor && !showEyesGif"
   >
     <span
       class="cursor__hovering__text"
@@ -55,6 +77,14 @@ window.addEventListener("mousemove", (e) => {
       {{ text }}
     </span>
   </div>
+
+  <img
+    class="eyes"
+    v-show="showEyesGif"
+    :style="cursorStyle"
+    src="@/assets/imgs/gifs/eyes.gif"
+    alt="eyes"
+  />
 </template>
 
 <style scoped lang="scss">
@@ -88,5 +118,17 @@ window.addEventListener("mousemove", (e) => {
       padding: 1.25rem; // 20px
     }
   }
+}
+
+.eyes {
+  position: fixed;
+  z-index: 7;
+  width: 150px;
+  height: 150px;
+  top: 0;
+  left: 0;
+  transform: translate(calc(-50% + 15px), -50%) scale(0.27);
+  transition: all 0.2s ease-out;
+  pointer-events: none;
 }
 </style>
