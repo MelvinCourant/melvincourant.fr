@@ -1,4 +1,6 @@
 <script setup>
+import { ref, onMounted } from 'vue';
+
 defineProps({
   value: {
     type: String,
@@ -24,7 +26,7 @@ defineProps({
   </h1>
   <h2
     v-else
-    :class="{hidden: hidden}"
+    :class="[{'not-revealed': !hidden }, {hidden: hidden}]"
   >
     {{ value }}
   </h2>
@@ -55,9 +57,15 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 0.44vh;
   margin-bottom: 9.26vh;
+  transition: all 0.7s ease;
 
   @media screen and (max-width: 991px) {
     font-size: 3.44vh;
+  }
+
+  &.not-revealed {
+    opacity: 0;
+    transform: translateY(50px);
   }
 }
 </style>

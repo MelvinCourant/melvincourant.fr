@@ -23,7 +23,7 @@ const headerLinks = [
   },
   {
     name: "Réalisations",
-    href: "#realisations.json"
+    href: "#realisations"
   },
   {
     name: "Contact",
@@ -43,6 +43,27 @@ const load = ref(false);
 
 onMounted(() => {
   load.value = true;
+
+  function handleIntersect(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.intersectionRatio > ratio) {
+        entry.target.classList.remove('not-revealed');
+        observer.unobserve(entry.target);
+      }
+    })
+  }
+
+  const ratio = 0.8;
+  const observer = new IntersectionObserver(handleIntersect, {
+    root: null,
+    rootMargin: '0px',
+    threshold: ratio
+  })
+  const titles = document.querySelectorAll('.not-revealed');
+
+  titles.forEach(title => {
+    observer.observe(title);
+  })
 });
 
 const displayHero = ref(false);
