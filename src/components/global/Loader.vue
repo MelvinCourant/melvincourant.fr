@@ -10,6 +10,8 @@ const props = defineProps({
   }
 })
 
+const emit = defineEmits(["loaderDisappeared"]);
+
 const showLoader = ref(true);
 
 watch(() => props.loaded, (newValue) => {
@@ -26,6 +28,7 @@ watch(() => props.loaded, (newValue) => {
       delay: 1.5,
       onComplete: () => {
         showLoader.value = false;
+        emit("loaderDisappeared");
       }
     });
   }

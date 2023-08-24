@@ -32,6 +32,32 @@ defineProps({
 
 <style scoped lang="scss">
 .hidden {
-  display: none;
+  font-size: 0;
+  margin-bottom: 0;
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 15.74vh;
+  font-weight: 400;
+  line-height: 0.97;
+  text-transform: uppercase;
+  margin-bottom: 1.85vh;
+
+  @media screen and (max-width: 991px) {
+    font-size: 10.74vh;
+  }
+}
+
+h2 {
+  font-family: Heebo, sans-serif;
+  font-size: 4.44vh;
+  text-transform: uppercase;
+  letter-spacing: 0.44vh;
+  margin-bottom: 9.26vh;
+
+  @media screen and (max-width: 991px) {
+    font-size: 3.44vh;
+  }
 }
 </style>

@@ -1,9 +1,9 @@
 <script setup>
-import { ref } from "vue";
+import {ref, watch} from "vue";
 import Title from "@/components/reusables/Title.vue";
 import Links from "@/components/reusables/Links.vue";
 
-defineProps({
+const props = defineProps({
   type: {
     type: String,
     default: "button"
@@ -11,10 +11,22 @@ defineProps({
   data: {
     type: Array,
     required: true
+  },
+  display: {
+    type: Boolean,
+    required: true
   }
 });
 
 defineEmits(["toggleCursor"]);
+
+const displayHero = ref(props.display);
+
+watch(() => props.display, (newValue) => {
+  if(newValue === true) {
+    displayHero.value = true;
+  }
+});
 
 const translateLogo = ref("transform: translate(0, 0)");
 
@@ -32,21 +44,25 @@ function mouseLeave() {
 
 <template>
   <section
-    class="hero"
+    :class="['hero', {'not-loaded': !displayHero}]"
     @mousemove="mouseMove"
     @mouseleave="mouseLeave"
   >
     <div class="hero__left">
-      <Title
-        :value="'Melvin Courant'"
-        :level="1"
-      />
-      <p>Développeur front-end</p>
-      <Links
-        :type="type"
-        :data="data"
-        @toggleCursor="$emit('toggleCursor')"
-      />
+      <div class="hero__left__texts">
+        <Title
+          :value="'Melvin Courant'"
+          :level="1"
+        />
+        <p>Développeur front-end</p>
+      </div>
+      <div class="hero__left__button">
+        <Links
+          :type="type"
+          :data="data"
+          @toggleCursor="$emit('toggleCursor')"
+        />
+      </div>
     </div>
     <div
       class="hero__right"
@@ -79,6 +95,25 @@ function mouseLeave() {
     width: initial;
   }
 
+  &.not-loaded {
+    .hero__left {
+      &__texts {
+        h1,
+        p {
+          transform: translateX(-100%);
+        }
+      }
+
+      &__button {
+        opacity: 0;
+      }
+    }
+
+    .hero__right {
+      transform: scale(0);
+    }
+  }
+
   &__left {
     width: 575px;
     margin-left: calc((100% - 1440px) / 2);
@@ -101,22 +136,38 @@ function mouseLeave() {
       text-align: center;
     }
 
-    p {
-      font-family: Anton, sans-serif;
-      font-size: 5.93vh;
-      font-weight: 400;
-      line-height: 1.34;
-      margin-bottom: 6.5rem; // 104px
+    &__texts {
+      overflow: hidden;
 
-      @media screen and (max-width: 991px) {
-        font-size: 3.93vh;
-        margin-bottom: 3.5rem; // 56px
+      h1,
+      p {
+        transition: transform 0.7s ease;
       }
+
+      p {
+        font-family: Anton, sans-serif;
+        font-size: 5.93vh;
+        font-weight: 400;
+        line-height: 1.34;
+        margin-bottom: 6.5rem; // 104px
+        transition-delay: 0.1s;
+
+        @media screen and (max-width: 991px) {
+          font-size: 3.93vh;
+          margin-bottom: 3.5rem; // 56px
+        }
+      }
+    }
+
+    &__button {
+      display: inline-block;
+      transition: opacity 0.7s ease 0.4s;
     }
   }
 
   &__right {
     margin-right: calc((100% - 1440px) / 2);
+    transition: transform 0.7s ease;
 
     @media screen and (max-width: 1699px) {
       margin-right: calc((100% - 1280px) / 2);
