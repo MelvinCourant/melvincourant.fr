@@ -90,12 +90,15 @@ function mouseLeave() {
   width: 100%;
   height: 100vh;
   position: relative;
+  transition: opacity 0.7s linear;
   
   @media screen and (max-width: 991px) {
     width: initial;
   }
 
   &.not-loaded {
+    opacity: 0;
+
     .hero__left {
       &__texts {
         h1,
