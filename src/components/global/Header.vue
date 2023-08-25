@@ -354,21 +354,22 @@ const toggleHeader = computed(() => {
       align-items: center;
       font-family: 'Anton', sans-serif;
       gap: 1.85vh;
-      font-size: 8.89vh;
-
-      @media screen and (max-width: 991px) {
-        font-size: 5.89vh;
-      }
-
-      @media screen and (max-width: 767px) {
-        font-size: 2.188rem; // 35px
-      }
 
       &__link {
         position: relative;
 
         a {
+          font-size: 8.89vh;
+          line-height: 1.5;
           transition: color .2s ease;
+
+          @media screen and (max-width: 991px) {
+            font-size: 5.89vh;
+          }
+
+          @media screen and (max-width: 767px) {
+            font-size: 2.188rem; // 35px
+          }
         }
 
         &:after {
