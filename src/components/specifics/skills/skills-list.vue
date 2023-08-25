@@ -11,7 +11,7 @@ defineProps({
 })
 
 onMounted(() => {
-  const masks = document.querySelectorAll('.skills-lists__mask li');
+  const masks = document.querySelectorAll('.skills-lists__mask li p');
 
   gsap.registerPlugin(ScrollTrigger)
 
@@ -38,12 +38,12 @@ onMounted(() => {
       class="skills-lists__list skills-lists__mask"
     >
       <li v-for="(skillMask, index) in skills" :key="index" aria-hidden="true">
-        {{ skillMask }}
+        <p>{{ skillMask }}</p>
       </li>
     </ul>
     <ul class="skills-lists__list">
       <li v-for="(skill, index) in skills" :key="index">
-        {{ skill }}
+        <p>{{ skill }}</p>
       </li>
     </ul>
   </div>
@@ -54,26 +54,20 @@ onMounted(() => {
   position: relative;
 
   &__list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.85vh;
       font-family: 'Anton', sans-serif;
       text-transform: uppercase;
 
-      @media screen and (max-width: 767px) {
-        font-size: 7.5vh;
-      }
-
       li {
         width: fit-content;
-        height: 11.85vh;
-        font-size: 11.85vh;
-        color: var(--text-grey);
-        line-height: 0.875;
 
-        @media screen and (max-width: 767px) {
-          height: 7.5vh;
-          font-size: inherit;
+        p {
+          font-size: 11.85vh;
+          color: var(--text-grey);
+          line-height: 1.2;
+
+          @media screen and (max-width: 767px) {
+            font-size: 7.5vh;
+          }
         }
       }
   }
@@ -86,8 +80,10 @@ onMounted(() => {
     height: 100%;
 
     li {
-      clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
-      color: var(--text);
+      p {
+        clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+        color: var(--text);
+      }
     }
   }
 }
