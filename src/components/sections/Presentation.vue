@@ -11,9 +11,9 @@ import Title from '@/components/reusables/Title.vue'
     />
     <p class="presentation__text">
       Bien le bonjour&nbsp;!
-      Je suis un développeur <span class="presentation__text__hightlights">front-end</span>
-      en master <span class="presentation__text__hightlights">Ingénierie du Web</span>.
-      Mon parcours m'a conduit à rejoindre <span class="presentation__text__hightlights">La&nbsp;Suite&nbsp;and&nbsp;Co</span> pour mon alternance.
+      Je suis un développeur <span class="presentation__text__highlights">front-end</span>
+      en master <span class="presentation__text__highlights">Ingénierie du Web</span>.
+      Mon parcours m'a conduit à rejoindre <span class="presentation__text__highlights">La&nbsp;Suite&nbsp;and&nbsp;Co</span> pour mon alternance.
     </p>
   </section>
 </template>
@@ -33,7 +33,7 @@ import Title from '@/components/reusables/Title.vue'
       font-size: 2.188rem; // 35px
     }
 
-    &__hightlights {
+    &__highlights {
       color: var(--primary);
     }
   }
