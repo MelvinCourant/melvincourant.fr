@@ -1,7 +1,9 @@
 <script setup>
 import {ref, watch} from "vue";
 import Title from "@/components/reusables/Title.vue";
+import Input from "@/components/specifics/hero/Input.vue";
 import Links from "@/components/reusables/Links.vue";
+import Img from "@/components/specifics/hero/Img.vue";
 
 const props = defineProps({
   type: {
@@ -40,6 +42,22 @@ function mouseMove(e) {
 function mouseLeave() {
   translateLogo.value = "transform: translate(0, 0); transition: transform 0.5s ease-in-out;";
 }
+
+const imgName = ref("logo");
+const imgs = [
+  {
+    name: "scratch",
+    src: "scratch.jpg"
+  },
+  {
+    name: "melvin",
+    src: "moi.jpg"
+  }
+];
+
+function updateImg(value) {
+  imgName.value = value;
+}
 </script>
 
 <template>
@@ -54,7 +72,10 @@ function mouseLeave() {
           :value="'Melvin Courant'"
           :level="1"
         />
-        <p>Développeur front-end</p>
+        <Input
+          :value="'Développeur front-end'"
+          @updateValue="updateImg"
+        />
       </div>
       <div class="hero__left__button">
         <Links
@@ -67,17 +88,15 @@ function mouseLeave() {
     <div
       class="hero__right"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-        viewBox="0 0 419 509.2"
-        xml:space="preserve"
+      <div
+        class="hero__right_img"
         :style="translateLogo"
       >
-        <g>
-          <polygon points="369,240.5 419,190.5 267.6,190.5 267.6,0 27.4,240.3 98,240.3 217.6,120.7 217.6,240.7 	"/>
-          <polygon points="101.4,509.2 101.1,434.7 218.7,317.2 50,317.2 0,267.2 343.4,267.2 	"/>
-        </g>
-      </svg>
+        <Img
+          :imgs="imgs"
+          :imgToDisplay="imgName"
+        />
+      </div>
     </div>
   </section>
 </template>
@@ -142,23 +161,8 @@ function mouseLeave() {
     &__texts {
       overflow: hidden;
 
-      h1,
-      p {
+      h1 {
         transition: transform 0.7s ease;
-      }
-
-      p {
-        font-family: Anton, sans-serif;
-        font-size: 5.93vh;
-        font-weight: 400;
-        line-height: 1.34;
-        margin-bottom: 6.5rem; // 104px
-        transition-delay: 0.1s;
-
-        @media screen and (max-width: 991px) {
-          font-size: 3.93vh;
-          margin-bottom: 3.5rem; // 56px
-        }
       }
     }
 
@@ -191,21 +195,6 @@ function mouseLeave() {
       transform: translate(-50%, -50%);
       opacity: 30%;
       margin-right: initial;
-    }
-
-    svg {
-      height: 60.19vh;
-      transition: transform 0.2s ease-out;
-
-      @media screen and (max-width: 991px) {
-        height: initial;
-        width: 80vw;
-        max-width: initial;
-      }
-
-      polygon {
-        fill: var(--text);
-      }
     }
   }
 }
