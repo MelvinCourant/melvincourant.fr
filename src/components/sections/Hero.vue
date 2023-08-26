@@ -121,7 +121,7 @@ function updateImg(value) {
     .hero__left {
       &__texts {
         h1,
-        p {
+        .input {
           transform: translateX(-100%);
         }
       }
