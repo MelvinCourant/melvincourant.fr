@@ -121,7 +121,7 @@ function updateImg(value) {
     .hero__left {
       &__texts {
         h1,
-        p {
+        .input {
           transform: translateX(-100%);
         }
       }
@@ -160,6 +160,10 @@ function updateImg(value) {
 
     &__texts {
       overflow: hidden;
+
+      @media screen and (max-width: 991px) {
+        overflow: initial;
+      }
 
       h1 {
         transition: transform 0.7s ease;
