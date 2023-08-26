@@ -33,14 +33,18 @@ watch(() => props.display, (newValue) => {
 const translateLogo = ref("transform: translate(0, 0)");
 
 function mouseMove(e) {
-  const x = e.clientX / window.innerWidth - 0.5;
-  const y = e.clientY / window.innerHeight - 0.5;
+  if(window.innerWidth >= 992) {
+    const x = e.clientX / window.innerWidth - 0.5;
+    const y = e.clientY / window.innerHeight - 0.5;
 
-  translateLogo.value = `transform: translate(${x * 50}px, ${y * 50}px)`;
+    translateLogo.value = `transform: translate(${x * 50}px, ${y * 50}px)`;
+  }
 }
 
 function mouseLeave() {
-  translateLogo.value = "transform: translate(0, 0); transition: transform 0.5s ease-in-out;";
+  if(window.innerWidth >= 992) {
+    translateLogo.value = "transform: translate(0, 0); transition: transform 0.5s ease-in-out;";
+  }
 }
 
 const imgName = ref("logo");
@@ -160,6 +164,7 @@ function updateImg(value) {
 
     &__texts {
       overflow: hidden;
+      padding-top: 1.61vh;
 
       @media screen and (max-width: 991px) {
         overflow: initial;
