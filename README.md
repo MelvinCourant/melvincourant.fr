@@ -1,7 +1,41 @@
-# Vue 3 + Vite
+# melvincourant.fr
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Description
+Ce site est mon portfolio, il est disponible à l'adresse suivante : [melvincourant.fr](https://melvincourant.fr)<br>
+Je compte le mettre à jour régulièrement pour y ajouter mes nouveaux projets, n'hésitez pas à y jeter un coup d'oeil de temps en temps !
 
-## Recommended IDE Setup
+## Environnement technologique
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+### Framework
+- [Vue.js](https://vuejs.org/)
+
+### Langages
+- [HTML5](https://developer.mozilla.org/fr/docs/Web/HTML)
+- [SCSS](https://sass-lang.com/)
+- [JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript)
+
+### Librairies
+- [GSAP](https://greensock.com/gsap/)
+- [ScrollTrigger](https://greensock.com/scrolltrigger/)
+- [Splide](https://splidejs.com/)
+
+### Bundler
+- [Vite](https://vitejs.dev/)
+
+### Package manager
+- [Yarn](https://yarnpkg.com/)
+
+## Démarrer le projet
+
+### Installer les dépendances
+```bash
+yarn
+```
+
+### Démarrer le serveur de développement
+```bash
+yarn dev
+```
+
+## Post-scriptum
+Je laisse ce projet public pour que vous puissiez vous en inspirer, mais je vous demande de ne pas le copier intégralement. Merci !
