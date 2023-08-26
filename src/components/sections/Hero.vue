@@ -161,6 +161,10 @@ function updateImg(value) {
     &__texts {
       overflow: hidden;
 
+      @media screen and (max-width: 991px) {
+        overflow: initial;
+      }
+
       h1 {
         transition: transform 0.7s ease;
       }
