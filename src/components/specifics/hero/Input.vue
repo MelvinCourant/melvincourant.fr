@@ -25,7 +25,6 @@ const inputValue = computed({
     class="input"
     type="text"
     v-model="inputValue"
-    :placeholder="props.value"
   />
 </template>
 
@@ -47,10 +46,6 @@ const inputValue = computed({
 
   &:focus {
     outline: none;
-  }
-
-  &::placeholder {
-    color: var(--text);
   }
 }
 </style>
