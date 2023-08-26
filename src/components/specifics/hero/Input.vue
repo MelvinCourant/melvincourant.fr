@@ -42,6 +42,7 @@ const inputValue = computed({
   @media screen and (max-width: 991px) {
     font-size: 3.93vh;
     margin-bottom: 3.5rem; // 56px
+    text-align: center;
   }
 
   &:focus {
