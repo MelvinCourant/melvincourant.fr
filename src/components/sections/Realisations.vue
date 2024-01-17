@@ -1,6 +1,6 @@
 <script setup>
 import Title from "@/components/reusables/Title.vue"
-import Slider from "@/components/specifics/realisations/Slider.vue";
+import Slider from "@/components/specifics/Slider.vue";
 
 defineProps({
   realisations: {
@@ -26,7 +26,3 @@ defineEmits(["toggleCursor", "realisationHovered"]);
     />
   </section>
 </template>
-
-<style scoped lang="scss">
-
-</style>
