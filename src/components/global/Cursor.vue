@@ -1,5 +1,6 @@
 <script setup>
 import {ref, watch} from "vue";
+import '@css/global/cursor.scss';
 
 const props = defineProps({
   display: {
@@ -86,49 +87,3 @@ startTimer();
     alt="eyes"
   />
 </template>
-
-<style scoped lang="scss">
-.cursor {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  z-index: 6;
-  width: 150px;
-  height: 150px;
-  aspect-ratio: 1/1;
-  text-align: center;
-  top: 0;
-  left: 0;
-  transform: translate(calc(-50% + 15px), -50%) scale(0.27);
-  transition: all 0.2s ease-out;
-  background-color: var(--primary);
-  border-radius: 50%;
-  pointer-events: none;
-
-  @media screen and (max-width: 991px) {
-    display: none;
-  }
-
-  &__hovering {
-    &__text {
-      font-family: 'Heebo', sans-serif;
-      font-size: 1.5rem; // 24px
-      line-height: 1.2;
-      padding: 1.25rem; // 20px
-    }
-  }
-}
-
-.eyes {
-  position: fixed;
-  z-index: 7;
-  width: 150px;
-  height: 150px;
-  top: 0;
-  left: 0;
-  transform: translate(calc(-50% + 15px), -50%) scale(0.27);
-  transition: all 0.2s ease-out;
-  pointer-events: none;
-}
-</style>

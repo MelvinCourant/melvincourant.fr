@@ -1,0 +1,13 @@
+svg {
+  height: 60.19vh;
+
+  @media screen and (max-width: 991px) {
+    height: initial;
+    width: 80vw;
+    max-width: initial;
+  }
+
+  polygon {
+    fill: var(--text);
+  }
+}
