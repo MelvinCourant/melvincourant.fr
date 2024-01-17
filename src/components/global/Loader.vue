@@ -1,6 +1,7 @@
 <script setup>
 import {ref, onMounted, watch} from "vue";
 import {gsap} from "gsap";
+import '@css/global/loader.scss';
 
 const props = defineProps({
   loaded: {
@@ -47,31 +48,3 @@ watch(() => props.loaded, (newValue) => {
     </div>
   </div>
 </template>
-
-<style scoped lang="scss">
-.loader {
-  position: fixed;
-  z-index: 7;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--primary);
-  clip-path: circle(156% at 50% 50%);
-
-  &__content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    clip-path: circle(118% at 50% 50%);
-    background-color: var(--background);
-
-    &__gif {
-      width: 200px;
-      height: 200px;
-    }
-  }
-}
-</style>

@@ -1,5 +1,6 @@
 <script setup>
-import Title from '@/components/reusables/Title.vue'
+import Title from '@/components/reusables/Title.vue';
+import '@css/sections/presentation.scss';
 </script>
 
 <template>
@@ -17,25 +18,3 @@ import Title from '@/components/reusables/Title.vue'
     </p>
   </section>
 </template>
-
-<style scoped lang="scss">
-.presentation {
-  &__text {
-    font-family: 'Anton', sans-serif;
-    font-size: 6.666vw;
-    line-height: 1.13;
-
-    @media screen and (max-width: 991px) {
-      font-size: 8.476vw;
-    }
-
-    @media screen and (max-width: 767px) {
-      font-size: 2.188rem; // 35px
-    }
-
-    &__highlights {
-      color: var(--primary);
-    }
-  }
-}
-</style>

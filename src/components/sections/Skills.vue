@@ -1,6 +1,6 @@
 <script setup>
 import Title from '@/components/reusables/Title.vue'
-import SkillsList from "@/components/specifics/skills/skills-list.vue";
+import SkillsList from "@/components/specifics/SkillsList.vue";
 
 defineProps({
   skills: {
@@ -17,12 +17,8 @@ defineProps({
       :value="'Compétences'"
       :level="2"
     />
-    <skills-list
+    <SkillsList
       :skills="skills"
     />
   </section>
 </template>
-
-<style scoped lang="scss">
-
-</style>

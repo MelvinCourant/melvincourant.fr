@@ -1,4 +1,6 @@
 <script setup>
+import '@css/specifics/hero-img.scss';
+
 const props = defineProps({
   imgs: {
     type: Array,
@@ -36,19 +38,3 @@ function generateImgSrc(src) {
     v-show="props.imgToDisplay === img.name"
   />
 </template>
-
-<style scoped lang="scss">
-svg {
-  height: 60.19vh;
-
-  @media screen and (max-width: 991px) {
-    height: initial;
-    width: 80vw;
-    max-width: initial;
-  }
-
-  polygon {
-    fill: var(--text);
-  }
-}
-</style>
