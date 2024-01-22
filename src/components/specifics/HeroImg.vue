@@ -13,22 +13,23 @@ const props = defineProps({
 })
 
 function generateImgSrc(src) {
-  return new URL(`../../../assets/imgs/hero/${src}`, import.meta.url).href;
+  return new URL(`../../assets/imgs/hero/${src}`, import.meta.url).href;
 }
 </script>
 
 <template>
   <svg
-    xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-    viewBox="0 0 419 509.2"
-    xml:space="preserve"
+    width="535"
+    height="650"
+    viewBox="0 0 535 650"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
     v-show="props.imgToDisplay !== imgs[0].name && props.imgToDisplay !== imgs[1].name"
   >
-    <g>
-      <polygon points="369,240.5 419,190.5 267.6,190.5 267.6,0 27.4,240.3 98,240.3 217.6,120.7 217.6,240.7 	"/>
-      <polygon points="101.4,509.2 101.1,434.7 218.7,317.2 50,317.2 0,267.2 343.4,267.2 	"/>
-    </g>
+    <path d="M471.139 307.001L534.979 243.176H341.672V0L34.9843 306.746H125.254L277.832 154.075V307.256L471.139 307.001Z" fill="var(--text)"/>
+    <path d="M129.468 650L129.085 554.9L279.236 404.91H63.84L0 341.084H438.453L129.468 650Z" fill="var(--text)"/>
   </svg>
+
 
   <img
     v-for="img in props.imgs"

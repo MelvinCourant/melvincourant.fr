@@ -28,7 +28,7 @@ const splideOptions = {
 };
 
 function getSrc(nameFile) {
-  return new URL(`../../../assets/imgs/realisations/${nameFile}`, import.meta.url).href;
+  return new URL(`../../assets/imgs/realisations/${nameFile}`, import.meta.url).href;
 }
 
 const elementsToHideCursor = [
