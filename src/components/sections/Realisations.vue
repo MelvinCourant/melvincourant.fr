@@ -1,5 +1,7 @@
 <script setup>
-import Title from "@/components/reusables/Title.vue"
+import { ref } from "vue";
+import Title from "@/components/reusables/Title.vue";
+import PopupRealisation from "@/components/specifics/PopupRealisation.vue";
 import Slider from "@/components/specifics/Slider.vue";
 
 defineProps({
@@ -10,6 +12,14 @@ defineProps({
 })
 
 defineEmits(["toggleCursor", "realisationHovered"]);
+
+const popupIsActive = ref(false);
+const realisation = ref(null);
+
+function updateRealisation(newRealisation) {
+  popupIsActive.value = true;
+  realisation.value = newRealisation;
+}
 </script>
 
 <template>
@@ -19,10 +29,15 @@ defineEmits(["toggleCursor", "realisationHovered"]);
       :value="'Réalisations'"
       :level="2"
     />
+    <PopupRealisation
+      :active="popupIsActive"
+      :realisationDetails="realisation"
+    />
     <Slider
       :realisations="realisations"
       @toggleCursor="$emit('toggleCursor')"
       @realisationHovered="$emit('realisationHovered', $event)"
+      @realisationClicked="updateRealisation($event)"
     />
   </section>
 </template>

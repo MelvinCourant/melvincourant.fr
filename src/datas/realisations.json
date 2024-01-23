@@ -2,21 +2,53 @@
   {
     "title": "La Suite and Co",
     "nameFile": "lsac.jpg",
-    "url": "https://www.lasuiteandco.com/"
+    "url": "https://www.lasuiteandco.com/",
+    "details": {
+      "technologies": [
+          "wordpress",
+          "scss",
+          "js"
+      ],
+      "description": "Site vitrine de l'agence de communication dans lequel j'effectue mon alternance."
+    }
   },
   {
     "title": "Projet JS",
     "nameFile": "projet-js.jpg",
-    "url": "https://projet-js.melvincourant.fr/"
+    "url": "https://projet-js.melvincourant.fr/",
+    "details": {
+      "technologies": [
+          "html",
+          "css",
+          "js"
+      ],
+      "description": "Projet où il fallait réaliser un OS dans un navigateur uniquement en Javascript."
+    }
   },
   {
     "title": "Syltours",
     "nameFile": "syltours.jpg",
-    "url": "https://www.syltours.fr/"
+    "url": "https://www.syltours.fr/",
+    "details": {
+      "technologies": [
+          "wordpress",
+          "scss",
+          "js"
+      ],
+      "description": "Site vitrine de l'agence de voyage Syltours."
+    }
   },
   {
     "title": "Star Wars",
     "nameFile": "star-wars.jpg",
-    "url": "https://star-wars.melvincourant.fr/"
+    "url": "https://star-wars.melvincourant.fr/",
+    "details": {
+      "technologies": [
+          "html",
+          "css",
+          "js"
+      ],
+      "description": "Petit challenge de Benjamin Code que j'ai décidé de réaliser où il fallait reproduire l'animation d'une maquette Figma."
+    }
   }
 ]
