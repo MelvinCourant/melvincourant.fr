@@ -78,6 +78,6 @@ watch(() => props.active, (newValue) => {
   <div
     class="overlay"
     v-if="active"
-    @click="$emit('popupClosed'); $emit('toggleCursor')"
+    @click="$emit('popupClosed');"
   ></div>
 </template>
