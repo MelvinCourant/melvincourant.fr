@@ -20,7 +20,8 @@
       "technologies": [
           "html",
           "css",
-          "js"
+          "js",
+          "figma"
       ],
       "description": "Projet où il fallait réaliser un OS dans un navigateur uniquement en Javascript."
     }
