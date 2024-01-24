@@ -31,7 +31,9 @@ function updateRealisation(newRealisation) {
     />
     <PopupRealisation
       :active="popupIsActive"
-      :realisationDetails="realisation"
+      :realisation="realisation"
+      @toggleCursor="$emit('toggleCursor')"
+      @popupClosed="popupIsActive = false; $emit('toggleCursor');"
     />
     <Slider
       :realisations="realisations"
