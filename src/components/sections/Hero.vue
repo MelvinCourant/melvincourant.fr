@@ -57,6 +57,10 @@ const imgs = [
   {
     name: "melvin",
     src: "moi.jpg"
+  },
+  {
+    name: "jo 2024",
+    src: "jo.jpg"
   }
 ];
 
