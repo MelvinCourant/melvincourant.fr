@@ -1,5 +1,19 @@
 [
   {
+    "title": "Open Cook",
+    "nameFile": "open-cook.jpg",
+    "url": "https://youtu.be/r8O8ALWi7YY",
+    "details": {
+      "technologies": [
+        "react",
+        "css",
+        "figma",
+        "openai"
+      ],
+      "description": "Projet en Intégration IA via API où il fallait réaliser un site de recettes de cuisine avec des fonctionnalitées reliés à l'API d'OpenAI."
+    }
+  },
+  {
     "title": "La Suite and Co",
     "nameFile": "lsac.jpg",
     "url": "https://www.lasuiteandco.com/",
