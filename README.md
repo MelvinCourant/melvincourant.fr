@@ -37,5 +37,14 @@ yarn
 yarn dev
 ```
 
+### Convertir les fichiers jpg en webp
+Nécessite d'avoir installé [cwebp](https://developers.google.com/speed/webp/docs/precompiled) sur votre machine.
+
+Les chemins des dossiers lu par le script sont renseignés dans le fichier `converter.config.json` à la racine ainsi que le format des images à convertir.
+
+```bash
+yarn convert
+```
+
 ## Post-scriptum
 Je laisse ce projet public pour que vous puissiez vous en inspirer, mais je vous demande de ne pas le copier intégralement. Merci !

@@ -12,8 +12,12 @@ const props = defineProps({
   },
 })
 
-function generateImgSrc(src) {
-  return new URL(`../../assets/imgs/hero/${src}`, import.meta.url).href;
+function generateImgSrc(nameFile, format) {
+  if(format === 'webp') {
+    return new URL(`../../assets/imgs/hero/${nameFile}.webp`, import.meta.url).href;
+  } else {
+    return new URL(`../../assets/imgs/hero/${nameFile}.jpg`, import.meta.url).href;
+  }
 }
 </script>
 
@@ -30,12 +34,18 @@ function generateImgSrc(src) {
     <path d="M129.468 650L129.085 554.9L279.236 404.91H63.84L0 341.084H438.453L129.468 650Z" fill="var(--text)"/>
   </svg>
 
-
-  <img
-    v-for="img in props.imgs"
+  <picture
+      v-for="img in props.imgs"
     :key="img.name"
-    :src="generateImgSrc(img.src)"
-    :alt="img.name"
-    v-show="props.imgToDisplay === img.name"
-  />
+  >
+    <source
+        :srcset="generateImgSrc(img.src, 'webp')"
+        type="image/webp"
+    />
+    <img
+        :src="generateImgSrc(img.src)"
+        :alt="img.name"
+        v-show="props.imgToDisplay === img.name"
+     />
+  </picture>
 </template>

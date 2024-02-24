@@ -52,15 +52,15 @@ const imgName = ref("logo");
 const imgs = [
   {
     name: "scratch",
-    src: "scratch.jpg"
+    src: "scratch"
   },
   {
     name: "melvin",
-    src: "moi.jpg"
+    src: "moi"
   },
   {
     name: "jo 2024",
-    src: "jo.jpg"
+    src: "jo"
   }
 ];
 

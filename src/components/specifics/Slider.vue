@@ -28,8 +28,12 @@ const splideOptions = {
   }
 };
 
-function getSrc(nameFile) {
-  return new URL(`../../assets/imgs/realisations/${nameFile}`, import.meta.url).href;
+function getSrc(nameFile, format) {
+  if(format === 'webp') {
+    return new URL(`../../assets/imgs/realisations/${nameFile}.webp`, import.meta.url).href;
+  } else {
+    return new URL(`../../assets/imgs/realisations/${nameFile}.jpg`, import.meta.url).href;
+  }
 }
 
 const elementsToHideCursor = [
@@ -61,11 +65,16 @@ onMounted(() => {
       @mouseover="$emit('realisationHovered', realisation.title)"
       @click="$emit('realisationClicked', realisation)"
     >
-      <img
-        :src="getSrc(realisation.nameFile)"
-        :alt="realisation.title"
-        :data-splide-lazy="getSrc(realisation.nameFile)"
-      />
+      <picture>
+        <source
+            :srcset="getSrc(realisation.nameFile, 'webp')"
+            type="image/webp"
+        />
+        <img
+            :src="getSrc(realisation.nameFile, 'jpg')"
+            :alt="realisation.title"
+        />
+      </picture>
     </SplideSlide>
   </Splide>
 </template>

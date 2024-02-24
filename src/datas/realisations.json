@@ -1,7 +1,7 @@
 [
   {
     "title": "Open Cook",
-    "nameFile": "open-cook.jpg",
+    "nameFile": "open-cook",
     "url": "https://youtu.be/r8O8ALWi7YY",
     "details": {
       "technologies": [
@@ -15,7 +15,7 @@
   },
   {
     "title": "La Suite and Co",
-    "nameFile": "lsac.jpg",
+    "nameFile": "lsac",
     "url": "https://www.lasuiteandco.com/",
     "details": {
       "technologies": [
@@ -28,7 +28,7 @@
   },
   {
     "title": "Projet JS",
-    "nameFile": "projet-js.jpg",
+    "nameFile": "projet-js",
     "url": "https://projet-js.melvincourant.fr/",
     "details": {
       "technologies": [
@@ -42,7 +42,7 @@
   },
   {
     "title": "Syltours",
-    "nameFile": "syltours.jpg",
+    "nameFile": "syltours",
     "url": "https://www.syltours.fr/",
     "details": {
       "technologies": [
@@ -55,7 +55,7 @@
   },
   {
     "title": "Star Wars",
-    "nameFile": "star-wars.jpg",
+    "nameFile": "star-wars",
     "url": "https://star-wars.melvincourant.fr/",
     "details": {
       "technologies": [

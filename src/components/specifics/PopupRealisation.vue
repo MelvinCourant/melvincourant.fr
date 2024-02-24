@@ -19,8 +19,12 @@ function getSrcTechnologies(nameFile) {
   return new URL(`../../assets/imgs/icons/${nameFile}.svg`, import.meta.url).href;
 }
 
-function getSrcVisual(nameFile) {
-  return new URL(`../../assets/imgs/realisations/${nameFile}`, import.meta.url).href;
+function getSrcVisual(nameFile, format) {
+  if(format === 'webp') {
+    return new URL(`../../assets/imgs/realisations/${nameFile}.webp`, import.meta.url).href;
+  } else {
+    return new URL(`../../assets/imgs/realisations/${nameFile}.jpg`, import.meta.url).href;
+  }
 }
 
 watch(() => props.active, (newValue) => {
@@ -56,10 +60,16 @@ watch(() => props.active, (newValue) => {
         target="_blank"
         :title="`Redirige sur ${realisation.title}`"
       >
-        <img
-          :src="getSrcVisual(realisation.nameFile)"
-          :alt="realisation.title"
-        />
+        <picture>
+          <source
+            :srcset="getSrcVisual(realisation.nameFile, 'webp')"
+            type="image/webp"
+          />
+          <img
+            :src="getSrcVisual(realisation.nameFile, 'jpg')"
+            :alt="realisation.title"
+          />
+        </picture>
       </a>
     </div>
     <button
