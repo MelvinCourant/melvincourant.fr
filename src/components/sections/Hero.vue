@@ -1,9 +1,10 @@
 <script setup>
 import {ref, watch} from "vue";
 import Title from "@/components/reusables/Title.vue";
-import Input from "@/components/specifics/hero/Input.vue";
+import HeroInput from "@/components/specifics/HeroInput.vue";
 import Links from "@/components/reusables/Links.vue";
-import Img from "@/components/specifics/hero/Img.vue";
+import HeroImg from "@/components/specifics/HeroImg.vue";
+import '@css/sections/hero.scss';
 
 const props = defineProps({
   type: {
@@ -51,11 +52,15 @@ const imgName = ref("logo");
 const imgs = [
   {
     name: "scratch",
-    src: "scratch.jpg"
+    src: "scratch"
   },
   {
     name: "melvin",
-    src: "moi.jpg"
+    src: "moi"
+  },
+  {
+    name: "jo 2024",
+    src: "jo"
   }
 ];
 
@@ -76,7 +81,7 @@ function updateImg(value) {
           :value="'Melvin Courant'"
           :level="1"
         />
-        <Input
+        <HeroInput
           :value="'Développeur front-end'"
           @updateValue="updateImg"
         />
@@ -96,7 +101,7 @@ function updateImg(value) {
         class="hero__right_img"
         :style="translateLogo"
       >
-        <Img
+        <HeroImg
           :imgs="imgs"
           :imgToDisplay="imgName"
         />
@@ -104,107 +109,3 @@ function updateImg(value) {
     </div>
   </section>
 </template>
-
-<style scoped lang="scss">
-.hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  transition: opacity 0.7s linear;
-  
-  @media screen and (max-width: 991px) {
-    width: initial;
-  }
-
-  &.not-loaded {
-    opacity: 0;
-
-    .hero__left {
-      &__texts {
-        h1,
-        .input {
-          transform: translateX(-100%);
-        }
-      }
-
-      &__button {
-        opacity: 0;
-      }
-    }
-
-    .hero__right {
-      transform: scale(0);
-    }
-  }
-
-  &__left {
-    width: 575px;
-    margin-left: calc((100% - 1440px) / 2);
-
-    @media screen and (max-width: 1699px) {
-      margin-left: calc((100% - 1280px) / 2);
-    }
-
-    @media screen and (max-width: 1399px) {
-      margin-left: calc((100% - 1170px) / 2);
-    }
-
-    @media screen and (max-width: 1199px) {
-      margin-left: calc((100% - 960px) / 2);
-    }
-
-    @media screen and (max-width: 991px) {
-      width: 100%;
-      margin-left: initial;
-      text-align: center;
-    }
-
-    &__texts {
-      overflow: hidden;
-      padding-top: 1.61vh;
-
-      @media screen and (max-width: 991px) {
-        overflow: initial;
-      }
-
-      h1 {
-        transition: transform 0.7s ease;
-      }
-    }
-
-    &__button {
-      display: inline-block;
-      transition: opacity 0.7s ease 0.4s;
-    }
-  }
-
-  &__right {
-    margin-right: calc((100% - 1440px) / 2);
-    transition: transform 0.7s ease;
-
-    @media screen and (max-width: 1699px) {
-      margin-right: calc((100% - 1280px) / 2);
-    }
-
-    @media screen and (max-width: 1399px) {
-      margin-right: calc((100% - 1170px) / 2);
-    }
-
-    @media screen and (max-width: 1199px) {
-      margin-right: calc((100% - 960px) / 2);
-    }
-
-    @media screen and (max-width: 991px) {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 30%;
-      margin-right: initial;
-    }
-  }
-}
-</style>

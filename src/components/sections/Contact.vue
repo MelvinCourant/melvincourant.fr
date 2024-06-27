@@ -30,7 +30,3 @@ defineEmits(["toggleCursor"]);
     />
   </section>
 </template>
-
-<style scoped lang="scss">
-
-</style>
