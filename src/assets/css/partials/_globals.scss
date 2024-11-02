@@ -45,5 +45,10 @@ html {
     .hidden-title {
       font-size: fonts.$hidden;
     }
+
+    section {
+      width: 1480px;
+      margin: auto;
+    }
   }
 }
