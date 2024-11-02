@@ -29,6 +29,7 @@
     padding: 0 20px;
     border-radius: 10px;
     @include mixins.font-type("medium text");
+    text-align: center;
     transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 
     @media screen and (max-width: 992px) {

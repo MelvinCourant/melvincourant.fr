@@ -8,6 +8,11 @@
     text-transform: uppercase;
     letter-spacing: functions.rem(-22);
 
+    @media (max-width: 1440px) {
+      font-size: functions.rem(96);
+      letter-spacing: functions.rem(-18);
+    }
+
     @media (max-width: 992px) {
       font-size: functions.rem(68);
       letter-spacing: functions.rem(-12);
@@ -18,7 +23,7 @@
     letter-spacing: functions.rem(-8);
 
     @media (max-width: 992px) {
-      font-size: functions.rem(25);
+      font-size: functions.rem(36);
       letter-spacing: functions.rem(-4.5);
     }
   } @else if($type == "medium hero title") {
@@ -26,8 +31,13 @@
     font-weight: 700;
     letter-spacing: functions.rem(-6);
 
+    @media (max-width: 1440px) {
+      font-size: functions.rem(32);
+      letter-spacing: functions.rem(-4);
+    }
+
     @media (max-width: 992px) {
-      font-size: functions.rem(36);
+      font-size: functions.rem(25);
       letter-spacing: functions.rem(-3);
     }
   } @else if($type == "title") {
