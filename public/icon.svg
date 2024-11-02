@@ -1,22 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 24.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     viewBox="0 0 419 509.2" style="enable-background:new 0 0 419 509.2;" xml:space="preserve">
-<style type="text/css">
-	@media (prefers-color-scheme: dark) {
-		.st0 {
-			fill: white;
-		}
-	}
-
-	@media (prefers-color-scheme: light) {
-		.st0 {
-			fill: #1D1D1B;
-		}
-	}
-</style>
-    <g>
-	<polygon class="st0" points="369,240.5 419,190.5 267.6,190.5 267.6,0 27.4,240.3 98,240.3 217.6,120.7 217.6,240.7 	"/>
-        <polygon class="st0" points="101.4,509.2 101.1,434.7 218.7,317.2 50,317.2 0,267.2 343.4,267.2 	"/>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" width="55" height="66" viewBox="0 0 55 66" fill="none">
+	<path d="M46.4901 31.8386L46.6968 31.8383L46.843 31.6922L52.7359 25.8006L53.5897 24.947H52.3824H35.0386V3V1.79273L34.185 2.64648L5.87542 30.9615L5.02206 31.815H6.229H14.5616H14.7688L14.9153 31.6684L28.1457 18.4299V31.3621V31.8628L28.6464 31.8621L46.4901 31.8386Z" fill="#FF7A5C" stroke="#282826"/>
+	<path d="M14.4509 63.002L14.4557 64.2021L15.3044 63.3536L43.8261 34.8383L44.6799 33.9847H43.4726H3H1.7927L2.64649 34.8383L8.53941 40.7299L8.68585 40.8763H8.89293H27.5676L14.5621 53.8678L14.4147 54.0151L14.4155 54.2235L14.4509 63.002Z" fill="#FF7A5C" stroke="#282826"/>
 </svg>
