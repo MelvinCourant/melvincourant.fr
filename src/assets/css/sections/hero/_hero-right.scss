@@ -1,0 +1,178 @@
+@use '../../partials/mixins';
+
+.hero {
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__images {
+    position: relative;
+    display: flex;
+    padding-right: 100px;
+
+    @media screen and (max-width: 1399px) {
+      padding-right: 90px;
+    }
+
+    @media screen and (max-width: 1199px) {
+      padding-right: 80px;
+    }
+
+    @media screen and (max-width: 992px) {
+      padding-right: 0;
+    }
+  }
+
+  &__bubble {
+    position: absolute;
+    z-index: 3;
+    top: -8.92%;
+    right: 0;
+    width: 31.25%;
+    animation: levitate 5s infinite;
+
+    @media screen and (max-width: 992px) {
+      right: -25%;
+      width: 40%;
+    }
+
+    &-container {
+      position: relative;
+    }
+
+    &-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include mixins.font-type('bubble text');
+    }
+
+    img {
+      position: relative;
+      z-index: -1;
+      filter: drop-shadow(3px 4px 0 var(--black));
+
+      @media screen and (max-width: 992px) {
+        filter: drop-shadow(2px 3px 0 var(--black));
+      }
+    }
+  }
+
+  &__coffee {
+    position: absolute;
+    top: 19.49%;
+    left: -14.87%;
+    z-index: 3;
+    width: 21.48%;
+    filter: drop-shadow(3px 4px 0 var(--black));
+    animation: levitate 5s infinite 0.2s;
+
+    @media screen and (max-width: 992px) {
+      width: 27.5%;
+    }
+  }
+
+  &__hide {
+    position: absolute;
+    z-index: 3;
+    left: -20%;
+    bottom: 12%;
+    width: 53.32%;
+    animation: levitate 5s infinite 0.4s;
+
+    @media screen and (max-width: 992px) {
+      width: 83.33%;
+    }
+
+    &-container {
+      position: relative;
+    }
+
+    &-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include mixins.font-type('very small text');
+      text-wrap: nowrap;
+    }
+
+    img {
+      position: relative;
+      z-index: -1;
+      filter: drop-shadow(3px 4px 0 var(--black));
+    }
+  }
+
+  @keyframes levitate {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  &__me {
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+      .scratch {
+        right: -3.17%;
+        bottom: 25.73%;
+        transform: rotate(-12deg);
+      }
+    }
+  }
+
+  &__mask-container {
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    z-index: 2;
+    left: 1.46%;
+    bottom: 2.6%;
+    clip-path: url(#hero-mask);
+    width: 97.3%;
+    height: 103.31%;
+
+    .me {
+      width: 84.25%;
+    }
+
+    .scratch {
+      position: absolute;
+      transition: all ease-out 0.4s;
+      right: -21.79%;
+      bottom: 22.81%;
+      width: 25.5%;
+    }
+  }
+
+  &__shape {
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(10px 16px 0 var(--black));
+
+    @media screen and (max-width: 1399px) {
+      width: 360px;
+      filter: drop-shadow(9px 15px 0 var(--black));
+    }
+
+    @media screen and (max-width: 1199px) {
+      width: 320px;
+      filter: drop-shadow(8px 14px 0 var(--black));
+    }
+
+    @media screen and (max-width: 992px) {
+      width: 240px;
+      filter: drop-shadow(6px 9px 0 var(--black));
+    }
+  }
+}

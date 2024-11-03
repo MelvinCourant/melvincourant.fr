@@ -1,15 +1,8 @@
 <script setup>
 import "../../assets/css/utils/_cta.scss"
+import {inject, ref} from "vue";
 
-defineProps({
-  content: {
-    type: String,
-    required: true,
-  },
-  url: {
-    type: String,
-  },
-})
+const cta = ref(inject('cta'))
 
 defineEmits(['click'])
 </script>
@@ -17,18 +10,18 @@ defineEmits(['click'])
 <template>
   <div class="cta">
     <a
-        v-if="url"
-        :href="url"
+        v-if="cta.url"
+        :href="cta.url"
         class="cta__buttons cta--link"
     >
-      {{ content }}
+      {{ cta.content }}
     </a>
     <button
         v-else
         class="cta__buttons cta--button"
         @click="$emit('click')"
     >
-      {{ content }}
+      {{ cta.content }}
     </button>
   </div>
 </template>

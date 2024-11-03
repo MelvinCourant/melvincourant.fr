@@ -47,15 +47,15 @@ html {
     }
 
     section {
-      width: 1480px;
+      max-width: 1480px;
       margin: auto;
 
       @media screen and (max-width: 1699px) {
-        width: 1280px;
+        width: 1350px;
       }
 
       @media screen and (max-width: 1399px) {
-        width: 1170px;
+        width: 1128px;
       }
 
       @media screen and (max-width: 1199px) {
@@ -63,12 +63,8 @@ html {
       }
 
       @media screen and (max-width: 991px) {
-        padding: 10.938rem 0 3.438rem; // 175px 0 55px
-        width: 80%;
-      }
-
-      @media screen and (max-width: 767px) {
-        padding: 5.625rem 0 1.875rem; // 90px 0 30px
+        width: 100%;
+        padding: 0 30px;
       }
     }
   }
