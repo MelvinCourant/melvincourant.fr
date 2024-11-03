@@ -1,5 +1,11 @@
 @use "functions";
 
+@mixin resetButton($border, $background) {
+  cursor: pointer;
+  background: $background;
+  border: $border;
+}
+
 @mixin font-type($type) {
   @if($type == 'big hero title') {
     font-size: functions.rem(128);
@@ -75,6 +81,20 @@
       font-size: functions.rem(13);
       letter-spacing: functions.rem(-1);
     }
+  } @else if($type == "navbar link") {
+    font-size: functions.rem(20);
+    font-weight: 700;
+    letter-spacing: functions.rem(-1.5);
+
+    @media screen and (max-width: 1199px) {
+      font-size: functions.rem(16);
+      letter-spacing: functions.rem(-1.2);
+    }
+
+    @media screen and (max-width: 992px) {
+      font-size: functions.rem(24);
+      letter-spacing: functions.rem(-1.8);
+    }
   } @else if($type == "bubble text") {
     font-size: functions.rem(20);
     font-weight: 700;
@@ -131,10 +151,4 @@
       letter-spacing: functions.rem(-0.9);
     }
   }
-}
-
-@mixin resetButton($border, $background) {
-  cursor: pointer;
-  background: $background;
-  border: $border;
 }
