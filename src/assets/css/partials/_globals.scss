@@ -53,6 +53,9 @@ html {
     }
 
     main {
+      display: flex;
+      flex-direction: column;
+      gap: 300px;
       max-width: 1480px;
       margin: auto;
 

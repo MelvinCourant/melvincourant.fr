@@ -14,7 +14,7 @@ provide('cta', cta)
 </script>
 
 <template>
-  <section class="hero">
+  <section class="hero" id="hero">
     <HeroLeft />
     <HeroRight :hideText="hideText" />
   </section>
