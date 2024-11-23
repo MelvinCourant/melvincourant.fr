@@ -3,7 +3,7 @@ import "../../assets/css/layouts/_navbar.scss";
 import {ref} from "vue";
 
 const navbarLinks = [
-  { id: 1, name: "Qui suis-je ?", href: "#presentation" },
+  { id: 1, name: "Qui suis-je ?", href: "#about" },
   { id: 2, name: "Mes talents", href: "#skill" },
   { id: 3, name: "Mes fiertés", href: "#realisations" },
   { id: 4, name: "Contactes moi !", href: "#contact" },

@@ -74,7 +74,7 @@
       @include mixins.resetButton(3px solid var(--black), var(--green));
     }
 
-    &:active {
+    &:hover {
       transform: translate(4px, 6px);
 
       @media screen and (max-width: 992px) {

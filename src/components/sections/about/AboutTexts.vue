@@ -1,11 +1,16 @@
 <script setup>
-import "../../../assets/css/sections/presentation/_presentation-texts.scss";
+import "../../../assets/css/sections/about/_about-texts.scss";
 import { gsap } from "gsap";
+import {watch} from "vue";
 
-defineProps({
-  presentationTexts: {
+const props = defineProps({
+  aboutTexts: {
     type: Array,
     required: true
+  },
+  activePickUpAllWoodenBoards: {
+    type: Boolean,
+    default: false
   }
 })
 
@@ -21,8 +26,7 @@ function pickUpWoodenBoard(id) {
         {
           duration: 0.1,
           scale: 1.1,
-          y: -10,
-          ease: "power1.out"
+          y: -10
         }
       )
       .to(
@@ -37,14 +41,30 @@ function pickUpWoodenBoard(id) {
       );
   }
 }
+
+function pickUpAllWoodenBoards() {
+  const woodenBoards = document.querySelectorAll('.wooden-board');
+
+  woodenBoards.forEach(woodenBoard => {
+    const index = woodenBoard.dataset.index;
+
+    pickUpWoodenBoard(index);
+  });
+}
+
+watch(() => props.activePickUpAllWoodenBoards, (newValue) => {
+  if(newValue) {
+    pickUpAllWoodenBoards();
+  }
+})
 </script>
 
 <template>
-  <p class="presentation-texts">
+  <p class="about-texts">
     <span
-      v-for="text in presentationTexts"
+      v-for="text in aboutTexts"
       :key="text.id"
-      :class="['presentation-texts__content', { 'presentation-texts__content--highlight': text.woodenBoardRotation }]"
+      :class="['about-texts__content', { 'about-texts__content--highlight': text.woodenBoardRotation }]"
     >
       {{ text.content }}
       <div

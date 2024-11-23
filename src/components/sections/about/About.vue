@@ -1,13 +1,13 @@
 <script setup>
-import "../../../assets/css/sections/presentation/_presentation.scss";
-import {provide} from "vue";
-import PresentationTexts from "./PresentationTexts.vue";
+import "../../../assets/css/sections/about/_about.scss";
+import {provide, ref} from "vue";
+import AboutTexts from "./AboutTexts.vue";
 import CTA from "../../utils/CTA.vue";
 
 const cta = {
   content: "Tout faire sauter !",
 }
-const presentationTexts = [
+const aboutTexts = [
   {
     id: 1,
     content: "Passionné par le développement "
@@ -49,13 +49,18 @@ const presentationTexts = [
     content: " la nuit."
   }
 ];
+const activePickUpAllWoodenBoards = ref(false)
 
 provide('cta', cta)
+
+function blowItUp() {
+  activePickUpAllWoodenBoards.value = true;
+}
 </script>
 
 <template>
-  <section class="presentation" id="about">
-    <PresentationTexts :presentationTexts="presentationTexts" />
-    <CTA />
+  <section class="about" id="about">
+    <AboutTexts :aboutTexts="aboutTexts" :activePickUpAllWoodenBoards="activePickUpAllWoodenBoards"/>
+    <CTA @click="blowItUp" />
   </section>
 </template>

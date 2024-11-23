@@ -29,7 +29,7 @@
       letter-spacing: functions.rem(-11);
       margin-left: functions.rem(-11);
     }
-  } @else if($type == "presentation text") {
+  } @else if($type == "about text") {
     font-size: functions.rem(64);
     font-weight: 700;
     letter-spacing: functions.rem(-8);
