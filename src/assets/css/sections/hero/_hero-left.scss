@@ -16,7 +16,7 @@
       gap: functions.rem(30);
     }
 
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 991px) {
       align-items: center;
       width: 100%;
     }
@@ -36,7 +36,7 @@
       gap: functions.rem(10);
     }
 
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 991px) {
       gap: functions.rem(8);
       text-align: center;
     }
@@ -80,7 +80,7 @@
         height: 60px;
       }
 
-      @media screen and (max-width: 992px) {
+      @media screen and (max-width: 991px) {
         top: functions.rem(-4);
         right: functions.rem(20);
         width: 44px;

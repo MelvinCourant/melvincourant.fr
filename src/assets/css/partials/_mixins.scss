@@ -24,7 +24,7 @@
       letter-spacing: functions.rem(-14);
     }
 
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 991px) {
       font-size: functions.rem(64);
       letter-spacing: functions.rem(-11);
       margin-left: functions.rem(-11);
@@ -34,7 +34,7 @@
     font-weight: 700;
     letter-spacing: functions.rem(-8);
 
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 991px) {
       font-size: functions.rem(36);
       letter-spacing: functions.rem(-4.5);
     }
@@ -53,7 +53,7 @@
       letter-spacing: functions.rem(-3);
     }
 
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 991px) {
       font-size: functions.rem(24);
       letter-spacing: functions.rem(-3);
       margin-left: functions.rem(-3);
@@ -63,7 +63,12 @@
     font-weight: 700;
     letter-spacing: functions.rem(-2.4);
 
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 991px) {
+      font-size: functions.rem(25);
+      letter-spacing: functions.rem(-1.9);
+    }
+
+    @media screen and (max-width: 767px) {
       font-size: functions.rem(23);
       letter-spacing: functions.rem(-1.7);
     }
@@ -77,7 +82,12 @@
       letter-spacing: functions.rem(-1.2);
     }
 
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 991px) {
+      font-size: functions.rem(16);
+      letter-spacing: functions.rem(-1.2);
+    }
+
+    @media screen and (max-width: 767px) {
       font-size: functions.rem(13);
       letter-spacing: functions.rem(-1);
     }
@@ -91,7 +101,7 @@
       letter-spacing: functions.rem(-1.2);
     }
 
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 991px) {
       font-size: functions.rem(24);
       letter-spacing: functions.rem(-1.8);
     }
@@ -110,7 +120,7 @@
       letter-spacing: functions.rem(-1.1);
     }
 
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 991px) {
       font-size: functions.rem(12);
       letter-spacing: functions.rem(-1);
     }
@@ -119,7 +129,7 @@
     font-weight: 700;
     letter-spacing: functions.rem(-1.2);
 
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 991px) {
       font-size: functions.rem(14);
       letter-spacing: functions.rem(-1);
     }
@@ -128,7 +138,7 @@
     font-weight: 700;
     letter-spacing: functions.rem(-1.2);
 
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 991px) {
       font-size: functions.rem(12);
       letter-spacing: functions.rem(-0.9);
     }
@@ -146,7 +156,7 @@
       font-size: functions.rem(12);
     }
 
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 991px) {
       font-size: functions.rem(11);
       letter-spacing: functions.rem(-0.9);
     }

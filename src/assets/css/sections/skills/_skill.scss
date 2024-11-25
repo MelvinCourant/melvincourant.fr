@@ -12,11 +12,46 @@
   padding: 30px 15px;
   gap: 10px;
 
+  @media screen and (max-width: 991px) {
+    width: 200px;
+    height: 200px;
+    padding: 25px 12px;
+    gap: 8px;
+  }
+
+  @media screen and (max-width: 767px) {
+    padding: 20px 12px;
+    width: 175px;
+    height: 175px;
+    gap: 7px;
+    margin: auto;
+  }
+
+  &__icon {
+    height: 75px;
+
+    @media screen and (max-width: 991px) {
+      height: 60px;
+    }
+
+    @media screen and (max-width: 767px) {
+      height: 54px;
+    }
+  }
+
   &__texts {
     display: flex;
     flex-direction: column;
     gap: 6px;
     text-align: center;
+
+    @media screen and (max-width: 991px) {
+      gap: 5px;
+    }
+
+    @media screen and (max-width: 767px) {
+      gap: 4px;
+    }
   }
 
   &__name {
