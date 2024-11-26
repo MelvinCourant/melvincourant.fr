@@ -4,7 +4,7 @@ import {ref} from "vue";
 
 const navbarLinks = [
   { id: 1, name: "Qui suis-je ?", href: "#about" },
-  { id: 2, name: "Mes talents", href: "#skill" },
+  { id: 2, name: "Mes talents", href: "#skills" },
   { id: 3, name: "Mes fiertés", href: "#realisations" },
   { id: 4, name: "Contactes moi !", href: "#contact" },
 ];
