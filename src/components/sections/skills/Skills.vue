@@ -3,7 +3,7 @@ import "../../../assets/css/sections/skills/_skills.scss";
 import skillsJson from "../../../data/skills.json";
 import SkillsList from "./SkillsList.vue";
 import Filters from "./Filters.vue";
-import { reactive } from "vue";
+import {reactive, ref, watch} from "vue";
 
 const filters = reactive([
   {
@@ -38,16 +38,20 @@ const filters = reactive([
   },
 ]);
 
+const categoryToShow = ref("all");
+
 function updateFilters(filterValue) {
   filters.forEach(filter => {
     filter.selected = filter.value === filterValue;
   });
+
+  categoryToShow.value = filterValue;
 }
 </script>
 
 <template>
   <section class="skills" id="skills">
     <Filters :filters="filters" @filterSelected="updateFilters($event)"/>
-    <SkillsList :skills="skillsJson" />
+    <SkillsList :skills="skillsJson" :categoryToShow="categoryToShow" />
   </section>
 </template>

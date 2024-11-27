@@ -1,11 +1,16 @@
 <script setup>
 import "../../../assets/css/sections/skills/_skills-list.scss";
 import Skill from "./Skill.vue";
+import {computed, watch} from "vue";
 
 defineProps({
   skills: {
     type: Array,
     required: true
+  },
+  categoryToShow: {
+    type: String,
+    default: "all"
   }
 })
 </script>
@@ -16,6 +21,7 @@ defineProps({
       v-for="(skill, index) in skills"
       :key="index"
       :skill="skill"
+      v-show="categoryToShow === 'all' || skill.category === categoryToShow"
     />
   </ul>
 </template>

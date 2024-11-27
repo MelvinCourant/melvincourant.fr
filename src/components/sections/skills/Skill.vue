@@ -16,7 +16,6 @@ function getSrc(nameFile) {
 <template>
   <li
     class="skill"
-    :data-category="skill.category"
     :style="{ backgroundColor: skill.color }"
   >
     <img
