@@ -3,8 +3,39 @@
 .filters {
   display: flex;
   gap: 40px;
+  margin: auto;
+  width: 1480px;
+
+  @media screen and (max-width: 1699px) {
+    width: 1350px;
+  }
+
+  @media screen and (max-width: 1399px) {
+    width: 1128px;
+  }
+
+  @media screen and (max-width: 1199px) {
+    width: 960px;
+  }
+
+  @media screen and (max-width: 991px) {
+    width: initial;
+    height: 58px;
+    gap: 30px;
+    margin: initial;
+    padding-left: 30px;
+    overflow-x: auto;
+    overflow-y: visible;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 
   &__item {
+    display: flex;
+    height: fit-content;
     position: relative;
 
     &::after {
@@ -35,6 +66,7 @@
   &__button {
     @include mixins.resetButton(3px solid var(--black), none);
     @include mixins.font-type("filter text");
+    text-wrap: nowrap;
     border-radius: 10px;
     padding: 0 30px;
     height: 60px;

@@ -56,23 +56,27 @@ html {
       display: flex;
       flex-direction: column;
       gap: 300px;
-      max-width: 1480px;
+    }
+
+    section:not(.skills),
+    .skills-list {
       margin: auto;
+      max-width: 1480px;
 
       @media screen and (max-width: 1699px) {
-        width: 1350px;
+        max-width: 1350px;
       }
 
       @media screen and (max-width: 1399px) {
-        width: 1128px;
+        max-width: 1128px;
       }
 
       @media screen and (max-width: 1199px) {
-        width: 960px;
+        max-width: 960px;
       }
 
       @media screen and (max-width: 991px) {
-        width: 100%;
+        max-width: initial;
         padding: 0 30px;
       }
     }
