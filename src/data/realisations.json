@@ -1,0 +1,59 @@
+[
+  {
+    "title": "Open Cook",
+    "image": "open-cook",
+    "url": "https://youtu.be/r8O8ALWi7YY",
+    "description": "Projet en Intégration IA via API où il fallait réaliser un site de recettes de cuisine avec des fonctionnalitées reliés à l'API d'OpenAI.",
+    "technologies": [
+      "react",
+      "css",
+      "figma",
+      "openai"
+    ]
+  },
+  {
+    "title": "La Suite and Co",
+    "image": "lsac",
+    "url": "https://www.lasuiteandco.com/",
+    "description": "Site vitrine de l'agence de communication dans laguelle j'effectue mon alternance.",
+    "technologies": [
+      "wordpress",
+      "sass",
+      "javascript"
+    ]
+  },
+  {
+    "title": "Projet JS",
+    "image": "projet-js",
+    "url": "https://projet-js.melvincourant.fr/",
+    "description": "Projet où il fallait réaliser un OS dans un navigateur uniquement en Javascript.",
+    "technologies": [
+      "html",
+      "css",
+      "javascript",
+      "figma"
+    ]
+  },
+  {
+    "title": "Syltours",
+    "image": "syltours",
+    "url": "https://www.syltours.fr/",
+    "description": "Site vitrine de l'agence de voyage Syltours.",
+    "technologies": [
+      "wordpress",
+      "sass",
+      "javascript"
+    ]
+  },
+  {
+    "title": "Star Wars",
+    "image": "star-wars",
+    "url": "https://star-wars.melvincourant.fr/",
+    "description": "Petit challenge de Benjamin Code que j'ai décidé de réaliser où il fallait reproduire l'animation d'une maquette Figma.",
+    "technologies": [
+      "html",
+      "css",
+      "javascript"
+    ]
+  }
+]
