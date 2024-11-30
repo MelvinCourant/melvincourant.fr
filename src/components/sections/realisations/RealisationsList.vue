@@ -1,4 +1,6 @@
 <script setup>
+import "../../../assets/css/sections/realisations/_realisations-list.scss";
+
 defineProps({
   realisations: {
     type: Array,
@@ -13,37 +15,41 @@ function getSrc(folder, nameFile, format) {
 
 <template>
   <ul class="realisations-list">
-    <li
-      v-for="realisation in realisations"
-      :key="realisation.id"
-      class="realisation"
+    <template
+        v-for="(realisation, index) in realisations"
+        :key="index"
     >
-      <img
-        class="realisation__image"
-        :src="getSrc('realisations', realisation.image, 'webp')"
-        :alt="realisation.title"
-      />
-      <div class="realisation__texts">
-        <h3 class="realisation__title">
-          {{ realisation.title }}
-        </h3>
-        <p class="realisation__description">
-          {{ realisation.description }}
-        </p>
-        <ul>
-          <li
-            v-for="technology in realisation.technologies"
-            :key="technology"
-            class="realisation__technology"
-          >
-            <img
-              class="realisation__technology-icon"
-              :src="getSrc('icons', technology, 'svg')"
-              :alt="technology"
-            />
-          </li>
-        </ul>
-      </div>
-    </li>
+      <li
+          class="realisation"
+          :style="{ zIndex: realisations.length - index }"
+      >
+        <img
+            class="realisation__image"
+            :src="getSrc('realisations', realisation.image, 'webp')"
+            :alt="realisation.title"
+        />
+        <div class="realisation__texts">
+          <h3 class="realisation__title">
+            {{ realisation.title }}
+          </h3>
+          <p class="realisation__description">
+            {{ realisation.description }}
+          </p>
+          <ul>
+            <li
+                v-for="technology in realisation.technologies"
+                :key="technology"
+                class="realisation__technology"
+            >
+              <img
+                  class="realisation__technology-icon"
+                  :src="getSrc('icons', technology, 'svg')"
+                  :alt="technology"
+              />
+            </li>
+          </ul>
+        </div>
+      </li>
+    </template>
   </ul>
 </template>
