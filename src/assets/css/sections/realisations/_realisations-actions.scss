@@ -1,0 +1,70 @@
+@use '../../partials/mixins';
+
+.realisations-actions {
+  display: flex;
+  gap: 50px;
+
+  &__item {
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background: var(--black);
+      transform: translate(4px, 6px);
+
+      @media screen and (max-width: 991px) {
+        transform: translate(3px, 5px);
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    transition: var(--button-transition);
+
+    &.pass {
+      @include mixins.resetButton(4px solid var(--black), var(--green));
+
+      @media screen and (max-width: 991px) {
+        @include mixins.resetButton(3px solid var(--black), var(--green));
+      }
+    }
+
+    &.rollback {
+      @include mixins.resetButton(4px solid var(--black), var(--yellow));
+
+      @media screen and (max-width: 991px) {
+          @include mixins.resetButton(3px solid var(--black), var(--yellow));
+      }
+    }
+
+    &.smash {
+      @include mixins.resetButton(4px solid var(--black), var(--red));
+
+      @media screen and (max-width: 991px) {
+          @include mixins.resetButton(3px solid var(--black), var(--red));
+      }
+    }
+
+    &:hover {
+      transform: translate(4px, 6px);
+
+      @media screen and (max-width: 991px) {
+        transform: translate(3px, 5px);
+      }
+    }
+  }
+}

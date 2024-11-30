@@ -35,7 +35,7 @@ function getSrc(folder, nameFile, format) {
           <p class="realisation__description">
             {{ realisation.description }}
           </p>
-          <ul>
+          <ul class="realisation__technologies">
             <li
                 v-for="technology in realisation.technologies"
                 :key="technology"

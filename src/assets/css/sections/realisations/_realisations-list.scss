@@ -1,3 +1,5 @@
+@use "../../partials/mixins";
+
 .realisations-list {
   position: relative;
   width: 986px;
@@ -30,6 +32,25 @@
 
     &__texts {
       margin-top: 20px;
+    }
+
+    &__title {
+      @include mixins.font-type("title");
+    }
+
+    &__description {
+      @include mixins.font-type("medium text");
+      margin-top: 6px;
+    }
+
+    &__technologies {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    &__technology-icon {
+      height: 60px;
     }
   }
 }
