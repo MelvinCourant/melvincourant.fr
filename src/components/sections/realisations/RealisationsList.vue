@@ -6,6 +6,10 @@ const props = defineProps({
   realisations: {
     type: Array,
     required: true
+  },
+  actionSelected: {
+    type: String,
+    default: null
   }
 })
 
@@ -53,6 +57,17 @@ watch(
       });
     },
     { immediate: true }
+);
+
+watch(
+    () => props.actionSelected,
+    (newActionSelected) => {
+      if (newActionSelected === "pass") {
+        forcePass();
+      } else if (newActionSelected === "smash") {
+        forceSmash();
+      }
+    }
 );
 
 function swipe(e, index) {
@@ -121,15 +136,6 @@ function swipeEnd() {
     currentCard.value.style.cursor = "";
     currentCard.value.style.transition = "all 0.2s ease-out";
 
-    if(pass.value) {
-      currentCard.value.classList.add("realisation--passed");
-    } else if(smash.value) {
-      currentCard.value.classList.add("realisation--smashed");
-    } else {
-      currentCard.value.style.transform = "";
-      currentReveal.value.style.opacity = "";
-    }
-
     followingCards.value.forEach((card, index) => {
       card.style.transition = "transform 0.2s ease-out";
 
@@ -146,6 +152,16 @@ function swipeEnd() {
       }
     });
 
+    if(pass.value) {
+      currentCard.value.classList.add("realisation--passed");
+    } else if(smash.value) {
+      currentCard.value.classList.add("realisation--smashed");
+      window.open(props.realisations[currentCardIndex.value].url, "_blank");
+    } else {
+      currentCard.value.style.transform = "";
+      currentReveal.value.style.opacity = "";
+    }
+
     currentCard.value = null;
     currentReveal.value = null;
     currentCardIndex.value = 0;
@@ -153,6 +169,26 @@ function swipeEnd() {
     pass.value = false;
     smash.value = false;
   }
+}
+
+function forcePass() {
+  const activeCard = document.querySelectorAll(".realisation:not(.realisation--passed):not(.realisation--smashed)")[0];
+
+  currentCard.value = activeCard;
+  currentReveal.value = activeCard.querySelector(".realisation__reveal");
+  currentCardIndex.value = parseInt(activeCard.dataset.index);
+  pass.value = true;
+  swipeEnd();
+}
+
+function forceSmash() {
+  const activeCard = document.querySelectorAll(".realisation:not(.realisation--passed):not(.realisation--smashed)")[0];
+
+  currentCard.value = activeCard;
+  currentReveal.value = activeCard.querySelector(".realisation__reveal");
+  currentCardIndex.value = parseInt(activeCard.dataset.index);
+  smash.value = true;
+  swipeEnd();
 }
 </script>
 
@@ -171,6 +207,7 @@ function swipeEnd() {
               translateY(${cardStyles[index]?.translateY}px)
             `
           }"
+          :data-index="index"
           @mousedown="swipe($event, index)"
           @mousemove="onMouseMove"
       >
