@@ -6,6 +6,7 @@ import Navbar from "./components/layouts/Navbar.vue";
 import About from "./components/sections/about/About.vue";
 import Skills from "./components/sections/skills/Skills.vue";
 import Realisations from "./components/sections/realisations/Realisations.vue";
+import Contact from "./components/sections/contact/Contact.vue";
 </script>
 
 <template>
@@ -15,5 +16,6 @@ import Realisations from "./components/sections/realisations/Realisations.vue";
     <About />
     <Skills />
     <Realisations />
+    <Contact />
   </main>
 </template>

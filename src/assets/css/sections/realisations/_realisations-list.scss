@@ -10,17 +10,80 @@
     top: 0;
     left: 0;
     width: 980px;
-    aspect-ratio: 16/9;
-    overflow-y: auto;
     background-color: var(--white);
-    padding: 20px;
     border-radius: 40px;
     border: var(--card-border);
-    box-shadow: var(--card-shadow);
-    scrollbar-width: none;
+    box-shadow: var(--wooden-shadow);
+    cursor: grab;
+    overflow: hidden;
 
-    &::-webkit-scrollbar {
-      display: none;
+    &--passed,
+    &--smashed {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &--passed {
+      transform: translateX(-25%) rotate(-3.75deg) !important;
+    }
+
+    &--smashed {
+      transform: translateX(25%) rotate(3.75deg) !important;
+    }
+
+    &__container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      padding: 20px;
+      overflow-y: auto;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &__reveal {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease-out;
+    }
+
+    &__pass,
+    &__smash {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+
+      p {
+        @include mixins.font-type("title");
+        text-transform: uppercase;
+        color: var(--white);
+        width: fit-content;
+        height: fit-content;
+        padding: 10px 15px;
+        border-radius: 20px;
+        border: 8px solid var(--white);
+      }
+    }
+
+    &__pass {
+      background-color: var(--green);
+    }
+
+    &__smash {
+      background-color: var(--red);
     }
 
     &__image {

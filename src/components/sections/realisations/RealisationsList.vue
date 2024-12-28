@@ -1,7 +1,8 @@
 <script setup>
 import "../../../assets/css/sections/realisations/_realisations-list.scss";
+import {reactive, ref, watch} from "vue";
 
-defineProps({
+const props = defineProps({
   realisations: {
     type: Array,
     required: true
@@ -10,6 +11,148 @@ defineProps({
 
 function getSrc(folder, nameFile, format) {
   return new URL(`../../../assets/imgs/${folder}/${nameFile}.${format}`, import.meta.url).href;
+}
+
+const initialMouseX = ref(0);
+const initialCardX = ref(0);
+const currentCard = ref(null);
+const currentReveal = ref(null);
+const currentCardIndex = ref(0);
+const cardStyles = reactive([]);
+const followingCards = ref([]);
+const scaleDifference = 0.01;
+const translateYDifference = 10;
+const limit = 15;
+const pass = ref(false);
+const smash = ref(false);
+
+watch(
+    () => props.realisations,
+    (newRealisations) => {
+      cardStyles.length = 0;
+      newRealisations.forEach((_, index) => {
+        const zIndex = newRealisations.length - index;
+        let transform;
+
+        if (index < 4) {
+          transform = {
+            scale: 1 - index * scaleDifference,
+            translateY: -index * translateYDifference
+          };
+        } else {
+          transform = {
+            scale: 1 - (3 * scaleDifference),
+            translateY: -3 * translateYDifference
+          };
+        }
+
+        cardStyles.push({
+          zIndex,
+          ...transform
+        });
+      });
+    },
+    { immediate: true }
+);
+
+function swipe(e, index) {
+  currentCard.value = e.target.closest(".realisation");
+  currentCard.value.style.transition = "";
+  currentCard.value.querySelector(".realisation__container").scrollTop = 0;
+  currentReveal.value = e.target.closest(".realisation").querySelector(".realisation__reveal");
+  currentCardIndex.value = index;
+  initialMouseX.value = e.clientX;
+  initialCardX.value = currentCard.value.getBoundingClientRect().left;
+  currentCard.value.style.cursor = "grabbing";
+  followingCards.value = Array.from(currentCard.value.parentElement.children).slice(index + 1, index + 4);
+  
+  followingCards.value.forEach((card, index) => {
+    card.style.transition = "";
+  });
+}
+
+function onMouseMove(e) {
+  if (currentCard.value) {
+    const cardWidth = currentCard.value.offsetWidth;
+    const deltaX = ((e.clientX - initialMouseX.value) / cardWidth) * 100;
+
+    if (deltaX >= -limit && deltaX <= limit) {
+      if(deltaX > 0) {
+        currentReveal.value.querySelector(".realisation__pass").style.display = "none";
+        currentReveal.value.querySelector(".realisation__smash").style.display = "flex";
+      } else {
+        currentReveal.value.querySelector(".realisation__pass").style.display = "flex";
+        currentReveal.value.querySelector(".realisation__smash").style.display = "none";
+      }
+
+      currentCard.value.style.transformOrigin = deltaX < 0 ? "bottom left" : "bottom right";
+      currentCard.value.style.transform = `translateX(${deltaX}%) rotate(${deltaX / 4}deg)`;
+      currentReveal.value.style.opacity = Math.abs(deltaX) / (limit + 1);
+
+      if(followingCards.value.length > 0) {
+        followingCards.value.forEach((card, index) => {
+          const newScale =
+            cardStyles[currentCardIndex.value + (index + 1)].scale +
+            (scaleDifference * (Math.abs(deltaX) / limit));
+          const newTranslateY =
+            cardStyles[currentCardIndex.value + (index + 1)].translateY +
+            (translateYDifference * (Math.abs(deltaX) / limit));
+
+          card.style.transform = `scale(${newScale}) translateY(${newTranslateY}px)`;
+        });
+      }
+
+      if (deltaX <= -limit + 2) {
+        pass.value = true;
+      } else if (deltaX >= limit - 2) {
+        smash.value = true;
+      } else {
+        pass.value = false;
+        smash.value = false;
+      }
+    }
+  }
+
+  window.addEventListener("mouseup", swipeEnd);
+}
+
+function swipeEnd() {
+  if (currentCard.value) {
+    currentCard.value.style.cursor = "";
+    currentCard.value.style.transition = "all 0.2s ease-out";
+
+    if(pass.value) {
+      currentCard.value.classList.add("realisation--passed");
+    } else if(smash.value) {
+      currentCard.value.classList.add("realisation--smashed");
+    } else {
+      currentCard.value.style.transform = "";
+      currentReveal.value.style.opacity = "";
+    }
+
+    followingCards.value.forEach((card, index) => {
+      card.style.transition = "transform 0.2s ease-out";
+
+      if(pass.value || smash.value) {
+        cardStyles[currentCardIndex.value + (index + 1)].scale =
+          cardStyles[currentCardIndex.value + (index + 1)].scale + scaleDifference;
+        cardStyles[currentCardIndex.value + (index + 1)].translateY =
+          cardStyles[currentCardIndex.value + (index + 1)].translateY + translateYDifference;
+      } else {
+        card.style.transform = `
+          scale(${cardStyles[currentCardIndex.value + (index + 1)].scale})
+          translateY(${cardStyles[currentCardIndex.value + (index + 1)].translateY}px)
+        `;
+      }
+    });
+
+    currentCard.value = null;
+    currentReveal.value = null;
+    currentCardIndex.value = 0;
+    followingCards.value = [];
+    pass.value = false;
+    smash.value = false;
+  }
 }
 </script>
 
@@ -21,33 +164,52 @@ function getSrc(folder, nameFile, format) {
     >
       <li
           class="realisation"
-          :style="{ zIndex: realisations.length - index }"
+          :style="{
+            zIndex: cardStyles[index]?.zIndex,
+            transform: `
+              scale(${cardStyles[index]?.scale})
+              translateY(${cardStyles[index]?.translateY}px)
+            `
+          }"
+          @mousedown="swipe($event, index)"
+          @mousemove="onMouseMove"
       >
-        <img
-            class="realisation__image"
-            :src="getSrc('realisations', realisation.image, 'webp')"
-            :alt="realisation.title"
-        />
-        <div class="realisation__texts">
-          <h3 class="realisation__title">
-            {{ realisation.title }}
-          </h3>
-          <p class="realisation__description">
-            {{ realisation.description }}
-          </p>
-          <ul class="realisation__technologies">
-            <li
-                v-for="technology in realisation.technologies"
-                :key="technology"
-                class="realisation__technology"
-            >
-              <img
-                  class="realisation__technology-icon"
-                  :src="getSrc('icons', technology, 'svg')"
-                  :alt="technology"
-              />
-            </li>
-          </ul>
+        <div class="realisation__container">
+          <div class="realisation__reveal">
+            <div class="realisation__pass">
+              <p>Pass</p>
+            </div>
+            <div class="realisation__smash">
+              <p>Smash !</p>
+            </div>
+          </div>
+          <img
+              class="realisation__image"
+              :src="getSrc('realisations', realisation.image, 'webp')"
+              :alt="realisation.title"
+              draggable="false"
+          />
+          <div class="realisation__texts">
+            <h3 class="realisation__title">
+              {{ realisation.title }}
+            </h3>
+            <p class="realisation__description">
+              {{ realisation.description }}
+            </p>
+            <ul class="realisation__technologies">
+              <li
+                  v-for="technology in realisation.technologies"
+                  :key="technology"
+                  class="realisation__technology"
+              >
+                <img
+                    class="realisation__technology-icon"
+                    :src="getSrc('icons', technology, 'svg')"
+                    :alt="technology"
+                />
+              </li>
+            </ul>
+          </div>
         </div>
       </li>
     </template>
