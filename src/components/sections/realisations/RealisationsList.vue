@@ -23,7 +23,7 @@ const initialMouseX = ref(0);
 const initialCardX = ref(0);
 const currentCard = ref(null);
 const currentReveal = ref(null);
-const currentCardIndex = ref(0);
+const currentCardIndex = ref(null);
 const cardStyles = reactive([]);
 const followingCards = ref([]);
 const scaleDifference = 0.01;
@@ -187,7 +187,6 @@ function swipeEnd() {
 
     currentCard.value = null;
     currentReveal.value = null;
-    currentCardIndex.value = 0;
     followingCards.value = [];
     pass.value = false;
     smash.value = false;
@@ -226,6 +225,7 @@ function rollback() {
     initCurrentCard(lastPassedOrSmashedCard).then(() => {
       if (currentCard.value) {
         currentReveal.value.style.opacity = "";
+        currentCard.value.style.transformOrigin = "";
         currentCard.value.classList.remove("realisation--passed-smashed", "realisation--passed", "realisation--smashed");
 
         followingCards.value.forEach((card, index) => {
@@ -242,7 +242,7 @@ function rollback() {
 
         currentCard.value = null;
         currentReveal.value = null;
-        currentCardIndex.value = 0;
+        currentCardIndex.value = null;
         followingCards.value = [];
       }
     });

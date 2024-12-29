@@ -16,10 +16,21 @@
     box-shadow: var(--wooden-shadow);
     cursor: grab;
     overflow: hidden;
+    pointer-events: none;
+
+    &:first-child {
+      pointer-events: initial;
+    }
+
+    &.realisation--passed-smashed {
+      + .realisation:not(.realisation--passed-smashed) {
+        pointer-events: initial;
+      }
+    }
 
     &--passed-smashed {
       opacity: 0;
-      pointer-events: none;
+      pointer-events: none !important;
     }
 
     &--passed {
