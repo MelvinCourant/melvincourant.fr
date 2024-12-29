@@ -24,10 +24,12 @@
 
     &--passed {
       transform: translateX(-25%) rotate(-3.75deg) !important;
+      transform-origin: left bottom;
     }
 
     &--smashed {
       transform: translateX(25%) rotate(3.75deg) !important;
+      transform-origin: right bottom;
     }
 
     &__container {
