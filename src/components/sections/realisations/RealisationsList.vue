@@ -225,6 +225,7 @@ function rollback() {
   if (lastPassedOrSmashedCard) {
     initCurrentCard(lastPassedOrSmashedCard).then(() => {
       if (currentCard.value) {
+        currentReveal.value.style.opacity = "";
         currentCard.value.classList.remove("realisation--passed-smashed", "realisation--passed", "realisation--smashed");
 
         followingCards.value.forEach((card, index) => {
@@ -238,6 +239,11 @@ function rollback() {
             translateY(${cardStyles[currentCardIndex.value + (index + 1)].translateY - translateYDifference}px)
           `;
         });
+
+        currentCard.value = null;
+        currentReveal.value = null;
+        currentCardIndex.value = 0;
+        followingCards.value = [];
       }
     });
   }
