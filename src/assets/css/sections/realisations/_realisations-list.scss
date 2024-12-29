@@ -17,8 +17,7 @@
     cursor: grab;
     overflow: hidden;
 
-    &--passed,
-    &--smashed {
+    &--passed-smashed {
       opacity: 0;
       pointer-events: none;
     }

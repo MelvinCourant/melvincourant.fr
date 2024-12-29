@@ -13,6 +13,8 @@ const props = defineProps({
   }
 })
 
+const emit = defineEmits(["resetAction"]);
+
 function getSrc(folder, nameFile, format) {
   return new URL(`../../../assets/imgs/${folder}/${nameFile}.${format}`, import.meta.url).href;
 }
@@ -66,23 +68,37 @@ watch(
         forcePass();
       } else if (newActionSelected === "smash") {
         forceSmash();
+      } else if (newActionSelected === "rollback") {
+        rollback();
       }
     }
 );
 
-function swipe(e, index) {
-  currentCard.value = e.target.closest(".realisation");
-  currentCard.value.style.transition = "";
-  currentCard.value.querySelector(".realisation__container").scrollTop = 0;
-  currentReveal.value = e.target.closest(".realisation").querySelector(".realisation__reveal");
-  currentCardIndex.value = index;
-  initialMouseX.value = e.clientX;
-  initialCardX.value = currentCard.value.getBoundingClientRect().left;
-  currentCard.value.style.cursor = "grabbing";
-  followingCards.value = Array.from(currentCard.value.parentElement.children).slice(index + 1, index + 4);
-  
-  followingCards.value.forEach((card, index) => {
-    card.style.transition = "";
+function initCurrentCard(cardElement) {
+  return new Promise((resolve) => {
+    if (cardElement) {
+      currentCard.value = cardElement;
+      currentReveal.value = cardElement.querySelector(".realisation__reveal");
+      currentCardIndex.value = parseInt(cardElement.dataset.index);
+      followingCards.value = Array.from(cardElement.parentElement.children).slice(parseInt(cardElement.dataset.index) + 1, parseInt(cardElement.dataset.index) + 4);
+      resolve();
+    }
+  });
+}
+
+function swipe(e) {
+  initCurrentCard(e.target.closest(".realisation")).then(() => {
+    if (currentCard.value) {
+      currentCard.value.style.transition = "";
+      currentCard.value.querySelector(".realisation__container").scrollTop = 0;
+      initialMouseX.value = e.clientX;
+      initialCardX.value = currentCard.value.getBoundingClientRect().left;
+      currentCard.value.style.cursor = "grabbing";
+
+      followingCards.value.forEach((card, index) => {
+        card.style.transition = "";
+      });
+    }
   });
 }
 
@@ -144,6 +160,11 @@ function swipeEnd() {
           cardStyles[currentCardIndex.value + (index + 1)].scale + scaleDifference;
         cardStyles[currentCardIndex.value + (index + 1)].translateY =
           cardStyles[currentCardIndex.value + (index + 1)].translateY + translateYDifference;
+
+        card.style.transform = `
+          scale(${cardStyles[currentCardIndex.value + (index + 1)].scale + scaleDifference})
+          translateY(${cardStyles[currentCardIndex.value + (index + 1)].translateY + translateYDifference}px)
+        `;
       } else {
         card.style.transform = `
           scale(${cardStyles[currentCardIndex.value + (index + 1)].scale})
@@ -153,10 +174,12 @@ function swipeEnd() {
     });
 
     if(pass.value) {
-      currentCard.value.classList.add("realisation--passed");
+      currentCard.value.classList.add("realisation--passed-smashed", "realisation--passed");
     } else if(smash.value) {
-      currentCard.value.classList.add("realisation--smashed");
-      window.open(props.realisations[currentCardIndex.value].url, "_blank");
+      currentCard.value.classList.add("realisation--passed-smashed", "realisation--smashed");
+      setTimeout(() => {
+        window.open(props.realisations[currentCardIndex.value].url, "_blank");
+      }, 200);
     } else {
       currentCard.value.style.transform = "";
       currentReveal.value.style.opacity = "";
@@ -172,23 +195,53 @@ function swipeEnd() {
 }
 
 function forcePass() {
-  const activeCard = document.querySelectorAll(".realisation:not(.realisation--passed):not(.realisation--smashed)")[0];
+  const activeCard = document.querySelectorAll(".realisation:not(.realisation--passed-smashed)")[0];
 
-  currentCard.value = activeCard;
-  currentReveal.value = activeCard.querySelector(".realisation__reveal");
-  currentCardIndex.value = parseInt(activeCard.dataset.index);
-  pass.value = true;
-  swipeEnd();
+  initCurrentCard(activeCard).then(() => {
+    if (currentCard.value) {
+      pass.value = true;
+      swipeEnd();
+      emit("resetAction");
+    }
+  });
 }
 
 function forceSmash() {
-  const activeCard = document.querySelectorAll(".realisation:not(.realisation--passed):not(.realisation--smashed)")[0];
+  const activeCard = document.querySelectorAll(".realisation:not(.realisation--passed-smashed)")[0];
 
-  currentCard.value = activeCard;
-  currentReveal.value = activeCard.querySelector(".realisation__reveal");
-  currentCardIndex.value = parseInt(activeCard.dataset.index);
-  smash.value = true;
-  swipeEnd();
+  initCurrentCard(activeCard).then(() => {
+    if (currentCard.value) {
+      smash.value = true;
+      swipeEnd();
+      emit("resetAction");
+    }
+  });
+}
+
+function rollback() {
+  const passedOrSmashedCards = document.querySelectorAll(".realisation--passed-smashed");
+  const lastPassedOrSmashedCard = passedOrSmashedCards[passedOrSmashedCards.length - 1];
+
+  if (lastPassedOrSmashedCard) {
+    initCurrentCard(lastPassedOrSmashedCard).then(() => {
+      if (currentCard.value) {
+        currentCard.value.classList.remove("realisation--passed-smashed", "realisation--passed", "realisation--smashed");
+
+        followingCards.value.forEach((card, index) => {
+          cardStyles[currentCardIndex.value + (index + 1)].scale =
+              cardStyles[currentCardIndex.value + (index + 1)].scale - scaleDifference;
+          cardStyles[currentCardIndex.value + (index + 1)].translateY =
+              cardStyles[currentCardIndex.value + (index + 1)].translateY - translateYDifference;
+
+          card.style.transform = `
+            scale(${cardStyles[currentCardIndex.value + (index + 1)].scale - scaleDifference})
+            translateY(${cardStyles[currentCardIndex.value + (index + 1)].translateY - translateYDifference}px)
+          `;
+        });
+      }
+    });
+  }
+  emit("resetAction");
 }
 </script>
 
