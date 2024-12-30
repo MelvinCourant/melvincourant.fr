@@ -35,6 +35,11 @@
     border-radius: 50%;
     transition: var(--button-transition);
 
+    @media screen and (max-width: 991px) {
+      width: 60px;
+      height: 60px;
+    }
+
     &.pass {
       @include mixins.resetButton(4px solid var(--black), var(--green));
 
