@@ -101,6 +101,12 @@
         padding: 10px 15px;
         border-radius: 20px;
         border: 8px solid var(--white);
+
+        @media screen and (max-width: 991px) {
+          padding: 8px 13px;
+          border-radius: 15px;
+          border: 6px solid var(--white);
+        }
       }
     }
 

@@ -1,6 +1,6 @@
 <script setup>
 import "../../../assets/css/sections/realisations/_realisations-list.scss";
-import {reactive, ref, watch} from "vue";
+import { reactive, ref, watch } from "vue";
 
 const props = defineProps({
   realisations: {
@@ -11,7 +11,7 @@ const props = defineProps({
     type: String,
     default: null
   }
-})
+});
 
 const emit = defineEmits(["resetAction"]);
 
@@ -91,7 +91,7 @@ function swipe(e) {
     if (currentCard.value) {
       currentCard.value.style.transition = "";
       currentCard.value.querySelector(".realisation__container").scrollTop = 0;
-      initialMouseX.value = e.clientX;
+      initialMouseX.value = e.clientX || e.touches[0].clientX;
       initialCardX.value = currentCard.value.getBoundingClientRect().left;
       currentCard.value.style.cursor = "grabbing";
 
@@ -105,10 +105,10 @@ function swipe(e) {
 function onMouseMove(e) {
   if (currentCard.value) {
     const cardWidth = currentCard.value.offsetWidth;
-    const deltaX = ((e.clientX - initialMouseX.value) / cardWidth) * 100;
+    const deltaX = (((e.clientX || e.touches[0].clientX) - initialMouseX.value) / cardWidth) * 100;
 
     if (deltaX >= -limit && deltaX <= limit) {
-      if(deltaX > 0) {
+      if (deltaX > 0) {
         currentReveal.value.querySelector(".realisation__pass").style.display = "none";
         currentReveal.value.querySelector(".realisation__smash").style.display = "flex";
       } else {
@@ -120,14 +120,14 @@ function onMouseMove(e) {
       currentCard.value.style.transform = `translateX(${deltaX}%) rotate(${deltaX / 4}deg)`;
       currentReveal.value.style.opacity = Math.abs(deltaX) / (limit + 1);
 
-      if(followingCards.value.length > 0) {
+      if (followingCards.value.length > 0) {
         followingCards.value.forEach((card, index) => {
           const newScale =
-            cardStyles[currentCardIndex.value + (index + 1)].scale +
-            (scaleDifference * (Math.abs(deltaX) / limit));
+              cardStyles[currentCardIndex.value + (index + 1)].scale +
+              (scaleDifference * (Math.abs(deltaX) / limit));
           const newTranslateY =
-            cardStyles[currentCardIndex.value + (index + 1)].translateY +
-            (translateYDifference * (Math.abs(deltaX) / limit));
+              cardStyles[currentCardIndex.value + (index + 1)].translateY +
+              (translateYDifference * (Math.abs(deltaX) / limit));
 
           card.style.transform = `scale(${newScale}) translateY(${newTranslateY}px)`;
         });
@@ -145,6 +145,7 @@ function onMouseMove(e) {
   }
 
   window.addEventListener("mouseup", swipeEnd);
+  window.addEventListener("touchend", swipeEnd);
 }
 
 function swipeEnd() {
@@ -155,11 +156,11 @@ function swipeEnd() {
     followingCards.value.forEach((card, index) => {
       card.style.transition = "transform 0.2s ease-out";
 
-      if(pass.value || smash.value) {
+      if (pass.value || smash.value) {
         cardStyles[currentCardIndex.value + (index + 1)].scale =
-          cardStyles[currentCardIndex.value + (index + 1)].scale + scaleDifference;
+            cardStyles[currentCardIndex.value + (index + 1)].scale + scaleDifference;
         cardStyles[currentCardIndex.value + (index + 1)].translateY =
-          cardStyles[currentCardIndex.value + (index + 1)].translateY + translateYDifference;
+            cardStyles[currentCardIndex.value + (index + 1)].translateY + translateYDifference;
 
         card.style.transform = `
           scale(${cardStyles[currentCardIndex.value + (index + 1)].scale + scaleDifference})
@@ -173,9 +174,9 @@ function swipeEnd() {
       }
     });
 
-    if(pass.value) {
+    if (pass.value) {
       currentCard.value.classList.add("realisation--passed-smashed", "realisation--passed");
-    } else if(smash.value) {
+    } else if (smash.value) {
       currentCard.value.classList.add("realisation--passed-smashed", "realisation--smashed");
       setTimeout(() => {
         window.open(props.realisations[currentCardIndex.value].url, "_blank");
@@ -269,6 +270,8 @@ function rollback() {
           :data-index="index"
           @mousedown="swipe($event, index)"
           @mousemove="onMouseMove"
+          @touchstart="swipe($event, index)"
+          @touchmove="onMouseMove"
       >
         <div class="realisation__container">
           <div class="realisation__reveal">
