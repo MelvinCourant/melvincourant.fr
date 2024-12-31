@@ -60,6 +60,7 @@ function blowItUp() {
 
 <template>
   <section class="about" id="about">
+    <h2 class="hidden-title">Qui suis-je ?</h2>
     <AboutTexts :aboutTexts="aboutTexts" :activePickUpAllWoodenBoards="activePickUpAllWoodenBoards"/>
     <CTA @click="blowItUp" />
   </section>

@@ -1,7 +1,6 @@
 <script setup>
 import "../../../assets/css/sections/skills/_skills-list.scss";
 import Skill from "./Skill.vue";
-import {computed, watch} from "vue";
 
 defineProps({
   skills: {

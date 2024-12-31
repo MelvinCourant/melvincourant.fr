@@ -51,6 +51,7 @@ function updateFilters(filterValue) {
 
 <template>
   <section class="skills" id="skills">
+    <h2 class="hidden-title">Mes talents</h2>
     <Filters :filters="filters" @filterSelected="updateFilters($event)"/>
     <SkillsList :skills="skillsJson" :categoryToShow="categoryToShow" />
   </section>

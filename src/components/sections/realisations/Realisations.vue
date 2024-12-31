@@ -10,6 +10,7 @@ const actionSelected = ref(null);
 
 <template>
   <section class="realisations" id="realisations">
+    <h2 class="hidden-title">Mes fiertés</h2>
     <RealisationsList :realisations="realisationsJson" :actionSelected="actionSelected" @resetAction="actionSelected = null" />
     <RealisationsActions @pass="actionSelected = 'pass'" @rollback="actionSelected = 'rollback'" @smash="actionSelected = 'smash'" />
   </section>

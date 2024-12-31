@@ -10,7 +10,7 @@ import CTA from "../../utils/CTA.vue";
         <span class="hero__firstname">Melvin</span><br>
         Courant
       </h1>
-      <p class="hero__description">Développeur front-end</p>
+      <h2 class="hero__description">Développeur front-end</h2>
     </div>
     <CTA/>
   </div>
