@@ -6,32 +6,35 @@ const showEyes = ref(false);
 const position = ref({top: 0, left: 0});
 
 function displayEyes() {
-  if(position.value.top === 0 && position.value.left === 0) {
+  if(
+    position.value.top === 0 &&
+    position.value.left === 0
+  ) {
     return;
   }
 
   document.body.style.cursor = "none";
   showEyes.value = true;
-  clearInterval(displayEyes);
+  clearInterval(eyesInterval);
 }
 
+let eyesInterval = null;
+
 function startTimer() {
-  setInterval(displayEyes, 10000);
+  eyesInterval = setInterval(displayEyes, 10000);
 }
 
 startTimer();
 
 window.addEventListener("mousemove", (e) => {
+  showEyes.value = false;
   document.body.style.cursor = "default";
   position.value = {
     top: e.clientY,
     left: e.clientX,
   };
 
-  if(showEyes.value) {
-    showEyes.value = false;
-  }
-
+  clearInterval(eyesInterval);
   startTimer();
 });
 </script>
