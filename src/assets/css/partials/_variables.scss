@@ -34,9 +34,11 @@ $colors: (
 
   // Radius
   --card-radius: 15px;
+  --card-inner-radius: 11px;
 
   @media screen and (max-width: 991px) {
     --card-radius: 10px;
+    --card-inner-radius: 7px;
   }
 
   // Borders

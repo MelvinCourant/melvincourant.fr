@@ -54,10 +54,10 @@
   }
 
   &__name {
-    @include mixins.font-type('title');
+    @include mixins.font-type('skill title');
   }
 
   &__description {
-    @include mixins.font-type('medium text');
+    @include mixins.font-type('skill text');
   }
 }
