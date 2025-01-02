@@ -54,7 +54,7 @@
   }
 
   &__name {
-    @include mixins.font-type('skill title');
+    @include mixins.font-type('title');
   }
 
   &__description {

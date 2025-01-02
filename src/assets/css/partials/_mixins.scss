@@ -58,7 +58,7 @@
       letter-spacing: functions.rem(-3);
       margin-left: functions.rem(-3);
     }
-  } @else if($type == "skill title") {
+  } @else if($type == "title") {
     font-size: functions.rem(32);
     font-weight: 700;
     letter-spacing: functions.rem(-2.4);
