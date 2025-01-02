@@ -58,6 +58,6 @@
   }
 
   &__description {
-    @include mixins.font-type('skill text');
+    @include mixins.font-type('medium text');
   }
 }

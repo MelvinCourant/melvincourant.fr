@@ -72,7 +72,7 @@
       font-size: functions.rem(20);
       letter-spacing: functions.rem(-1.5);
     }
-  } @else if($type == "skill text") {
+  } @else if($type == "medium text") {
     font-size: functions.rem(20);
     font-weight: 700;
     letter-spacing: functions.rem(-1.5);
