@@ -12,7 +12,8 @@
   "dependencies": {
     "cwebp": "^3.0.0",
     "gsap": "^3.12.5",
-    "vue": "^3.5.12"
+    "vue": "^3.5.12",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.4",

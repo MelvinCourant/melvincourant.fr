@@ -28,7 +28,11 @@ startTimer();
 
 window.addEventListener("mousemove", (e) => {
   showEyes.value = false;
-  document.body.style.cursor = "default";
+
+  if(document.body.style.cursor === "none") {
+    document.body.style.cursor = "default";
+  }
+
   position.value = {
     top: e.clientY,
     left: e.clientX,
