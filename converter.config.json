@@ -1,7 +1,6 @@
 {
   "directories": [
-    "src/assets/imgs/realisations",
-    "src/assets/imgs/hero"
+    "src/assets/imgs/realisations"
   ],
   "format": "jpg"
 }

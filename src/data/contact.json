@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Linkedin",
+    "icon": "linkedin",
+    "description": "Melvin Courant",
+    "url": "https://www.linkedin.com/in/melvin-courant/",
+    "color": "#A7DBD8"
+  },
+  {
+    "title": "Github",
+    "icon": "github",
+    "description": "MelvinCourant",
+    "url": "https://github.com/MelvinCourant",
+    "color": "#C4A1FF"
+  },
+  {
+    "title": "Instagram",
+    "icon": "instagram",
+    "description": "melvincourant_dev",
+    "url": "https://www.instagram.com/melvincourant_dev/",
+    "color": "#FFA07A"
+  },
+  {
+    "title": "X",
+    "icon": "x",
+    "description": "@MelvinCourant",
+    "url": "https://x.com/MelvinCourant",
+    "color": ""
+  },
+  {
+    "title": "Email",
+    "icon": "email",
+    "description": "melvincourant1@gmail.com",
+    "url": "mailto:melvincourant1@gmail.com",
+    "color": "#FFDB58"
+  },
+  {
+    "title": "CV",
+    "icon": "download",
+    "description": "Clique pour télécharger",
+    "url": "https://drive.google.com/file/d/1B-RBJpuoEjPMfecwKY0xFGchIbgNNKAj/view",
+    "color": "#BAFCA2"
+  }
+]

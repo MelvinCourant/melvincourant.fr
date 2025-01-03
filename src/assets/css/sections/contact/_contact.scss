@@ -1,0 +1,16 @@
+.contact {
+  display: flex;
+  justify-content: center;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    max-width: 850px;
+    gap: 50px;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 991px) {
+      gap: 30px;
+    }
+  }
+}

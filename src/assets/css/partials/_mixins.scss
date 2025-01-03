@@ -1,0 +1,187 @@
+@use "functions";
+
+@mixin resetButton($border, $background) {
+  cursor: pointer;
+  background: $background;
+  border: $border;
+}
+
+@mixin font-type($type) {
+  @if($type == 'big hero title') {
+    font-size: functions.rem(128);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: functions.rem(-22);
+
+    @media screen and (max-width: 1399px) {
+      font-size: functions.rem(96);
+      letter-spacing: functions.rem(-18);
+    }
+
+    @media screen and (max-width: 1199px) {
+      font-size: functions.rem(80);
+      letter-spacing: functions.rem(-14);
+    }
+
+    @media screen and (max-width: 991px) {
+      font-size: functions.rem(64);
+      letter-spacing: functions.rem(-11);
+      margin-left: functions.rem(-11);
+    }
+  } @else if($type == "about text") {
+    font-size: functions.rem(64);
+    font-weight: 700;
+    letter-spacing: functions.rem(-8);
+
+    @media screen and (max-width: 991px) {
+      font-size: functions.rem(36);
+      letter-spacing: functions.rem(-4.5);
+    }
+  } @else if($type == "medium hero title") {
+    font-size: functions.rem(48);
+    font-weight: 700;
+    letter-spacing: functions.rem(-6);
+
+    @media screen and (max-width: 1399px) {
+      font-size: functions.rem(32);
+      letter-spacing: functions.rem(-4);
+    }
+
+    @media screen and (max-width: 1199px) {
+      font-size: functions.rem(28);
+      letter-spacing: functions.rem(-3);
+    }
+
+    @media screen and (max-width: 991px) {
+      font-size: functions.rem(24);
+      letter-spacing: functions.rem(-3);
+      margin-left: functions.rem(-3);
+    }
+  } @else if($type == "title") {
+    font-size: functions.rem(32);
+    font-weight: 700;
+    letter-spacing: functions.rem(-2.4);
+
+    @media screen and (max-width: 991px) {
+      font-size: functions.rem(25);
+      letter-spacing: functions.rem(-1.9);
+    }
+
+    @media screen and (max-width: 767px) {
+      font-size: functions.rem(20);
+      letter-spacing: functions.rem(-1.5);
+    }
+  } @else if($type == "medium text") {
+    font-size: functions.rem(20);
+    font-weight: 700;
+    letter-spacing: functions.rem(-1.5);
+
+    @media screen and (max-width: 991px) {
+      font-size: functions.rem(16);
+      letter-spacing: functions.rem(-1.2);
+    }
+
+    @media screen and (max-width: 767px) {
+      font-size: functions.rem(12);
+      letter-spacing: functions.rem(-1);
+    }
+  } @else if($type == "navbar link") {
+    font-size: functions.rem(20);
+    font-weight: 700;
+    letter-spacing: functions.rem(-1.5);
+
+    @media screen and (max-width: 1199px) {
+      font-size: functions.rem(16);
+      letter-spacing: functions.rem(-1.2);
+    }
+
+    @media screen and (max-width: 991px) {
+      font-size: functions.rem(24);
+      letter-spacing: functions.rem(-1.8);
+    }
+  } @else if($type == "bubble text") {
+    font-size: functions.rem(20);
+    font-weight: 700;
+    letter-spacing: functions.rem(-1.5);
+
+    @media screen and (max-width: 1399px) {
+      font-size: functions.rem(16);
+      letter-spacing: functions.rem(-1.2);
+    }
+
+    @media screen and (max-width: 1199px) {
+      font-size: functions.rem(14);
+      letter-spacing: functions.rem(-1.1);
+    }
+
+    @media screen and (max-width: 991px) {
+      font-size: functions.rem(12);
+      letter-spacing: functions.rem(-1);
+    }
+  } @else if($type == "filter text") {
+    font-size: functions.rem(16);
+    font-weight: 700;
+    letter-spacing: functions.rem(-1.2);
+
+    @media screen and (max-width: 991px) {
+      font-size: functions.rem(14);
+      letter-spacing: functions.rem(-1);
+    }
+  } @else if($type == "small text") {
+    font-size: functions.rem(16);
+    font-weight: 700;
+    letter-spacing: functions.rem(-1.2);
+
+    @media screen and (max-width: 991px) {
+      font-size: functions.rem(12);
+      letter-spacing: functions.rem(-0.9);
+    }
+  } @else if($type == "very small text") {
+    font-size: functions.rem(15);
+    font-weight: 700;
+    letter-spacing: functions.rem(-1.1);
+
+    @media screen and (max-width: 1399px) {
+      font-size: functions.rem(13);
+      letter-spacing: functions.rem(-1);
+    }
+
+    @media screen and (max-width: 1199px) {
+      font-size: functions.rem(12);
+    }
+
+    @media screen and (max-width: 991px) {
+      font-size: functions.rem(11);
+      letter-spacing: functions.rem(-0.9);
+    }
+  } @else if($type == "contact title") {
+    font-size: functions.rem(32);
+    font-weight: 700;
+    letter-spacing: functions.rem(-2.4);
+
+    @media screen and (max-width: 991px) {
+      font-size: functions.rem(25);
+      letter-spacing: functions.rem(-1.9);
+    }
+
+    @media screen and (max-width: 767px) {
+      font-size: functions.rem(23);
+      letter-spacing: functions.rem(-1.7);
+    }
+  } @else if($type == "contact text") {
+    font-size: functions.rem(20);
+    font-weight: 700;
+    letter-spacing: functions.rem(-1.5);
+
+    @media screen and (max-width: 991px) {
+      font-size: functions.rem(16);
+      letter-spacing: functions.rem(-1.2);
+    }
+
+    @media screen and (max-width: 767px) {
+      font-size: functions.rem(14);
+      letter-spacing: functions.rem(-1);
+    }
+  }
+}

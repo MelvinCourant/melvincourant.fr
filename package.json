@@ -10,15 +10,14 @@
     "convert": "node convert.js"
   },
   "dependencies": {
-    "@splidejs/vue-splide": "^0.6.12",
     "cwebp": "^3.0.0",
     "gsap": "^3.12.5",
-    "vue": "^3.4.30",
-    "yarn": "^1.22.22"
+    "vue": "^3.5.12",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.0.5",
-    "sass": "^1.77.6",
-    "vite": "^5.3.1"
+    "@vitejs/plugin-vue": "^5.1.4",
+    "sass": "^1.80.6",
+    "vite": "^5.4.10"
   }
 }

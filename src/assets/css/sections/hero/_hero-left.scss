@@ -1,0 +1,95 @@
+@use '../../partials/functions';
+@use '../../partials/mixins';
+
+.hero {
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: functions.rem(50);
+
+    @media screen and (max-width: 1399px) {
+      gap: functions.rem(40);
+    }
+
+    @media screen and (max-width: 1199px) {
+      gap: functions.rem(30);
+    }
+
+    @media screen and (max-width: 991px) {
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  &__texts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: functions.rem(15);
+
+    @media screen and (max-width: 1399px) {
+      gap: functions.rem(12);
+    }
+
+    @media screen and (max-width: 1199px) {
+      gap: functions.rem(10);
+    }
+
+    @media screen and (max-width: 991px) {
+      gap: functions.rem(8);
+      text-align: center;
+    }
+  }
+
+  &__firstname {
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: functions.rem(-7);
+      right: functions.rem(34);
+      width: 90px;
+      height: 90px;
+      background-image: url("data:image/svg+xml,%3Csvg width='90' height='89' viewBox='0 0 90 89' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M52.9223 21.2874L67.4898 10.0052L63.2787 27.9431L62.9196 29.4725L64.4846 29.3348L82.8392 27.7194L69.5987 40.533L68.4697 41.6256L69.8607 42.3558L86.175 50.9201L68.1087 54.5412L66.5684 54.8499L67.3438 56.2163L76.438 72.2411L59.2819 65.5201L57.8192 64.947L57.7328 66.5157L56.7196 84.9134L45.9207 69.984L45 68.7111L44.0793 69.984L33.2804 84.9134L32.2672 66.5157L32.1808 64.947L30.7181 65.5201L13.562 72.2411L22.6562 56.2163L23.4316 54.8499L21.8913 54.5412L3.82503 50.9201L20.1393 42.3558L21.5303 41.6256L20.4013 40.533L7.16077 27.7194L25.5154 29.3348L27.0804 29.4725L26.7213 27.9431L22.5102 10.0052L37.0777 21.2874L38.3198 22.2494L38.8446 20.7686L45 3.40161L51.1554 20.7686L51.6802 22.2494L52.9223 21.2874Z' fill='%2369D2E7' stroke='%23282826' stroke-width='2.27273'/%3E%3C/svg%3E%0A");
+      background-size: cover;
+      animation: rotate 10s linear infinite;
+
+      @keyframes rotate {
+        0% {
+          transform: translateX(100%) rotate(0deg);
+        }
+        100% {
+          transform: translateX(100%) rotate(360deg);
+        }
+      }
+
+      @media (max-width: 1399px) {
+        top: functions.rem(-5);
+        right: functions.rem(30);
+        width: 72px;
+        height: 72px;
+      }
+
+      @media screen and (max-width: 1199px) {
+        top: functions.rem(-5);
+        right: functions.rem(25);
+        width: 60px;
+        height: 60px;
+      }
+
+      @media screen and (max-width: 991px) {
+        top: functions.rem(-4);
+        right: functions.rem(20);
+        width: 44px;
+        height: 44px;
+      }
+    }
+  }
+
+  &__description {
+    @include mixins.font-type("medium hero title");
+  }
+}

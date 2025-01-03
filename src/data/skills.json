@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Vue.js",
+    "category": "frontend",
+    "icon": "vuejs",
+    "description": "Pour en prendre plein la vue",
+    "color": "#B4E4CF"
+  },
+  {
+    "name": "JavaScript",
+    "category": "frontend",
+    "icon": "javascript",
+    "description": "Pour donner vie aux sites webs",
+    "color": "#F7ECA1"
+  },
+  {
+      "name": "Figma",
+      "category": "design",
+      "icon": "figma",
+      "description": "C'est l'heure du dasagn",
+      "color": "#C699FF"
+  },
+  {
+    "name": "AdonisJS",
+    "category": "backend",
+    "icon": "adonisjs",
+    "description": "Adieu Express, bonjour Adonis",
+    "color": "#FAF2DE"
+  },
+  {
+    "name": "Sass",
+    "category": "frontend",
+    "icon": "sass",
+    "description": "CSS c’est bien mais Sass c’est mieux",
+    "color": "#E6B2CC"
+  },
+  {
+    "name": "PHP",
+    "category": "backend",
+    "icon": "php",
+    "description": "Toujours vivant, toujours debout",
+    "color": "#A7BAF1"
+  },
+  {
+    "name": "Wordpress",
+    "category": "tools",
+    "icon": "wordpress",
+    "description": "Les sites webs en express",
+    "color": "#ABD8ED"
+  },
+  {
+    "name": "TypeScript",
+    "category": "frontend",
+    "icon": "typescript",
+    "description": "Du même type que le JS",
+    "color": "#ADCBEB"
+  },
+  {
+    "name": "Illustrator",
+    "category": "design",
+    "icon": "illustrator",
+    "description": "Pas besoin de vous l’illustrer",
+    "color": "#FFD799"
+  },
+  {
+    "name": "Photoshop",
+    "category": "design",
+    "icon": "photoshop",
+    "description": "Tant que je n’ai pas a détourer",
+    "color": "#99D4FF"
+  },
+  {
+    "name": "Git",
+    "category": "tools",
+    "icon": "git",
+    "description": "Des branches à tout va",
+    "color": "#F8AEA0"
+  }
+]
