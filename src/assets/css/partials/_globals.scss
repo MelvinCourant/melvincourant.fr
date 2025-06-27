@@ -51,14 +51,14 @@ html {
     }
 
     .hidden-title {
+      position: absolute;
       font-size: fonts.$hidden;
     }
 
     main {
       display: flex;
       flex-direction: column;
-      gap: 300px;
-      padding-bottom: 300px;
+      padding-bottom: 150px;
     }
 
     section:not(.skills),
@@ -82,6 +82,10 @@ html {
         width: 100%;
         padding: 0 20px;
       }
+    }
+
+    section:not(.hero) {
+      padding: 150px 0;
     }
   }
 }
