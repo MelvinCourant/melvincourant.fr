@@ -7,6 +7,8 @@
   border-radius: var(--card-radius);
   border: var(--card-border);
   transform-style: preserve-3d;
+  transition: transform 0.1s;
+  cursor: pointer;
 
   @media screen and (max-width: 991px) {
     width: 200px;
@@ -19,7 +21,7 @@
   }
 
   &--flipped {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) !important;
     transition: transform 0.6s;
   }
 
@@ -41,7 +43,6 @@
     justify-content: space-between;
     background-color: var(--background);
     padding: 30px 12px 15px;
-    cursor: pointer;
 
     @media screen and (max-width: 767px) {
       padding: 20px 8px 10px;
