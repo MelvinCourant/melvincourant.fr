@@ -14,6 +14,39 @@ function getSrc(nameFile) {
 }
 
 const flipped = ref(false);
+const card = ref(null);
+const width = ref(0);
+const height = ref(0);
+const scale = ref(1);
+const rotateX = ref('0');
+const rotateY = ref('0');
+const threshold = 20;
+
+function initHover() {
+  if (card.value) {
+    width.value = card.value.clientWidth;
+    height.value = card.value.clientHeight;
+    scale.value = 1.1;
+  }
+}
+
+function handleHover(e) {
+  if(flipped.value) {
+    return;
+  }
+
+  const layerX = e.layerX
+  const layerY = e.layerY
+
+  rotateX.value = threshold * ((layerX - width.value / 2) / width.value);
+  rotateY.value = -threshold * ((layerY - height.value / 2) / height.value);
+}
+
+function resetStyles() {
+  scale.value = 1;
+  rotateX.value = '0';
+  rotateY.value = '0';
+}
 </script>
 
 <template>
@@ -23,6 +56,19 @@ const flipped = ref(false);
       contactInfo.title.toLowerCase(),
       flipped ? 'contact-card--flipped' : ''
     ]"
+    ref="card"
+    :style="`transform: perspective(500px) scale(${scale}) rotateX(${rotateX}deg) rotateY(${rotateY}deg);`"
+    @mouseenter="() => {
+      if(!flipped) {
+        initHover()
+      }
+    }"
+    @mousemove="handleHover"
+    @mouseleave="() => {
+      if(!flipped) {
+        resetStyles()
+      }
+    }"
   >
     <div
       class="contact-card__recto"
