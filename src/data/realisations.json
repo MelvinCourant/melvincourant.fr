@@ -3,7 +3,7 @@
     "title": "Shifumi Fight Pokémon Edition",
     "image": "shifumi-fight",
     "url": "https://shifumi-fight.melvincourant.fr/",
-    "description": "Refonte d'un ancien projet d'école ... mais à la sauce Pokémon !",
+    "description": "Refonte d'un ancien projet d'école d'un jeu de Shifumi ... mais à la sauce Pokémon !",
     "technologies": [
       "vuejs",
       "sass",
