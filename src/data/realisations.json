@@ -1,5 +1,16 @@
 [
   {
+    "title": "Shifumi Fight Pokémon Edition",
+    "image": "shifumi-fight",
+    "url": "https://shifumi-fight.melvincourant.fr/",
+    "description": "Refonte d'un ancien projet d'école ... mais à la sauce Pokémon !",
+    "technologies": [
+      "vuejs",
+      "sass",
+      "figma"
+    ]
+  },
+  {
     "title": "Open Cook",
     "image": "open-cook",
     "url": "https://youtu.be/r8O8ALWi7YY",
@@ -32,17 +43,6 @@
       "css",
       "javascript",
       "figma"
-    ]
-  },
-  {
-    "title": "Syltours",
-    "image": "syltours",
-    "url": "https://www.syltours.fr/",
-    "description": "Site vitrine de l'agence de voyage Syltours.",
-    "technologies": [
-      "wordpress",
-      "sass",
-      "javascript"
     ]
   },
   {
