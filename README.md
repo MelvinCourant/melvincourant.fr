@@ -16,8 +16,6 @@ Je compte le mettre à jour régulièrement pour y ajouter mes nouveaux projets,
 
 ### Librairies
 - [GSAP](https://greensock.com/gsap/)
-- [ScrollTrigger](https://greensock.com/scrolltrigger/)
-- [Splide](https://splidejs.com/)
 
 ### Bundler
 - [Vite](https://vitejs.dev/)
