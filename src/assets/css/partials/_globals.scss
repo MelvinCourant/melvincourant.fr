@@ -8,7 +8,7 @@
   box-sizing: border-box;
   font-family: fonts.$lexend;
   color: var(--black);
-  scrollbar-color: var(--red) transparent;
+  scrollbar-color: var(--red) var(--background);
 
   &::selection {
     background: var(--red);
