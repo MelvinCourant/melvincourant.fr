@@ -1,9 +1,20 @@
 [
   {
+    "title": "Winmac OS",
+    "image": "winmac-os",
+    "url": "https://winmac-os.melvincourant.fr/",
+    "description": "Refonte d'un projet d'école d'un mini OS dans un navigateur.",
+    "technologies": [
+      "vuejs",
+      "sass",
+      "figma"
+    ]
+  },
+  {
     "title": "Shifumi Fight Pokémon Edition",
     "image": "shifumi-fight",
     "url": "https://shifumi-fight.melvincourant.fr/",
-    "description": "Refonte d'un ancien projet d'école d'un jeu de Shifumi ... mais à la sauce Pokémon !",
+    "description": "Refonte d'un projet d'école d'un jeu de Shifumi ... mais à la sauce Pokémon !",
     "technologies": [
       "vuejs",
       "sass",
@@ -31,18 +42,6 @@
       "wordpress",
       "sass",
       "javascript"
-    ]
-  },
-  {
-    "title": "Projet JS",
-    "image": "projet-js",
-    "url": "https://projet-js.melvincourant.fr/",
-    "description": "Projet où il fallait réaliser un OS dans un navigateur uniquement en Javascript.",
-    "technologies": [
-      "html",
-      "css",
-      "javascript",
-      "figma"
     ]
   },
   {
