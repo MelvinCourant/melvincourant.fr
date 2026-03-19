@@ -1,5 +1,7 @@
 <script setup>
 import '../assets/css/views/_not-found.scss';
+
+const year = new Date().getFullYear();
 </script>
 
 <template>
@@ -19,6 +21,6 @@ import '../assets/css/views/_not-found.scss';
       allowfullscreen
     >
     </iframe>
-    <p class="not-found__brackets">(Oui je t'ai rickroll en 2025)</p>
+    <p class="not-found__brackets">(Oui je t'ai rickroll en {{ year }})</p>
   </section>
 </template>
