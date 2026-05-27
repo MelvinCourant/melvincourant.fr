@@ -1,5 +1,17 @@
 [
   {
+    "title": "Globe Trotter",
+    "image": "globe-trotter",
+    "url": "https://globe-trotter.tech/shared/b0fc994e-18ae-4506-9c01-6200df29c807",
+    "description": "Projet personnel d'un site pour ajouter ses voyages sur une carte interactive et la partager",
+    "technologies": [
+      "vuejs",
+      "sass",
+      "adonisjs",
+      "figma"
+    ]
+  },
+  {
     "title": "Winmac OS",
     "image": "winmac-os",
     "url": "https://winmac-os.melvincourant.fr/",
