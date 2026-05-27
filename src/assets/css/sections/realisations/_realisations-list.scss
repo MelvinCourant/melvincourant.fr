@@ -2,7 +2,7 @@
 
 .realisations-list {
   position: relative;
-  width: 986px;
+  width: 980px;
   height: 558px;
 
   @media screen and (max-width: 991px) {
@@ -16,6 +16,7 @@
     top: 0;
     left: 0;
     width: 980px;
+    display: flex;
     background-color: var(--white);
     border-radius: 40px;
     border: var(--card-border);
@@ -111,11 +112,11 @@
     }
 
     &__pass {
-      background-color: var(--green);
+      background-color: var(--red);
     }
 
     &__smash {
-      background-color: var(--red);
+      background-color: var(--green);
     }
 
     &__image {

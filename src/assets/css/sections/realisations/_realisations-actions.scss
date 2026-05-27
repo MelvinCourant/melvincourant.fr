@@ -45,10 +45,10 @@
     }
 
     &.pass {
-      @include mixins.resetButton(4px solid var(--black), var(--green));
+      @include mixins.resetButton(4px solid var(--black), var(--red));
 
       @media screen and (max-width: 991px) {
-        @include mixins.resetButton(3px solid var(--black), var(--green));
+        @include mixins.resetButton(3px solid var(--black), var(--red));
       }
     }
 
@@ -61,10 +61,10 @@
     }
 
     &.smash {
-      @include mixins.resetButton(4px solid var(--black), var(--red));
+      @include mixins.resetButton(4px solid var(--black), var(--green));
 
       @media screen and (max-width: 991px) {
-          @include mixins.resetButton(3px solid var(--black), var(--red));
+          @include mixins.resetButton(3px solid var(--black), var(--green));
       }
     }
 
