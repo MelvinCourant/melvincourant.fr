@@ -42,6 +42,10 @@
     }
   }
 
+  &__name {
+    transform: translateX(-1.53%);
+  }
+
   &__firstname {
     position: relative;
 
@@ -91,5 +95,6 @@
 
   &__description {
     @include mixins.font-type("medium hero title");
+    transform: translateX(-0.84%);
   }
 }
