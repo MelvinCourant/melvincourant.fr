@@ -16,7 +16,7 @@ const props = defineProps({
 const emit = defineEmits(["resetAction"]);
 
 function getSrc(folder, nameFile, format) {
-  return new URL(`../../../assets/imgs/${folder}/${nameFile}.${format}`, import.meta.url).href;
+  return new URL(`../../../assets/images/${folder}/${nameFile}.${format}`, import.meta.url).href;
 }
 
 const initialMouseX = ref(0);

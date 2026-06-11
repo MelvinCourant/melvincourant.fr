@@ -1,9 +1,20 @@
 <script setup>
 import "../../assets/css/utils/_cursor.scss"
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
+import {DotLottie} from "@lottiefiles/dotlottie-web";
+import eyesLottie from "../../assets/lottie/eyes.lottie?url";
 
 const showEyes = ref(false);
 const position = ref({top: 0, left: 0});
+
+onMounted(() => {
+  new DotLottie({
+    autoplay: true,
+    loop: true,
+    canvas: document.querySelector('.cursor'),
+    src: eyesLottie,
+  });
+})
 
 function displayEyes() {
   if(
@@ -44,9 +55,9 @@ window.addEventListener("mousemove", (e) => {
 </script>
 
 <template>
-  <img
+  <canvas
     v-show="showEyes"
     :style="{top: position.top + 'px', left: position.left + 'px'}"
-    src="../../assets/imgs/eyes.gif" alt="cursor" class="cursor"
-  >
+    class="cursor"
+  ></canvas>
 </template>

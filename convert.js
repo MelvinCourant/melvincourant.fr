@@ -38,7 +38,7 @@ async function converter() {
                 } else {
                     const encoder = CWebp(file);
                     const outputFile = file.replace('.jpg', '.webp');
-                    const fileName = file.replace('src/assets/imgs', '');
+                    const fileName = file.replace('src/assets/images', '');
 
                     encoder.write(outputFile, function (err) {
                         if (err) {

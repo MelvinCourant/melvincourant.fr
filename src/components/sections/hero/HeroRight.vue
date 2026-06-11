@@ -15,20 +15,20 @@ defineProps({
       <div class="hero__bubble">
         <div class="hero__bubble-container">
           <p class="hero__bubble-text">Bien le bonjour&nbsp;!</p>
-          <img src="../../../assets/imgs/bubble.png"/>
+          <img src="../../../assets/images/bubble.png"/>
         </div>
       </div>
-      <img class="hero__coffee" src="../../../assets/imgs/coffee.png"/>
+      <img class="hero__coffee" src="../../../assets/images/coffee.png"/>
       <div class="hero__hide">
         <div class="hero__hide-container">
           <p class="hero__hide-text">{{ hideText }}</p>
-          <img src="../../../assets/imgs/hide.png"/>
+          <img src="../../../assets/images/hide.png"/>
         </div>
       </div>
       <div class="hero__me">
         <div class="hero__mask-container">
-          <img class="me" src="../../../assets/imgs/me.png"/>
-          <img class="scratch" src="../../../assets/imgs/scratch.png"/>
+          <img class="me" src="../../../assets/images/me.png"/>
+          <img class="scratch" src="../../../assets/images/scratch.png"/>
           <svg width="0" height="0" viewBox="0 0 400 550" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <clipPath id="hero-mask" clipPathUnits="objectBoundingBox">
@@ -37,7 +37,7 @@ defineProps({
             </defs>
           </svg>
         </div>
-        <img class="hero__shape" src="../../../assets/imgs/hero-shape.png"/>
+        <img class="hero__shape" src="../../../assets/images/hero-shape.png"/>
       </div>
     </div>
   </div>

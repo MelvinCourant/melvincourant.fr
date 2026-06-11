@@ -9,7 +9,7 @@ defineProps({
 })
 
 function getSrc(nameFile) {
-  return new URL(`../../../assets/imgs/icons/${nameFile}.svg`, import.meta.url).href;
+  return new URL(`../../../assets/images/icons/${nameFile}.svg`, import.meta.url).href;
 }
 </script>
 

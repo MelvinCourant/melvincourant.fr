@@ -48,7 +48,7 @@ function toggleBurger() {
         ]"
     >
       <a href="#hero" class="navbar__logo">
-        <img src="../../assets/imgs/logo.svg" alt="Logo" />
+        <img src="../../assets/images/logo.svg" alt="Logo" />
       </a>
       <ul class="navbar__list">
         <li
