@@ -58,7 +58,6 @@ html {
     main {
       display: flex;
       flex-direction: column;
-      padding-bottom: 150px;
     }
 
     section:not(.skills),
@@ -84,8 +83,12 @@ html {
       }
     }
 
-    section:not(.hero) {
-      padding: 150px 0;
+    section:not(.hero):not(.contact) {
+      padding: 180px 0 100px;
+
+      @media screen and (max-width: 991px) {
+        padding: 100px 0;
+      }
     }
   }
 }
