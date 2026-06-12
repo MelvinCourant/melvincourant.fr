@@ -56,24 +56,31 @@
     "color": "#ADCBEB"
   },
   {
-    "name": "Illustrator",
-    "category": "design",
-    "icon": "illustrator",
-    "description": "Pas besoin de vous l’illustrer",
-    "color": "#FFD799"
-  },
-  {
-    "name": "Photoshop",
-    "category": "design",
-    "icon": "photoshop",
-    "description": "Tant que je n’ai pas a détourer",
-    "color": "#99D4FF"
-  },
-  {
     "name": "Git",
     "category": "tools",
     "icon": "git",
     "description": "Des branches à tout va",
     "color": "#F8AEA0"
+  },
+  {
+    "name": "Node.js",
+    "category": "backend",
+    "icon": "nodejs",
+    "description": "Le JS est aussi dans le back",
+    "color": "#BFE1B7"
+  },
+  {
+    "name": "GSAP",
+    "category": "frontend",
+    "icon": "gsap",
+    "description": "Animer n'importe quoi",
+    "color": "#F2ECE1"
+  },
+  {
+    "name": "Pinia",
+    "category": "frontend",
+    "icon": "pinia",
+    "description": "De quoi être dans tous ses états",
+    "color": "#FFE299"
   }
 ]

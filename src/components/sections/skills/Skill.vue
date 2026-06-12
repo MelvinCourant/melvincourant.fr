@@ -18,11 +18,13 @@ function getSrc(nameFile) {
     class="skill"
     :style="{ backgroundColor: skill.color }"
   >
-    <img
-      class="skill__icon"
-      :src="getSrc(skill.icon)"
-      :alt="skill.name"
-    />
+    <div class="skill__icon-container">
+      <img
+        class="skill__icon"
+        :src="getSrc(skill.icon)"
+        :alt="skill.name"
+      />
+    </div>
     <div class="skill__texts">
       <h3 class="skill__name">
         {{ skill.name }}
