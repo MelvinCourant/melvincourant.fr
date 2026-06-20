@@ -1,20 +1,39 @@
 .hero {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   height: 100svh;
-  padding-top: 100px;
+  padding: 0 20px;
 
-  @media screen and (max-width: 1440px) {
-    padding-top: 90px;
-  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1480px;
+    width: 100%;
+    padding-top: 100px;
+    margin: auto;
 
-  @media screen and (max-width: 991px) {
-    flex-direction: column-reverse;
-    justify-content: center;
-    gap: 50px;
-    min-height: 100svh;
-    height: fit-content;
-    padding: 100px 20px !important;
+    @media screen and (max-width: 1699px) {
+      max-width: 1350px;
+    }
+
+    @media screen and (max-width: 1440px) {
+      padding-top: 90px;
+    }
+
+    @media screen and (max-width: 1399px) {
+      max-width: 1128px;
+    }
+
+    @media screen and (max-width: 1199px) {
+      max-width: 960px;
+    }
+
+    @media screen and (max-width: 991px) {
+      flex-direction: column-reverse;
+      justify-content: center;
+      gap: 50px;
+      padding-top: 0;
+    }
   }
 }

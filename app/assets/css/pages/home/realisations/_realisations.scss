@@ -3,10 +3,12 @@
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  width: fit-content !important;
+  width: fit-content;
+  margin: auto;
+  padding: 180px 20px 100px;
 
   @media screen and (max-width: 991px) {
-    width: 100% !important;
-    padding: 150px 20px !important;
+    width: 100%;
+    padding: 150px 20px;
   }
 }

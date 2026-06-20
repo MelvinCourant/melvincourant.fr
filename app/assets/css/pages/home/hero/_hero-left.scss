@@ -43,6 +43,7 @@
   }
 
   &__name {
+    @include mixins.font-type('big hero title');
     transform: translateX(-1.53%);
   }
 
