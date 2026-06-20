@@ -1,8 +1,8 @@
 <script setup>
-import "../../assets/css/utils/_cursor.scss"
+import "~/assets/css/utils/_cursor.scss"
 import {onMounted, ref} from "vue";
 import {DotLottie} from "@lottiefiles/dotlottie-web";
-import eyesLottie from "../../assets/lottie/eyes.lottie?url";
+import eyesLottie from "~/assets/lottie/eyes.lottie?url";
 
 const showEyes = ref(false);
 const position = ref({top: 0, left: 0});

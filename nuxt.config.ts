@@ -25,9 +25,14 @@ export default defineNuxtConfig({
   },
   components: [
     {
-      path: '~/components',
+      path: '~/components/pages',
       global: true,
+      ignore: ['**/**/partials/**'],
     },
+    {
+      path: '~/components/layouts',
+      global: true,
+    }
   ],
   css: [
     '~/assets/css/main.scss'

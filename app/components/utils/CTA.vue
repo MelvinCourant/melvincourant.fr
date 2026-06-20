@@ -1,5 +1,5 @@
 <script setup>
-import "../../assets/css/utils/_cta.scss"
+import "~/assets/css/utils/_cta.scss"
 import {inject, ref} from "vue";
 
 const cta = ref(inject('cta'))

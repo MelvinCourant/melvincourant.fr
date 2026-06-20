@@ -1,5 +1,5 @@
 <script setup>
-import "../../assets/css/layouts/_navbar.scss";
+import "~/assets/css/layouts/_navbar.scss";
 import {ref} from "vue";
 
 const navbarLinks = [
@@ -48,7 +48,7 @@ function toggleBurger() {
         ]"
     >
       <a href="#hero" class="navbar__logo">
-        <img src="../../assets/images/logo.svg" alt="Logo" />
+        <img src="~/assets/images/logo.svg" alt="Logo" />
       </a>
       <ul class="navbar__list">
         <li
