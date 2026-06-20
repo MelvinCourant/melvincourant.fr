@@ -1,28 +1,16 @@
 ---
-title: Welcome to Nuxt Content Starter
-description: This is the main page displaying Markdown located at content/index.md.
+title: Melvin Courant - Développeur Front-end
+description: Passionné par le développement front depuis quelques années, j’adore me lancer des challenges en concevant des projets de A à Z. Développeur Wordpress  le jour et Vue.js la nuit.
 ---
 
-# Welcome to Nuxt Content Starter
+:layouts-navbar
 
-This is the main page displaying Markdown located at [content/index.md](https://github.com/nuxt/starter/blob/content/content/index.md).
+:sections-hero
 
-Move to [about](/about) page.
+:sections-about
 
-## Manage your Contents
+:sections-skills
 
-Create new pages or modify the existing ones in `content/` directory.
+:sections-realisations
 
-## Query & Render Pages
-
-You can find an example of querying contents and rendering them in a [catch-all page](https://github.com/nuxt/starter/blob/content/app/pages/%5B...slug%5D.vue)
-
-## Integrate Vue Component
-
-::alert{color="green"}
-The current [alert](https://github.com/nuxt/starter/blob/content/app/components/Alert.vue) and the [counter](https://github.com/nuxt/starter/blob/content/app/components/Counter.vue) below are `Vue` components integrated into the Markdown.
-::
-
-:counter
-
-Checkout out the [documentation](https://content.nuxt.com/docs/getting-started) to learn more.
+:sections-contact

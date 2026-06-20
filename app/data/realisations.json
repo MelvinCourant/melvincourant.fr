@@ -1,0 +1,70 @@
+[
+  {
+    "title": "Globe Trotter",
+    "image": "globe-trotter",
+    "url": "https://globe-trotter.tech/shared/b0fc994e-18ae-4506-9c01-6200df29c807",
+    "description": "Un site web personnel pour cartographier ses voyages de manière interactive et les partager avec d’autres",
+    "technologies": [
+      "Vue.js",
+      "Sass",
+      "AdonisJS",
+      "Figma"
+    ]
+  },
+  {
+    "title": "Winmac OS",
+    "image": "winmac-os",
+    "url": "https://winmac-os.melvincourant.fr/",
+    "description": "Développement d’un mini OS dans un navigateur, basé sur un projet d’école",
+    "technologies": [
+      "Vue.js",
+      "Sass",
+      "Figma"
+    ]
+  },
+  {
+    "title": "Shifumi Fight Pokémon Edition",
+    "image": "shifumi-fight",
+    "url": "https://shifumi-fight.melvincourant.fr/",
+    "description": "Refonte d'un projet d'école d'un jeu de Shifumi&nbsp;... mais à la sauce Pokémon&nbsp;!",
+    "technologies": [
+      "Vue.js",
+      "Sass",
+      "Figma"
+    ]
+  },
+  {
+    "title": "Open Cook",
+    "image": "open-cook",
+    "url": "https://youtu.be/r8O8ALWi7YY",
+    "description": "Développement d’un site de recettes de cuisine utilisant l’API d’OpenAI, projet en intégration IA",
+    "technologies": [
+      "React",
+      "CSS",
+      "Figma",
+      "ChatGPT"
+    ]
+  },
+  {
+    "title": "La Suite and Co",
+    "image": "lsac",
+    "url": "https://www.lasuiteandco.com/",
+    "description": "Développement du site vitrine pour l’agence de communication qui m’emploie",
+    "technologies": [
+      "Wordpress",
+      "Sass",
+      "Javascript"
+    ]
+  },
+  {
+    "title": "Star Wars",
+    "image": "star-wars",
+    "url": "https://star-wars.melvincourant.fr/",
+    "description": "Réalisation du challenge de Benjamin Code:<br/><a href=\"https://youtu.be/Ld97MuYMaQQ?si=biFoi5SStO6pgOLv\" target=\"_blank\">Challenge : 2h pour coder cette page Star Wars</a>",
+    "technologies": [
+      "HTML",
+      "CSS",
+      "Javascript"
+    ]
+  }
+]
