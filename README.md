@@ -1,48 +1,75 @@
-# melvincourant.fr
+# Nuxt Content Starter
 
-## Description
-Ce site est mon portfolio, il est disponible à l'adresse suivante : [melvincourant.fr](https://melvincourant.fr)<br>
-Je compte le mettre à jour régulièrement pour y ajouter mes nouveaux projets, n'hésitez pas à y jeter un coup d'oeil de temps en temps !
+Look at the [Nuxt Content documentation](https://content.nuxt.com) to learn more.
 
-## Environnement technologique
+## Setup
 
-### Framework
-- [Vue.js](https://vuejs.org/)
+Make sure to install dependencies:
 
-### Langages
-- [HTML5](https://developer.mozilla.org/fr/docs/Web/HTML)
-- [SCSS](https://sass-lang.com/)
-- [JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript)
-
-### Librairies
-- [GSAP](https://greensock.com/gsap/)
-
-### Bundler
-- [Vite](https://vitejs.dev/)
-
-### Package manager
-- [Yarn](https://yarnpkg.com/)
-
-## Démarrer le projet
-
-### Installer les dépendances
 ```bash
-yarn
+# npm
+npm install
+
+# pnpm
+pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
 ```
 
-### Démarrer le serveur de développement
+## Development Server
+
+Start the development server on `http://localhost:3000`:
+
 ```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
 yarn dev
+
+# bun
+bun run dev
 ```
 
-### Convertir les fichiers jpg en webp
-Nécessite d'avoir installé [cwebp](https://developers.google.com/speed/webp/docs/precompiled) sur votre machine.
+## Production
 
-Les chemins des dossiers lu par le script sont renseignés dans le fichier `converter.config.json` à la racine ainsi que le format des images à convertir.
+Build the application for production:
 
 ```bash
-yarn convert
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# yarn
+yarn build
+
+# bun
+bun run build
 ```
 
-## Post-scriptum
-Je laisse ce projet public pour que vous puissiez vous en inspirer, mais je vous demande de ne pas le copier intégralement. Merci !
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
