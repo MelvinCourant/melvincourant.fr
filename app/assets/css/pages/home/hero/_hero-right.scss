@@ -77,32 +77,32 @@
   &__hide {
     position: absolute;
     z-index: 3;
-    left: -20%;
+    left: 39.26%;
     bottom: 12%;
-    width: 53.32%;
-    animation: levitate 5s infinite 0.4s;
-
-    @media screen and (max-width: 991px) {
-      width: 83.33%;
-    }
-
-    &-container {
-      position: relative;
-    }
+    transform: translate(-100%, 0);
+    display: flex;
+    padding: 10px;
+    border-radius: 30px;
+    background: var(--blue);
+    border: 3px solid var(--black);
+    box-shadow: 3px 4px 0 0 var(--black);
+    animation: levitateHide 5s infinite 0.4s;
 
     &-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       @include mixins.font-type('very small text');
       text-wrap: nowrap;
     }
 
-    img {
-      position: relative;
-      z-index: -1;
-      filter: drop-shadow(3px 4px 0 var(--black));
+    @keyframes levitateHide {
+      0% {
+        transform: translate(-100%, 0);
+      }
+      50% {
+        transform: translate(-100%, -10px);
+      }
+      100% {
+        transform: translate(-100%, 0);
+      }
     }
   }
 

@@ -1,12 +1,16 @@
-<script setup>
+<script setup lang="ts">
 import "~/assets/css/pages/home/hero/_hero-right.scss";
 
-defineProps({
-  hideText: {
-    type: String,
-    required: true,
+withDefaults(
+  defineProps<{
+    hideText?: string,
+    bubbleText?: string,
+  }>(),
+  {
+    hideText: 'J’ai caché des petits trucs',
+    bubbleText: 'Bien le bonjour !',
   }
-})
+)
 </script>
 
 <template>
@@ -14,16 +18,13 @@ defineProps({
     <div class="hero__images">
       <div class="hero__bubble">
         <div class="hero__bubble-container">
-          <p class="hero__bubble-text">Bien le bonjour&nbsp;!</p>
+          <p class="hero__bubble-text">{{ bubbleText }}</p>
           <img src="~/assets/images/bubble.png"/>
         </div>
       </div>
       <img class="hero__coffee" src="~/assets/images/coffee.png"/>
       <div class="hero__hide">
-        <div class="hero__hide-container">
-          <p class="hero__hide-text">{{ hideText }}</p>
-          <img src="~/assets/images/hide.png"/>
-        </div>
+        <p class="hero__hide-text">{{ hideText }}</p>
       </div>
       <div class="hero__me">
         <div class="hero__mask-container">

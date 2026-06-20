@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import "~/assets/css/pages/home/realisations/_realisations-list.scss";
 import { reactive, ref, watch } from "vue";
 

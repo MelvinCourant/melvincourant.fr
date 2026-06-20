@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import "~/assets/css/pages/home/about/_about.scss";
 import {provide, ref} from "vue";
 import AboutTexts from "./partials/AboutTexts.vue";

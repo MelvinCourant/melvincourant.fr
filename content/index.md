@@ -13,11 +13,27 @@ links:
   - name: Mes fiertés
     href: "#realisations"
   - name: Contacte-moi !
-    href: " #contact"
+    href: "#contact"
+logoLink:
+  href: "#hero"
+  title: Retour en haut de la page
 ---
 ::
 
-:home-hero
+::home-hero
+---
+cta:
+  content: Découvre moi !
+  url: "#about "
+name:
+  firstname: Melvin
+  lastname: Courant
+anchor: "#hero"
+bubbleText: Bien le bonjour !
+description: Développeur Front-end
+hideText: J’ai caché des petits trucs
+---
+::
 
 :home-about
 

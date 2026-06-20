@@ -8,6 +8,10 @@ interface NavbarLink {
 }
 
 defineProps<{
+  logoLink: {
+    title?: string
+    href?: string;
+  },
   links: NavbarLink[];
 }>();
 
@@ -50,7 +54,11 @@ function toggleBurger() {
           { 'navbar__nav--opened': burgerOpened },
         ]"
     >
-      <a href="#hero" class="navbar__logo">
+      <a
+        :href="logoLink?.href"
+        :title="logoLink?.title"
+        class="navbar__logo"
+      >
         <img src="~/assets/images/logo.svg" alt="Logo" />
       </a>
       <ul class="navbar__list">

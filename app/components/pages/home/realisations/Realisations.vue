@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import "~/assets/css/pages/home/realisations/_realisations.scss";
 import realisationsJson from "~/data/realisations.json";
 import RealisationsList from "./partials/RealisationsList.vue";

@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import "~/assets/css/pages/home/realisations/_realisations-actions.scss";
 
 defineEmits(["pass", "rollback", "smash"]);

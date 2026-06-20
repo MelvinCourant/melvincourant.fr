@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import "~/assets/css/pages/home/about/_about-texts.scss";
 import { gsap } from "gsap";
 import {watch} from "vue";

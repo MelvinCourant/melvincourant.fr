@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import "~/assets/css/pages/home/contact/_contact-card.scss";
 import {ref} from "vue";
 

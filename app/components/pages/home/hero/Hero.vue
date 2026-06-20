@@ -1,23 +1,27 @@
-<script setup>
+<script setup lang="ts">
 import "~/assets/css/pages/home/hero/_hero.scss";
 import HeroLeft from "./partials/HeroLeft.vue";
 import HeroRight from "./partials/HeroRight.vue";
-import {provide} from "vue";
+import {provide, toRef} from "vue";
+import type { CTA, Name } from "~/models/types.ts"
 
-const cta = {
-  content: "Découvre moi !",
-  url: "#about",
-}
-const hideText = "J’ai caché des petits trucs";
+const props = defineProps<{
+  cta: CTA,
+  anchor?: string,
+  name: Name,
+  description: string,
+  hideText: string,
+  bubbleText: string,
+}>()
 
-provide('cta', cta)
+provide('cta', toRef(props, 'cta'))
 </script>
 
 <template>
-  <section class="hero" id="hero">
+  <section class="hero" :id="anchor">
     <div class="hero__container">
-      <HeroLeft />
-      <HeroRight :hideText="hideText" />
+      <HeroLeft :name="name" :description="description"/>
+      <HeroRight :hideText="hideText" :bubbleText="bubbleText" />
     </div>
   </section>
 </template>

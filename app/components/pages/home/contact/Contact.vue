@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import "~/assets/css/pages/home/contact/_contact.scss";
 import contactJson from "~/data/contact.json";
 import ContactCard from "./partials/ContactCard.vue";

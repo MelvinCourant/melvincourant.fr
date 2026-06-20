@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import "~/assets/css/utils/_cursor.scss"
 import {onMounted, ref} from "vue";
 import {DotLottie} from "@lottiefiles/dotlottie-web";
