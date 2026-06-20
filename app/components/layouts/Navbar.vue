@@ -1,13 +1,16 @@
-<script setup>
+<script setup lang="ts">
 import "~/assets/css/layouts/_navbar.scss";
 import {ref} from "vue";
 
-const navbarLinks = [
-  { id: 1, name: "Qui suis-je ?", href: "#about" },
-  { id: 2, name: "Mes talents", href: "#skills" },
-  { id: 3, name: "Mes fiertés", href: "#realisations" },
-  { id: 4, name: "Contacte-moi !", href: "#contact" },
-];
+interface NavbarLink {
+  name: string;
+  href: string;
+}
+
+defineProps<{
+  links: NavbarLink[];
+}>();
+
 const burgerOpened = ref(false);
 
 function toggleBurger() {
@@ -52,8 +55,8 @@ function toggleBurger() {
       </a>
       <ul class="navbar__list">
         <li
-            v-for="link in navbarLinks"
-            :key="link.id"
+            v-for="(link, index) in links"
+            :key="index"
             class="navbar__item"
         >
           <a

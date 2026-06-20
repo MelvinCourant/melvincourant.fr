@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import '~/assets/css/views/_not-found.scss';
+import '~/assets/css/views/_error.scss';
 import type { NuxtError } from '#app'
 
 const props = defineProps<{ error: NuxtError }>()
@@ -14,13 +14,13 @@ const statusText = computed(() =>
 </script>
 
 <template>
-  <section class="not-found">
-    <div class="not-found__text">
-      <h1 class="not-found__title">{{ error?.status }}</h1>
-      <p class="not-found__chapo">{{ statusText }}</p>
+  <section class="error">
+    <div class="error__text">
+      <h1 class="error__title">{{ error?.status }}</h1>
+      <p class="error__chapo">{{ statusText }}</p>
     </div>
     <iframe
-      class="not-found__video"
+      class="error__video"
       width="560"
       height="315"
       src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?si=LdyT8eLGhOz1nDBa?&autoplay=1"
@@ -30,6 +30,6 @@ const statusText = computed(() =>
       allowfullscreen
     >
     </iframe>
-    <p class="not-found__brackets">(Oui je t'ai rickroll en {{ year }})</p>
+    <p class="error__brackets">(Oui je t'ai rickroll en {{ year }})</p>
   </section>
 </template>
