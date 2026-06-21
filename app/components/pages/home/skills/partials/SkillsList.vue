@@ -1,22 +1,22 @@
 <script setup lang="ts">
 import "~/assets/css/pages/home/skills/_skills-list.scss";
-import Skill from "./Skill.vue";
+import SkillComponent from "./Skill.vue";
+import type { Skill } from "~/models/types.ts"
 
-defineProps({
-  skills: {
-    type: Array,
-    required: true
-  },
-  categoryToShow: {
-    type: String,
-    default: "all"
+withDefaults(
+  defineProps<{
+    skills: Skill[],
+    categoryToShow?: string,
+  }>(),
+  {
+    categoryToShow: 'all',
   }
-})
+)
 </script>
 
 <template>
   <ul class="skills-list">
-    <Skill
+    <SkillComponent
       v-for="(skill, index) in skills"
       :key="index"
       :skill="skill"

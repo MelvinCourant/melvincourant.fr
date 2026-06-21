@@ -1,0 +1,79 @@
+title: Mes talents
+anchor: skills
+filters:
+  - value: all
+    label: Tout voir !
+    color: red
+  - value: frontend
+    label: Front-end
+    color: green
+  - value: backend
+    label: Back-end
+    color: yellow
+  - value: fullstack
+    label: Fullstack
+    color: purple
+  - value: tools
+    label: Outils
+    color: blue
+skills:
+  - name: Vue.js
+    category: frontend
+    icon: /icons/vuejs.svg
+    description: Pour en prendre plein la vue
+    color: "#B4E4CF"
+  - name: JavaScript
+    category: fullstack
+    icon: /icons/javascript.svg
+    description: Pour donner vie aux sites webs
+    color: "#F7ECA1"
+  - name: Figma
+    category: tools
+    icon: /icons/figma.svg
+    description: C'est l'heure du dasagn
+    color: "#C699FF"
+  - name: AdonisJS
+    category: backend
+    icon: /icons/adonisjs.svg
+    description: Adieu Express, bonjour Adonis
+    color: "#FAF2DE"
+  - name: Sass
+    category: frontend
+    icon: /icons/sass.svg
+    description: CSS c’est bien mais Sass c’est mieux
+    color: "#E6B2CC"
+  - name: PHP
+    category: backend
+    icon: /icons/php.svg
+    description: Toujours vivant, toujours debout
+    color: "#A7BAF1"
+  - name: Wordpress
+    category: tools
+    icon: /icons/wordpress.svg
+    description: Les sites webs en express
+    color: "#ABD8ED"
+  - name: TypeScript
+    category: fullstack
+    icon: /icons/typescript.svg
+    description: Du même type que le JS
+    color: "#ADCBEB"
+  - name: Git
+    category: tools
+    icon: /icons/git.svg
+    description: Des branches à tout va
+    color: "#F8AEA0"
+  - name: Node.js
+    category: backend
+    icon: /icons/nodejs.svg
+    description: Le JS est aussi dans le back
+    color: "#BFE1B7"
+  - name: GSAP
+    category: frontend
+    icon: /icons/gsap.svg
+    description: Animer n'importe quoi
+    color: "#F2ECE1"
+  - name: Pinia
+    category: frontend
+    icon: /icons/pinia.svg
+    description: De quoi être dans tous ses états
+    color: "#FFE299"

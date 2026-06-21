@@ -1,46 +1,29 @@
 <script setup lang="ts">
 import "~/assets/css/pages/home/skills/_skills.scss";
-import skillsJson from "~/data/skills.json";
 import SkillsList from "./partials/SkillsList.vue";
 import Filters from "./partials/Filters.vue";
-import {reactive, ref} from "vue";
+import {computed, reactive, ref} from "vue";
 
-const filters = reactive([
-  {
-    value: "all",
-    label: "Tout voir !",
-    color: "red",
-    selected: true
-  },
-  {
-    value: "frontend",
-    label: "Front-end",
-    color: "green",
-    selected: false
-  },
-  {
-    value: "backend",
-    label: "Back-end",
-    color: "yellow",
-    selected: false
-  },
-  {
-    value: "design",
-    label: "Design",
-    color: "purple",
-    selected: false
-  },
-  {
-    value: "tools",
-    label: "Outils",
-    color: "blue",
-    selected: false
-  },
-]);
+const { data } = await useAsyncData('skills', () =>
+  queryCollection('skills').first()
+)
 
-const categoryToShow = ref("all");
+const anchor = computed(() => data.value?.anchor ?? 'skills')
+const title = computed(() => data.value?.title ?? 'Mes talents')
+const skills = computed(() => data.value?.skills ?? [])
 
-function updateFilters(filterValue) {
+const filters = reactive(
+  (data.value?.filters ?? []).map((filter, index) => ({
+    ...filter,
+    selected: filter.selected ?? index === 0,
+  }))
+)
+
+const categoryToShow = ref(
+  filters.find(filter => filter.selected)?.value ?? 'all'
+)
+
+function updateFilters(filterValue: string) {
   filters.forEach(filter => {
     filter.selected = filter.value === filterValue;
   });
@@ -50,9 +33,9 @@ function updateFilters(filterValue) {
 </script>
 
 <template>
-  <section class="skills" id="skills">
-    <h2 class="hidden-title">Mes talents</h2>
+  <section class="skills" :id="anchor">
+    <h2 class="hidden-title">{{ title }}</h2>
     <Filters :filters="filters" @filterSelected="updateFilters($event)"/>
-    <SkillsList :skills="skillsJson" :categoryToShow="categoryToShow" />
+    <SkillsList :skills="skills" :categoryToShow="categoryToShow" />
   </section>
 </template>

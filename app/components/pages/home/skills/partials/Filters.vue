@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import "~/assets/css/pages/home/skills/_filters.scss";
+import type { Filter } from "~/models/types.ts"
 
-defineProps({
-  filters: {
-    type: Array,
-    required: true
-  }
-})
+defineProps<{
+  filters: Filter[],
+}>()
 
-const emit = defineEmits(["filterSelected"]);
+const emit = defineEmits<{
+  filterSelected: [value: string]
+}>()
 
-function selectFilter(filter) {
+function selectFilter(filter: Filter) {
   if(filter.selected) return;
 
   emit("filterSelected", filter.value);
