@@ -11,7 +11,7 @@ links:
   - name: Mes talents
     href: "#skills"
   - name: Mes fiertés
-    href: "#realisations"
+    href: "#projects"
   - name: Contacte-moi !
     href: "#contact"
 logoLink:
@@ -39,6 +39,6 @@ hideText: J’ai caché des petits trucs
 
 :home-skills
 
-:home-realisations
+:home-projects
 
 :home-contact

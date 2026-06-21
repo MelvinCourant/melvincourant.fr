@@ -25,6 +25,21 @@ export default defineContentConfig({
         })),
       }),
     }),
+    projects: defineCollection({
+      type: 'data',
+      source: 'projects.yml',
+      schema: z.object({
+        anchor: z.string(),
+        title: z.string(),
+        projects: z.array(z.object({
+          title: z.string(),
+          image: z.string().editor({ input: 'media' }),
+          url: z.string(),
+          description: z.string(),
+          technologies: z.array(z.string()),
+        })),
+      }),
+    }),
     skills: defineCollection({
       type: 'data',
       source: 'skills.yml',

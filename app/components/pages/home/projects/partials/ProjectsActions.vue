@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import "~/assets/css/pages/home/realisations/_realisations-actions.scss";
+import "~/assets/css/pages/home/projects/_projects-actions.scss";
 
 defineEmits(["pass", "rollback", "smash"]);
 </script>
 
 <template>
-  <ul class="realisations-actions">
-    <li class="realisations-actions__item">
+  <ul class="projects-actions">
+    <li class="projects-actions__item">
       <button
-        class="realisations-actions__button pass"
+        class="projects-actions__button pass"
         @click="$emit('pass')"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="31" viewBox="0 0 32 31" fill="none">
@@ -16,9 +16,9 @@ defineEmits(["pass", "rollback", "smash"]);
         </svg>
       </button>
     </li>
-    <li class="realisations-actions__item">
+    <li class="projects-actions__item">
       <button
-        class="realisations-actions__button rollback"
+        class="projects-actions__button rollback"
         @click="$emit('rollback')"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="38" height="34" viewBox="0 0 38 34" fill="none">
@@ -27,9 +27,9 @@ defineEmits(["pass", "rollback", "smash"]);
         </svg>
       </button>
     </li>
-    <li class="realisations-actions__item">
+    <li class="projects-actions__item">
       <button
-        class="realisations-actions__button smash"
+        class="projects-actions__button smash"
         @click="$emit('smash')"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="34" height="31" viewBox="0 0 34 31" fill="none">

@@ -1,7 +1,7 @@
 @use "../../../partials/functions";
 @use "../../../partials/mixins";
 
-.realisations-list {
+.projects-list {
   position: relative;
   width: 980px;
   height: 558px;
@@ -12,7 +12,7 @@
     aspect-ratio: 16/9;
   }
 
-  .realisation {
+  .project {
     position: absolute;
     top: 0;
     left: 0;
@@ -35,8 +35,8 @@
       pointer-events: initial;
     }
 
-    &.realisation--passed-smashed {
-      + .realisation:not(.realisation--passed-smashed) {
+    &.project--passed-smashed {
+      + .project:not(.project--passed-smashed) {
         pointer-events: initial;
       }
     }
