@@ -23,7 +23,7 @@ const statusText = computed(() =>
       class="error__video"
       width="560"
       height="315"
-      src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?si=LdyT8eLGhOz1nDBa?&autoplay=1"
+      src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?si=LdyT8eLGhOz1nDBa?&autoplay=1&mute=1"
       title="YouTube video player" frameborder="0"
       allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin"
