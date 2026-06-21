@@ -9,6 +9,22 @@ export default defineContentConfig({
       type: 'page',
       source: '**/*.md',
     }),
+    about: defineCollection({
+      type: 'data',
+      source: 'about.yml',
+      schema: z.object({
+        anchor: z.string(),
+        title: z.string(),
+        cta: z.object({
+          content: z.string(),
+          url: z.string().optional(),
+        }),
+        aboutTexts: z.array(z.object({
+          content: z.string(),
+          woodenBoardRotation: z.string().optional(),
+        })),
+      }),
+    }),
     skills: defineCollection({
       type: 'data',
       source: 'skills.yml',
