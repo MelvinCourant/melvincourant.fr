@@ -1,16 +1,10 @@
 <script setup lang="ts">
 import "~/assets/css/pages/home/hero/_hero-right.scss";
 
-withDefaults(
-  defineProps<{
-    hideText?: string,
-    bubbleText?: string,
-  }>(),
-  {
-    hideText: 'J’ai caché des petits trucs',
-    bubbleText: 'Bien le bonjour !',
-  }
-)
+defineProps<{
+  hideText: string,
+  bubbleText: string,
+}>()
 </script>
 
 <template>

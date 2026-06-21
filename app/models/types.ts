@@ -8,4 +8,9 @@ interface Name {
   lastname: string
 }
 
-export type { CTA, Name }
+interface AboutText {
+  content: string,
+  woodenBoardRotation?: string
+}
+
+export type { CTA, Name, AboutText }

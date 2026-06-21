@@ -1,57 +1,34 @@
 <script setup lang="ts">
 import "~/assets/css/pages/home/about/_about.scss";
-import {provide, ref} from "vue";
+import {provide, ref, toRef} from "vue";
 import AboutTexts from "./partials/AboutTexts.vue";
 import CTA from "~/components/utils/CTA.vue";
+import type { CTA as CTAType, AboutText } from "~/models/types.ts"
 
-const cta = {
-  content: "Tout faire sauter !",
-}
-const aboutTexts = [
+const props = withDefaults(
+  defineProps<{
+    cta?: CTAType,
+    anchor?: string,
+    title?: string,
+    aboutTexts?: AboutText[],
+  }>(),
   {
-    id: 1,
-    content: "Passionné par le développement "
-  },
-  {
-    id: 2,
-    content: "front",
-    woodenBoardRotation: "-11"
-  },
-  {
-    id: 3,
-    content: " depuis quelques années, j’adore me lancer des "
-  },
-  {
-    id: 4,
-    content: "challenges",
-    woodenBoardRotation: "1.8"
-  },
-  {
-    id: 5,
-    content: " en concevant des projets de A à Z. Développeur "
-  },
-  {
-    id: 6,
-    content: "Wordpress",
-    woodenBoardRotation: "0"
-  },
-  {
-    id: 7,
-    content: " le jour et "
-  },
-  {
-    id: 8,
-    content: "Vue.js",
-    woodenBoardRotation: "9"
-  },
-  {
-    id: 9,
-    content: " la nuit."
+    cta: () => ({ content: 'Tout faire sauter !' }),
+    anchor: 'about',
+    title: 'Qui suis-je ?',
+    aboutTexts: () => [
+      { content: 'Développeur ' },
+      { content: 'front', woodenBoardRotation: '-11' },
+      { content: ' passionné, j’aime relever des ' },
+      { content: 'challenges', woodenBoardRotation: '1.8' },
+      { content: ' et concevoir des projets de A à Z.' },
+    ],
   }
-];
+)
+
 const activePickUpAllWoodenBoards = ref(false)
 
-provide('cta', cta)
+provide('cta', toRef(props, 'cta'))
 
 function blowItUp() {
   activePickUpAllWoodenBoards.value = true;
@@ -59,9 +36,11 @@ function blowItUp() {
 </script>
 
 <template>
-  <section class="about" id="about">
-    <h2 class="hidden-title">Qui suis-je ?</h2>
-    <AboutTexts :aboutTexts="aboutTexts" :activePickUpAllWoodenBoards="activePickUpAllWoodenBoards"/>
-    <CTA @click="blowItUp" />
+  <section class="about" :id="anchor">
+    <div class="about__container">
+      <h2 class="hidden-title">{{ title }}</h2>
+      <AboutTexts :aboutTexts="aboutTexts" :activePickUpAllWoodenBoards="activePickUpAllWoodenBoards"/>
+      <CTA @click="blowItUp" />
+    </div>
   </section>
 </template>

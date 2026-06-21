@@ -2,17 +2,17 @@
 import "~/assets/css/pages/home/about/_about-texts.scss";
 import { gsap } from "gsap";
 import {watch} from "vue";
+import type { AboutText } from "~/models/types.ts"
 
-const props = defineProps({
-  aboutTexts: {
-    type: Array,
-    required: true
-  },
-  activePickUpAllWoodenBoards: {
-    type: Boolean,
-    default: false
+const props = withDefaults(
+  defineProps<{
+    aboutTexts: AboutText[],
+    activePickUpAllWoodenBoards?: boolean,
+  }>(),
+  {
+    activePickUpAllWoodenBoards: false,
   }
-})
+)
 
 function pickUpWoodenBoard(id) {
   const woodenBoard = document.querySelector(`.wooden-board[data-index="${id}"]`);
@@ -63,8 +63,8 @@ watch(() => props.activePickUpAllWoodenBoards, (newValue) => {
 <template>
   <div class="about-texts">
     <span
-      v-for="text in aboutTexts"
-      :key="text.id"
+      v-for="(text, index) in aboutTexts"
+      :key="index"
       :class="['about-texts__content', { 'about-texts__content--highlight': text.woodenBoardRotation }]"
     >
       {{ text.content }}
@@ -72,9 +72,9 @@ watch(() => props.activePickUpAllWoodenBoards, (newValue) => {
         class="wooden-board"
         v-if="text.woodenBoardRotation"
         :style="{ transform: `translateY(-50%) rotate(${text.woodenBoardRotation}deg)` }"
-        :data-index="text.id"
+        :data-index="index"
         :data-rotation="text.woodenBoardRotation"
-        @click.once="pickUpWoodenBoard(text.id)"
+        @click.once="pickUpWoodenBoard(index)"
       >
         <div class="dots">
           <div class="dots__dot"></div>
