@@ -28,7 +28,7 @@ cta:
 name:
   firstname: Melvin
   lastname: Courant
-anchor: "#hero"
+anchor: "hero"
 bubbleText: Bien le bonjour !
 description: Développeur Front-end
 hideText: J’ai caché des petits trucs
