@@ -1,20 +1,20 @@
-name: Deploy (dev)
+name: Deploy (prod)
 
 on:
   push:
     branches:
-      - dev
+      - main
   workflow_dispatch:
 
 concurrency:
-  group: deploy-dev
+  group: deploy-prod
   cancel-in-progress: false
 
 jobs:
   deploy:
-    name: Build & deploy to dev server
+    name: Build & deploy to prod server
     runs-on: ubuntu-latest
-    environment: dev
+    environment: prod
 
     steps:
       - name: Checkout repository
@@ -50,7 +50,8 @@ jobs:
         run: |
           sshpass -e rsync -avz --delete \
             --exclude='.htaccess' \
-            --exclude='.htpasswd' \
+            --exclude='robots.txt' \
+            --exclude='sitemap.xml' \
             -e "ssh -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=yes" \
             .output/public/ \
-            "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DEV_SSH_PATH }}"
+            "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.PROD_SSH_PATH }}"
