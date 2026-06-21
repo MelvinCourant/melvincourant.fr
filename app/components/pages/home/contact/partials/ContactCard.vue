@@ -94,7 +94,7 @@ function resetStyles() {
     >
       <img
         class="contact-card__icon"
-        :src="`/icons/${contactInfo.icon}.svg`"
+        :src="contactInfo.icon"
         :alt="contactInfo.title"
       />
       <div class="contact-card__info">

@@ -9,6 +9,21 @@ export default defineContentConfig({
       type: 'page',
       source: '**/*.md',
     }),
+    contact: defineCollection({
+      type: 'data',
+      source: 'contact.yml',
+      schema: z.object({
+        anchor: z.string(),
+        title: z.string(),
+        contacts: z.array(z.object({
+          title: z.string(),
+          icon: z.string().editor({ input: 'media' }),
+          description: z.string(),
+          url: z.string(),
+          color: z.string(),
+        })),
+      }),
+    }),
     about: defineCollection({
       type: 'data',
       source: 'about.yml',
