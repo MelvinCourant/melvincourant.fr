@@ -1,0 +1,43 @@
+.simple-image {
+  margin-top: 32px;
+
+  &--cover {
+    .simple-image {
+      &__image {
+        aspect-ratio: 16/9;
+        border: 6px solid var(--black);
+        box-shadow: 6px 6px 0 0 var(--black);
+      }
+    }
+  }
+
+  &__image {
+    border-radius: var(--card-radius);
+  }
+
+  &__links {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46px;
+    height: 46px;
+
+    &:hover {
+      .simple-image__icon {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__icon {
+    width: auto;
+    height: 40px;
+    transition: transform 0.3s ease-in-out;
+  }
+}

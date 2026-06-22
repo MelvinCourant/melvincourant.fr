@@ -1,0 +1,55 @@
+@use "../../partials/fonts";
+@use "../../partials/functions";
+@use "../../partials/mixins";
+
+.project {
+  max-width: 1280px;
+  margin: 0 auto;
+
+  &__navbar {
+    display: flex;
+    align-items: center;
+    gap: functions.rem(6);
+    max-width: 1280px;
+    margin: 0 auto;
+
+    span {
+      display: block;
+      font-family: fonts.$lexend;
+      font-size: functions.rem(20);
+      font-weight: 900;
+      line-height: 0.8;
+      letter-spacing: -0.213em; // 3.4px
+      text-transform: uppercase;
+      width: functions.rem(112);
+    }
+  }
+
+  h1 {
+    @include mixins.font-type('medium hero title');
+    margin: functions.rem(70) 0 functions.rem(16);
+  }
+
+  h2 {
+    @include mixins.font-type('title');
+    margin: functions.rem(96) 0 functions.rem(32);
+  }
+
+  p {
+    @include mixins.font-type('body');
+
+    strong {
+      font-weight: 700;
+    }
+
+    + p {
+      margin-top: functions.rem(26);
+    }
+  }
+}
+
+#melvincourant {
+  &:has(.project) {
+    padding: 20px 20px 150px;
+  }
+}
