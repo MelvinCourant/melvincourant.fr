@@ -40,7 +40,7 @@ stack:
 
 ## Pourquoi j’ai créé ce projet ?
 
-L’idée m’est venue lors des derniers jours de mon voyage en **Amazonie**. J’ai entendu une conversation entre mes compagnons de voyage : à leur retour, ils comptaient ajouter cette aventure à leurs **cartes en liège**. En les entendant, je me suis dit : \*« Mais pourquoi ne \****développerais***\*-je pas ce concept ? »\*
+L’idée m’est venue lors des derniers jours de mon voyage en **Amazonie**. J’ai entendu une conversation entre mes compagnons de voyage : à leur retour, ils comptaient ajouter cette aventure à leurs **cartes en liège**. En les entendant, je me suis dit : *« Mais pourquoi ne **développerais-je*** *pas ce concept ? »*
 
 Avant de partir, je cherchais justement un projet qui me correspondrait et que je pourrais utiliser moi-même. Ce fut une révélation : j’avais trouvé **le projet idéal**.
 

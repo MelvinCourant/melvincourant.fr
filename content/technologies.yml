@@ -63,4 +63,8 @@ technologies:
     category: frontend
     src: /icons/mapbox.svg
     color: "#FAF2DE"
-    description: Elle est belle ma carte
+    description: ""
+  - name: Vue Router
+    category: frontend
+    src: /icons/vuejs.svg
+    color: "#B4E4CF"
