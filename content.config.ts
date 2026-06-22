@@ -67,10 +67,17 @@ export default defineContentConfig({
           color: z.string(),
           selected: z.boolean().optional(),
         })),
-        skills: z.array(z.object({
+        skills: z.array(z.string()),
+      }),
+    }),
+    technologies: defineCollection({
+      type: 'data',
+      source: 'technologies.yml',
+      schema: z.object({
+        technologies: z.array(z.object({
           name: z.string(),
           category: z.enum(CATEGORIES),
-          icon: z.string().editor({ input: 'media' }),
+          src: z.string().editor({ input: 'media' }),
           description: z.string(),
           color: z.string(),
         })),

@@ -13,14 +13,6 @@ interface AboutText {
   woodenBoardRotation?: string
 }
 
-interface Skill {
-  name: string,
-  category: string,
-  icon: string,
-  description: string,
-  color: string
-}
-
 interface Filter {
   value: string,
   label: string,
@@ -28,4 +20,12 @@ interface Filter {
   selected?: boolean
 }
 
-export type { CTA, Name, AboutText, Skill, Filter }
+interface Technology {
+  name: string,
+  category: string,
+  src: string,
+  description: string,
+  color: string
+}
+
+export type { CTA, Name, AboutText, Filter, Technology }

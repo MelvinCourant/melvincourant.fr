@@ -1,29 +1,27 @@
 @use '../../../partials/mixins';
 
-.skill {
+.technology {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   border-radius: var(--card-radius);
   box-shadow: var(--card-shadow);
   border: var(--card-border);
-  width: 250px;
-  height: 250px;
-  padding: 30px 15px;
+  width: 200px;
+  height: 200px;
   gap: 10px;
 
   @media screen and (max-width: 991px) {
-    width: 200px;
-    height: 200px;
-    padding: 25px 12px;
-    gap: 8px;
+    width: 160px;
+    height: 160px;
+    gap: 7px;
   }
 
   @media screen and (max-width: 767px) {
-    width: 160px;
-    height: 160px;
-    padding: 19px 12px;
-    gap: 7px;
+    width: 150px;
+    height: 150px;
+    gap: 6px;
   }
 
   &__icon {
@@ -50,26 +48,7 @@
     }
   }
 
-  &__texts {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    text-align: center;
-
-    @media screen and (max-width: 991px) {
-      gap: 5px;
-    }
-
-    @media screen and (max-width: 767px) {
-      gap: 4px;
-    }
-  }
-
   &__name {
-    @include mixins.font-type('title');
-  }
-
-  &__description {
-    @include mixins.font-type('medium text');
+    @include mixins.font-type('little title');
   }
 }

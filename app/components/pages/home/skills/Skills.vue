@@ -8,9 +8,19 @@ const { data } = await useAsyncData('skills', () =>
   queryCollection('skills').first()
 )
 
+const { data: technologiesData } = await useAsyncData('technologies', () =>
+  queryCollection('technologies').first()
+)
+
 const anchor = computed(() => data.value?.anchor ?? 'skills')
 const title = computed(() => data.value?.title ?? 'Mes talents')
-const skills = computed(() => data.value?.skills ?? [])
+const skills = computed(() => {
+  const technologies = technologiesData.value?.technologies ?? []
+
+  return (data.value?.skills ?? [])
+    .map(name => technologies.find(technology => technology.name === name))
+    .filter(technology => technology !== undefined)
+})
 
 const filters = reactive(
   (data.value?.filters ?? []).map((filter, index) => ({

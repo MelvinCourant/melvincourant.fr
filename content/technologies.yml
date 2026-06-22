@@ -1,0 +1,66 @@
+technologies:
+  - name: Vue.js
+    category: frontend
+    src: /icons/vuejs.svg
+    description: Pour en prendre plein la vue
+    color: "#B4E4CF"
+  - name: JavaScript
+    category: fullstack
+    src: /icons/javascript.svg
+    description: Pour donner vie aux sites webs
+    color: "#F7ECA1"
+  - name: Figma
+    category: tools
+    src: /icons/figma.svg
+    description: C'est l'heure du dasagn
+    color: "#C699FF"
+  - name: AdonisJS
+    category: backend
+    src: /icons/adonisjs.svg
+    description: Adieu Express, bonjour Adonis
+    color: "#FAF2DE"
+  - name: Sass
+    category: frontend
+    src: /icons/sass.svg
+    description: CSS c’est bien mais Sass c’est mieux
+    color: "#E6B2CC"
+  - name: PHP
+    category: backend
+    src: /icons/php.svg
+    description: Toujours vivant, toujours debout
+    color: "#A7BAF1"
+  - name: Wordpress
+    category: tools
+    src: /icons/wordpress.svg
+    description: Les sites webs en express
+    color: "#ABD8ED"
+  - name: TypeScript
+    category: fullstack
+    src: /icons/typescript.svg
+    description: Du même type que le JS
+    color: "#ADCBEB"
+  - name: Git
+    category: tools
+    src: /icons/git.svg
+    description: Des branches à tout va
+    color: "#F8AEA0"
+  - name: Node.js
+    category: backend
+    src: /icons/nodejs.svg
+    description: Le JS est aussi dans le back
+    color: "#BFE1B7"
+  - name: GSAP
+    category: frontend
+    src: /icons/gsap.svg
+    description: Animer n'importe quoi
+    color: "#F2ECE1"
+  - name: Pinia
+    category: frontend
+    src: /icons/pinia.svg
+    description: De quoi être dans tous ses états
+    color: "#FFE299"
+  - name: Mapbox
+    category: frontend
+    src: /icons/mapbox.svg
+    color: "#FAF2DE"
+    description: Elle est belle ma carte

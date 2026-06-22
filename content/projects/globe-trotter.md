@@ -26,6 +26,18 @@ url: https://globe-trotter.tech/shared/b0fc994e-18ae-4506-9c01-6200df29c807
 
 ## Stack technique
 
+::projects-tech-stack
+---
+stack:
+  - Vue.js
+  - Sass
+  - AdonisJS
+  - TypeScript
+  - Mapbox
+  - Figma
+---
+::
+
 ## Pourquoi j’ai créé ce projet ?
 
 L’idée m’est venue lors des derniers jours de mon voyage en **Amazonie**. J’ai entendu une conversation entre mes compagnons de voyage : à leur retour, ils comptaient ajouter cette aventure à leurs **cartes en liège**. En les entendant, je me suis dit : \*« Mais pourquoi ne \****développerais***\*-je pas ce concept ? »\*

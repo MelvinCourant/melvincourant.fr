@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import "~/assets/css/pages/home/skills/_skills-list.scss";
 import SkillComponent from "./Skill.vue";
-import type { Skill } from "~/models/types.ts"
+import type { Technology } from "~/models/types.ts"
 
 withDefaults(
   defineProps<{
-    skills: Skill[],
+    skills: Technology[],
     categoryToShow?: string,
   }>(),
   {

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import "~/assets/css/pages/home/skills/_skill.scss";
-import type { Skill } from "~/models/types.ts"
+import type { Technology } from "~/models/types.ts"
 
 defineProps<{
-  skill: Skill,
+  skill: Technology,
 }>()
 </script>
 
@@ -15,7 +15,7 @@ defineProps<{
     <div class="skill__icon-container">
       <img
         class="skill__icon"
-        :src="skill.icon"
+        :src="skill.src"
         :alt="skill.name"
       />
     </div>
