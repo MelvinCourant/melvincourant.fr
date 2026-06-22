@@ -50,8 +50,6 @@ export default defineContentConfig({
           title: z.string(),
           image: z.string().editor({ input: 'media' }),
           url: z.string(),
-          description: z.string(),
-          technologies: z.array(z.string()),
         })),
       }),
     }),

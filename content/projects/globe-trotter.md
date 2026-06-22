@@ -48,12 +48,4 @@ Avant de partir, je cherchais justement un projet qui me correspondrait et que j
 
 ## Figma
 
-::projects-simple-image
----
-alt: Aperçu de la maquette Figma
-src: /projects/globe-trotter/figma.webp
-title: Voir le Figma du projet
-type: default
-url: https://www.figma.com/design/XNRcQHb9SSIhCU8Mciy49q/Globe-trotter?node-id=1-4&p=f&t=86jT3ghQLwAmKhcM-0
----
-::
+:projects-iframe-wrapper{src="https://embed.figma.com/design/XNRcQHb9SSIhCU8Mciy49q/Globe-trotter?embed-host=share"}
