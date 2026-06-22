@@ -4,7 +4,6 @@
   &--cover {
     .simple-image {
       &__image {
-        aspect-ratio: 16/9;
         border: 6px solid var(--black);
         box-shadow: 6px 6px 0 0 var(--black);
       }
@@ -12,6 +11,7 @@
   }
 
   &__image {
+    aspect-ratio: 16/9;
     border-radius: var(--card-radius);
   }
 

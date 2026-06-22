@@ -68,3 +68,15 @@ technologies:
     category: frontend
     src: /icons/vuejs.svg
     color: "#B4E4CF"
+  - name: React
+    category: frontend
+    color: "#A2E2F6"
+    src: /icons/react.svg
+  - name: CSS
+    category: frontend
+    src: /icons/css.svg
+    color: "#A4B5F4"
+  - name: ChatGPT
+    category: tools
+    src: /icons/chatgpt.svg
+    color: "#FAF2DE"

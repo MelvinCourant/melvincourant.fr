@@ -10,7 +10,7 @@ interface Link {
 withDefaults(defineProps<{
   src: string
   alt: string
-  type?: 'default' | 'cover'
+  variant?: 'default' | 'cover'
   url?: string
   title?: string
   links?: Link[]
@@ -24,7 +24,7 @@ withDefaults(defineProps<{
   <div
     :class="[
       'simple-image',
-      {'simple-image--cover': type === 'cover'}
+      {'simple-image--cover': variant === 'cover'}
     ]"
   >
     <a

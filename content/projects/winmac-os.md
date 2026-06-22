@@ -19,7 +19,7 @@ links:
 alt: Aperçu de WInmac OS
 src: /projects/winmac-os/cover.webp
 title: Voir le projet en ligne
-type: cover
+variant: cover
 url: https://winmac-os.melvincourant.fr/
 ---
 ::

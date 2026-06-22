@@ -18,8 +18,8 @@ links:
     src: /icons/github.svg
 alt: Aperçu de Globe Trotter
 src: /projects/globe-trotter/cover.webp
+variant: cover
 title: Voir le projet en ligne
-type: cover
 url: https://globe-trotter.tech/shared/b0fc994e-18ae-4506-9c01-6200df29c807
 ---
 ::
