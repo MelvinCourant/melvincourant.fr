@@ -20,7 +20,7 @@ links:
     url: https://github.com/MelvinCourant/shifumi-fight-pokemon-edition
     src: /icons/github.svg
 alt: Aperçu de Shifumi Fight
-src: /projects/shifumi-fight/cover.webp
+src: /projects/shifumi-fight-pokemon-edition/cover.webp
 title: Voir le projet en ligne
 url: https://shifumi-fight.melvincourant.fr/
 variant: cover

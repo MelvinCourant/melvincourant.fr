@@ -16,7 +16,7 @@ defineProps<Rebound>()
     >
       <img
         class="rebound__image"
-        :src="image"
+        :src="`${url}/thumb.webp`"
         :alt="title"
       />
       <div class="rebound__content">
