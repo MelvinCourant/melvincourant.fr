@@ -20,6 +20,8 @@
     "vue-router": "^5.1.0"
   },
   "devDependencies": {
+    "@nuxtjs/robots": "^6.1.1",
+    "@nuxtjs/sitemap": "^8.2.1",
     "sass-embedded": "^1.100.0"
   }
 }

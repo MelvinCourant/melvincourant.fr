@@ -1,8 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/content', 'nuxt-studio'],
+  modules: ['@nuxt/content', 'nuxt-studio', '@nuxtjs/sitemap', '@nuxtjs/robots'],
   devtools: { enabled: true },
   compatibilityDate: '2024-04-03',
+  site: {
+    url: 'https://melvincourant.fr',
+  },
   nitro: {
     prerender: {
       routes: [

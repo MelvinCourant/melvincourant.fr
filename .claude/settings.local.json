@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(git mv *)",
-      "Bash(pnpm generate *)"
+      "Bash(pnpm generate *)",
+      "Bash(pnpm install *)"
     ]
   }
 }
