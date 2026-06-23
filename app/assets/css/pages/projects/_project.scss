@@ -46,6 +46,16 @@
       margin-top: functions.rem(26);
     }
   }
+
+  video {
+    margin-top: functions.rem(32);
+    border-radius: var(--card-radius);
+
+    + p {
+      margin-top: functions.rem(6);
+      text-align: center;
+    }
+  }
 }
 
 #melvincourant {

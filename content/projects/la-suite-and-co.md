@@ -43,3 +43,11 @@ Ce projet a démarré peu après mon **arrivée chez La Suite and Co** pour mon 
 En collaboration avec le **directeur artistique associé**, nous avons **repensé le site** pour conserver un **effet WOW** au niveau du **visuel** et des **animations**, tout en **optimisant la création de contenu** via le **back-office** (ACF/Gutenberg).
 
 Depuis, je m’occupe de la **maintenance du site** et mets à jour **plusieurs fois par an** le **hero** de la page d’accueil.
+
+:video{autoplay controls loop muted src="/projects/la-suite-and-co/voeux-2025.mp4"}
+
+*Vœux 2025*
+
+:video{autoplay controls loop muted src="/projects/la-suite-and-co/header-2025.mp4"}
+
+*Header 2025*
