@@ -12,13 +12,13 @@ defineEmits<{
 
 <template>
   <div class="cta">
-    <a
+    <NuxtLink
       v-if="cta.url"
-      :href="cta.url"
+      :to="cta.url"
       class="cta__buttons cta--link"
     >
       {{ cta.content }}
-    </a>
+    </NuxtLink>
     <button
       v-else
       class="cta__buttons cta--button"

@@ -27,9 +27,9 @@ withDefaults(defineProps<{
       {'simple-image--cover': variant === 'cover'}
     ]"
   >
-    <a
+    <NuxtLink
       v-if="url"
-      :href="url"
+      :to="url"
       :title="title"
       target="_blank"
     >
@@ -38,7 +38,7 @@ withDefaults(defineProps<{
         :src="src"
         :alt="alt"
       />
-    </a>
+    </NuxtLink>
     <img
       v-else
       class="simple-image__image"
@@ -46,11 +46,11 @@ withDefaults(defineProps<{
       :alt="alt"
     />
     <div v-if="links" class="simple-image__links">
-      <a
+      <NuxtLink
         v-for="link in links"
         :key="link.url"
         class="simple-image__link"
-        :href="link.url"
+        :to="link.url"
         :title="link.title"
         target="_blank"
       >
@@ -59,7 +59,7 @@ withDefaults(defineProps<{
           :src="link.src"
           alt=""
         />
-      </a>
+      </NuxtLink>
     </div>
   </div>
 </template>

@@ -24,7 +24,7 @@ logoLink:
 ---
 cta:
   content: Découvre moi !
-  url: "#about "
+  url: "#about"
 name:
   firstname: Melvin
   lastname: Courant

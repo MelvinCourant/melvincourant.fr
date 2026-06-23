@@ -54,26 +54,26 @@ function toggleBurger() {
           { 'navbar__nav--opened': burgerOpened },
         ]"
     >
-      <a
-        :href="logoLink?.href"
+      <NuxtLink
+        :to="logoLink?.href"
         :title="logoLink?.title"
         class="navbar__logo"
       >
         <img src="~/assets/images/logo.svg" alt="Logo" />
-      </a>
+      </NuxtLink>
       <ul class="navbar__list">
         <li
             v-for="(link, index) in links"
             :key="index"
             class="navbar__item"
         >
-          <a
-            :href="link.href"
+          <NuxtLink
+            :to="link.href"
             class="navbar__link"
             @click="toggleBurger"
           >
             {{ link.name }}
-          </a>
+          </NuxtLink>
         </li>
       </ul>
     </nav>

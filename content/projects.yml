@@ -2,12 +2,16 @@ projects:
   - title: Globe Trotter
     image: /projects/globe-trotter/globe-trotter.webp
     url: /projects/globe-trotter
+    color: red
   - title: Winmac OS
     image: /projects/winmac-os/winmac-os.webp
     url: /projects/winmac-os
+    color: purple
   - title: Shifumi Fight Pokémon Edition
     image: /projects/shifumi-fight/shifumi-fight.webp
     url: /projects/shifumi-fight-pokemon-edition
+    color: yellow
   - title: La Suite and Co
     image: /projects/la-suite-and-co/la-suite-and-co.webp
     url: /projects/la-suite-and-co
+    color: green

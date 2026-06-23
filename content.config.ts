@@ -1,6 +1,7 @@
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
 const CATEGORIES = ['frontend', 'backend', 'fullstack', 'tools'] as const
+const COLORS = ['red', 'green', 'blue', 'yellow', 'purple'] as const
 
 export default defineContentConfig({
   collections: {
@@ -16,6 +17,7 @@ export default defineContentConfig({
           title: z.string(),
           image: z.string().editor({ input: 'media' }),
           url: z.string(),
+          color: z.enum(COLORS),
         })),
       }),
     }),

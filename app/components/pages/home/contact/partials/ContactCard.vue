@@ -86,8 +86,8 @@ function resetStyles() {
         <p>Tape pour retourner la carte</p>
       </div>
     </div>
-    <a
-      :href="contactInfo.url"
+    <NuxtLink
+      :to="contactInfo.url"
       target="_blank"
       class="contact-card__verso"
       :style="`background-color: ${contactInfo.color || 'var(--background)'}`"
@@ -101,6 +101,6 @@ function resetStyles() {
         <p class="contact-card__title">{{ contactInfo.title }}</p>
         <p class="contact-card__description">{{ contactInfo.description }}</p>
       </div>
-    </a>
+    </NuxtLink>
   </li>
 </template>

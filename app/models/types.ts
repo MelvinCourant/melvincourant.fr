@@ -36,4 +36,12 @@ interface Contact {
   color: string
 }
 
-export type { CTA, Name, AboutText, Filter, Technology, Contact }
+interface Rebound {
+  title: string,
+  description: string,
+  color: string,
+  image: string,
+  url: string
+}
+
+export type { CTA, Name, AboutText, Filter, Technology, Contact, Rebound }

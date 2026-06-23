@@ -1,5 +1,11 @@
+@use "../../partials/functions";
+
 .simple-image {
-  margin-top: 32px;
+  margin-top: functions.rem(32);
+
+  @media screen and (max-width: 767px) {
+    margin-top: functions.rem(24);
+  }
 
   &--cover {
     .simple-image {
@@ -18,7 +24,7 @@
   &__links {
     display: flex;
     gap: 16px;
-    margin-top: 16px;
+    margin-top: functions.rem(16);
   }
 
   &__link {

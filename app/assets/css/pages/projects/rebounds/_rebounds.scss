@@ -1,0 +1,30 @@
+@use "../../../partials/functions";
+@use "../../../partials/mixins";
+
+.rebounds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+
+  @media screen and (max-width: 991px) {
+    gap: 20px;
+  }
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
+
+  &__container {
+    max-width: 1280px;
+    margin: functions.rem(96) auto 0;
+
+    h2 {
+      @include mixins.font-type('title');
+      margin: functions.rem(96) 0 functions.rem(32);
+
+      @media screen and (max-width: 767px) {
+        margin: functions.rem(64) 0 functions.rem(24)
+      }
+    }
+  }
+}

@@ -2,20 +2,24 @@
 @use "../../partials/functions";
 @use "../../partials/mixins";
 
-.project {
+.project-page {
   max-width: 1280px;
   margin: 0 auto;
+
+  &__header {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
 
   &__navbar {
     display: flex;
     align-items: center;
     gap: functions.rem(6);
-    max-width: 1280px;
-    margin: 0 auto;
+    width: fit-content;
 
     span {
       display: block;
-      font-family: fonts.$lexend;
+      font-family: fonts.$lexend-mega;
       font-size: functions.rem(20);
       font-weight: 900;
       line-height: 0.8;
@@ -28,11 +32,19 @@
   h1 {
     @include mixins.font-type('medium hero title');
     margin: functions.rem(70) 0 functions.rem(16);
+
+    @media screen and (max-width: 767px) {
+      margin: functions.rem(50) 0 functions.rem(12);
+    }
   }
 
   h2 {
     @include mixins.font-type('title');
     margin: functions.rem(96) 0 functions.rem(32);
+
+    @media screen and (max-width: 767px) {
+      margin: functions.rem(64) 0 functions.rem(24)
+    }
   }
 
   p {
@@ -59,7 +71,7 @@
 }
 
 #melvincourant {
-  &:has(.project) {
+  &:has(.project-page) {
     padding: 20px 20px 150px;
   }
 }

@@ -1,9 +1,13 @@
 // Lexend Mega
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@100..900&display=swap');
 
+// Lexend
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
 // Public Sans
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-$lexend: 'Lexend Mega', sans-serif;
+$lexend-mega: 'Lexend Mega', sans-serif;
+$lexend: 'Lexend', sans-serif;
 $public-sans: 'Public Sans', sans-serif;
 $hidden: 0;

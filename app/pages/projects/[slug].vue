@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import "~/assets/css/pages/projects/_project.scss";
+import "~/assets/css/pages/projects/_project-page.scss";
 
 const route = useRoute()
 
@@ -13,20 +13,23 @@ if (!page.value) {
 </script>
 
 <template>
-  <header>
-    <a
-      href="/#projects"
+  <header
+    class="project-page__header"
+  >
+    <NuxtLink
+      to="/#projects"
       title="Revenir sur la page d'accueil"
-      class="project__navbar"
+      class="project-page__navbar"
     >
       <img src="~/assets/images/logo.svg" alt="Logo" />
       <span>Melvin Courant</span>
-    </a>
+    </NuxtLink>
   </header>
   <ContentRenderer
     v-if="page"
     :value="page"
     tag="section"
-    class="project"
+    class="project-page"
   />
+  <ProjectsRebounds />
 </template>

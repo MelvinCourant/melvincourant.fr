@@ -88,6 +88,11 @@
     box-shadow: 3px 4px 0 0 var(--black);
     animation: levitateHide 5s infinite 0.4s;
 
+    @media screen and (max-width: 991px) {
+      left: 58%;
+      padding: 6px;
+    }
+
     &-text {
       @include mixins.font-type('very small text');
       text-wrap: nowrap;
