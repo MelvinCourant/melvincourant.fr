@@ -1,75 +1,31 @@
-# Nuxt Content Starter
+# Globe Trotter
 
-Look at the [Nuxt Content documentation](https://content.nuxt.com) to learn more.
+[![img.png](img.png "Screenshot of melvincourant.fr project")](https://melvincourant.fr/)
+https://melvincourant.fr/
 
-## Setup
+## Description
 
-Make sure to install dependencies:
+This is my front-end developer portfolio. It includes my bio, skills, projects, and ways to get in touch.
 
-```bash
-# npm
-npm install
+## Tech stack
 
-# pnpm
-pnpm install
+### Core
+- [Nuxt 4](https://nuxt.com/) (>= Node 18) — Vue meta-framework, statically generated via `nuxt generate` (Nitro prerendering)
+- [Vue 3](https://vuejs.org/) and [Vue Router](https://router.vuejs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
 
-# yarn
-yarn install
+### Content
+- [@nuxt/content](https://content.nuxt.com/) — file-based Markdown content, backed by [better-sqlite3](https://github.com/WiseLibs/better-sqlite3)
+- [Nuxt Studio](https://nuxt.studio/) for visual content editing
 
-# bun
-bun install
-```
+### Styling & animation
+- [Sass](https://sass-lang.com/) (`sass-embedded`) for styling
+- [GSAP](https://gsap.com/) for animations
+- [dotLottie](https://lottiefiles.com/) (`@lottiefiles/dotlottie-web`) for Lottie animations
 
-## Development Server
+### SEO
+- [@nuxtjs/sitemap](https://nuxtseo.com/sitemap) and [@nuxtjs/robots](https://nuxtseo.com/robots) for sitemap and robots generation
 
-Start the development server on `http://localhost:3000`:
+### Tooling
+- [pnpm](https://pnpm.io/) package manager
 
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
