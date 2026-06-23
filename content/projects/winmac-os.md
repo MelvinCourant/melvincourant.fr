@@ -1,6 +1,9 @@
 ---
-title: Winmac OS file
+title: Winmac OS
 description: Développement d’un mini OS dans un navigateur, basé sur un projet d’école
+seo:
+  title: Winmac OS
+  description: Développement d’un mini OS dans un navigateur, basé sur un projet d’école
 ---
 
 # Winmac OS

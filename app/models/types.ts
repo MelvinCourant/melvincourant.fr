@@ -28,4 +28,12 @@ interface Technology {
   color: string
 }
 
-export type { CTA, Name, AboutText, Filter, Technology }
+interface Contact {
+  title: string,
+  icon: string,
+  description: string,
+  url: string,
+  color: string
+}
+
+export type { CTA, Name, AboutText, Filter, Technology, Contact }

@@ -3,27 +3,34 @@ import "~/assets/css/pages/home/skills/_skills.scss";
 import SkillsList from "./partials/SkillsList.vue";
 import Filters from "./partials/Filters.vue";
 import {computed, reactive, ref} from "vue";
+import type { Filter } from "~/models/types.ts"
 
-const { data } = await useAsyncData('skills', () =>
-  queryCollection('skills').first()
-)
+const props = withDefaults(defineProps<{
+  anchor?: string,
+  title?: string,
+  filters?: Filter[],
+  skills?: string[],
+}>(), {
+  anchor: 'skills',
+  title: 'Mes talents',
+  filters: () => [],
+  skills: () => [],
+})
 
 const { data: technologiesData } = await useAsyncData('technologies', () =>
   queryCollection('technologies').first()
 )
 
-const anchor = computed(() => data.value?.anchor ?? 'skills')
-const title = computed(() => data.value?.title ?? 'Mes talents')
 const skills = computed(() => {
   const technologies = technologiesData.value?.technologies ?? []
 
-  return (data.value?.skills ?? [])
+  return props.skills
     .map(name => technologies.find(technology => technology.name === name))
     .filter(technology => technology !== undefined)
 })
 
 const filters = reactive(
-  (data.value?.filters ?? []).map((filter, index) => ({
+  props.filters.map((filter, index) => ({
     ...filter,
     selected: filter.selected ?? index === 0,
   }))

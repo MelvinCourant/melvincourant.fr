@@ -4,12 +4,18 @@ import ProjectsList from "./partials/ProjectsList.vue";
 import ProjectsActions from "./partials/ProjectsActions.vue";
 import {computed, ref} from "vue";
 
+withDefaults(defineProps<{
+  anchor?: string,
+  title?: string,
+}>(), {
+  anchor: 'projects',
+  title: 'Mes fiertés',
+})
+
 const { data } = await useAsyncData('projects', () =>
   queryCollection('projects').first()
 )
 
-const anchor = computed(() => data.value?.anchor ?? 'projects')
-const title = computed(() => data.value?.title ?? 'Mes fiertés')
 const projects = computed(() => data.value?.projects ?? [])
 
 const actionSelected = ref(null);

@@ -1,15 +1,13 @@
-title: Mes fiertés
-anchor: projects
 projects:
   - title: Globe Trotter
-    image: /projects/globe-trotter.webp
+    image: /projects/globe-trotter/globe-trotter.webp
     url: /projects/globe-trotter
   - title: Winmac OS
-    image: /projects/winmac-os.webp
+    image: /projects/winmac-os/winmac-os.webp
     url: /projects/winmac-os
   - title: Shifumi Fight Pokémon Edition
-    image: /projects/shifumi-fight.webp
+    image: /projects/shifumi-fight/shifumi-fight.webp
     url: /projects/shifumi-fight-pokemon-edition
   - title: La Suite and Co
-    image: /projects/la-suite-and-co.webp
+    image: /projects/la-suite-and-co/la-suite-and-co.webp
     url: /projects/la-suite-and-co

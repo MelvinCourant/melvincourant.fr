@@ -1,15 +1,17 @@
 <script setup lang="ts">
 import "~/assets/css/pages/home/contact/_contact.scss";
 import ContactCard from "./partials/ContactCard.vue";
-import {computed} from "vue";
+import type { Contact } from "~/models/types.ts"
 
-const { data } = await useAsyncData('contact', () =>
-  queryCollection('contact').first()
-)
-
-const anchor = computed(() => data.value?.anchor ?? 'contact')
-const title = computed(() => data.value?.title ?? 'Contactes moi !')
-const contacts = computed(() => data.value?.contacts ?? [])
+withDefaults(defineProps<{
+  anchor?: string,
+  title?: string,
+  contacts?: Contact[],
+}>(), {
+  anchor: 'contact',
+  title: 'Contacte moi !',
+  contacts: () => [],
+})
 </script>
 
 <template>

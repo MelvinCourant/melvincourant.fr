@@ -1,8 +1,8 @@
 ---
-title: La Suite and Co file
+title: La Suite and Co
 description: Refonte du site vitrine pour l’agence de communication qui m’emploie
 seo:
-  title: La Suite and Co file
+  title: La Suite and Co
   description: Développement du site vitrine pour l’agence de communication qui m’emploie
 ---
 

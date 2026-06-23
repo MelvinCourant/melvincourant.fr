@@ -1,6 +1,9 @@
 ---
-title: Shifumi Fight Pokémon Edition file
+title: Shifumi Fight Pokémon Edition
 description: Refonte d'un projet d'école d'un jeu de Shifumi ... mais à la sauce Pokémon !
+seo:
+  title: Shifumi Fight Pokémon Edition
+  description: Refonte d'un projet d'école d'un jeu de Shifumi ... mais à la sauce Pokémon !
 ---
 
 # Shifumi Fight Pokémon Edition
