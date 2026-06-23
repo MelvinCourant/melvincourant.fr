@@ -19,8 +19,8 @@ links:
 alt: Aperçu de Shifumi Fight
 src: /projects/shifumi-fight/cover.webp
 title: Voir le projet en ligne
-variant: cover
 url: https://shifumi-fight.melvincourant.fr/
+variant: cover
 ---
 ::
 
