@@ -1,4 +1,4 @@
-# Globe Trotter
+# melvincourant.fr
 
 [![img.png](img.png "Screenshot of melvincourant.fr project")](https://melvincourant.fr/)
 https://melvincourant.fr/
