@@ -3,6 +3,16 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content', 'nuxt-studio'],
   devtools: { enabled: true },
   compatibilityDate: '2024-04-03',
+  nitro: {
+    prerender: {
+      routes: [
+        '/projects/globe-trotter',
+        '/projects/winmac-os',
+        '/projects/shifumi-fight-pokemon-edition',
+        '/projects/la-suite-and-co',
+      ],
+    },
+  },
   app: {
     head: {
       htmlAttrs: { lang: 'fr' },
